@@ -21,7 +21,6 @@
             scroll-behavior: smooth;
         }
 
-        /* Navigation */
         nav {
             background: var(--primary);
             padding: 15px 0;
@@ -41,7 +40,6 @@
             font-size: 0.9rem;
         }
 
-        /* Hero Section */
         .hero {
             background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/561993086.jpg');
             background-size: cover;
@@ -57,12 +55,7 @@
 
         .hero h1 { font-size: 3.5rem; margin: 0; }
 
-        /* Language Switcher Buttons */
-        .lang-switcher {
-            text-align: center;
-            margin: 30px 0;
-        }
-
+        .lang-switcher { text-align: center; margin: 30px 0; }
         .lang-btn {
             background: white;
             border: 2px solid var(--primary);
@@ -73,15 +66,9 @@
             font-weight: bold;
             transition: 0.3s;
         }
+        .lang-btn.active { background: var(--primary); color: white; }
 
-        .lang-btn:hover, .lang-btn.active {
-            background: var(--primary);
-            color: white;
-        }
-
-        /* Content Sections */
         .container { max-width: 1000px; margin: auto; padding: 20px; }
-        
         .content-box {
             background: white;
             padding: 30px;
@@ -106,58 +93,39 @@
             object-fit: cover;
             border-radius: 10px;
             transition: 0.3s;
-            cursor: pointer; /* Показва, че може да се клика */
+            cursor: pointer;
         }
+        .gallery img:hover { transform: translateY(-5px); filter: brightness(0.8); }
 
-        .gallery img:hover { transform: translateY(-5px); filter: brightness(0.9); }
-
-        /* Image Modal (Оригинален размер) */
+        /* MODAL STYLE */
         .modal {
             display: none;
             position: fixed;
-            z-index: 2000;
-            padding-top: 50px;
+            z-index: 9999;
             left: 0;
             top: 0;
             width: 100%;
             height: 100%;
             background-color: rgba(0,0,0,0.9);
-            cursor: zoom-out;
+            align-items: center;
+            justify-content: center;
         }
 
         .modal-content {
-            margin: auto;
-            display: block;
             max-width: 90%;
-            max-height: 85vh;
-            border-radius: 5px;
-            animation: zoom 0.3s;
-        }
-
-        @keyframes zoom {
-            from {transform:scale(0)} 
-            to {transform:scale(1)}
+            max-height: 80vh;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(255,255,255,0.2);
         }
 
         .close-modal {
             position: absolute;
             top: 20px;
-            right: 35px;
-            color: #f1f1f1;
-            font-size: 40px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        .cta-container { text-align: center; margin-top: 50px; }
-        .cta-button {
-            background: var(--secondary);
+            right: 30px;
             color: white;
-            padding: 18px 40px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-size: 1.2rem;
-            font-weight: bold;
+            font-size: 50px;
+            cursor: pointer;
+            line-height: 1;
         }
 
         footer {
@@ -171,8 +139,8 @@
 </head>
 <body>
 
-<div id="imageModal" class="modal" onclick="this.style.display='none'">
-    <span class="close-modal">&times;</span>
+<div id="imageModal" class="modal">
+    <span class="close-modal" onclick="closeFullImg()">&times;</span>
     <img class="modal-content" id="imgFull">
 </div>
 
@@ -189,55 +157,35 @@
 </section>
 
 <div class="container">
-    
     <div class="lang-switcher">
-        <button class="lang-btn active" onclick="showLang('en')">🇬🇧 English</button>
-        <button class="lang-btn" onclick="showLang('it')">🇮🇹 Italiano</button>
-        <button class="lang-btn" onclick="showLang('nl')">🇳🇱 Nederlands</button>
+        <button class="lang-btn active" onclick="showLang(event, 'en')">🇬🇧 English</button>
+        <button class="lang-btn" onclick="showLang(event, 'it')">🇮🇹 Italiano</button>
+        <button class="lang-btn" onclick="showLang(event, 'nl')">🇳🇱 Nederlands</button>
     </div>
 
     <div id="about" class="content-box">
         <div id="en" class="lang-content active">
             <h2>Welcome to Umi B&B</h2>
-            <p>Located just 19 minutes walk from <strong>Spiaggia Giulianova</strong>, Umi B&B offers a peaceful garden, private patios, and free WiFi. Each unit is equipped with air conditioning, flat-screen TV, and a private bathroom with bidet. Perfect for couples looking for comfort and style.</p>
+            <p>Located just 19 minutes walk from <strong>Spiaggia Giulianova</strong>, Umi B&B offers a peaceful garden and free WiFi. Perfect for couples.</p>
         </div>
-
         <div id="it" class="lang-content">
             <h2>Benvenuti a Umi B&B</h2>
-            <p>Situato a soli 19 minuti a piedi dalla <strong>Spiaggia di Giulianova</strong>, l'Umi B&B offre un giardino tranquillo, patii privati e WiFi gratuito. Ogni unità è dotata di aria condizionata, TV a schermo piatto e bagno privato con bidet. Perfetto per le coppie che cercano comfort e stile.</p>
+            <p>Situato a soli 19 minuti a piedi dalla <strong>Spiaggia di Giulianova</strong>, l'Umi B&B offre un giardino tranquillo e WiFi gratuito.</p>
         </div>
-
         <div id="nl" class="lang-content">
             <h2>Welkom bij Umi B&B</h2>
-            <p>Umi B&B ligt на slechts 19 minuten lopen van <strong>Spiaggia Giulianova</strong> en biedt een rustige tuin, privépatiō's en gratis WiFi. Elke accommodatie е voorzien van airconditioning, een flatscreen-tv en een eigen badkamer met bidet. Ideaal voor stellen die op zoek zijn naar comfort en stijl.</p>
+            <p>Umi B&B ligt на slechts 19 minuten lopen van <strong>Spiaggia Giulianova</strong> en biedt een rustige tuin en gratis WiFi.</p>
         </div>
     </div>
 
-    <h2 id="gallery" style="text-align: center; margin-top: 50px;">Gallery</h2>
-    <p style="text-align: center; color: #666; font-size: 0.9rem;">(Click on any image to enlarge)</p>
-    
+    <h2 id="gallery" style="text-align: center;">Gallery (Click to enlarge)</h2>
     <div class="gallery">
-        <img src="images/543547600.jpg" loading="lazy" onclick="openFullImg(this.src)">
-        <img src="images/543547616.jpg" loading="lazy" onclick="openFullImg(this.src)">
-        <img src="images/543547620.jpg" loading="lazy" onclick="openFullImg(this.src)">
-        <img src="images/543547683.jpg" loading="lazy" onclick="openFullImg(this.src)">
-        <img src="images/543547709.jpg" loading="lazy" onclick="openFullImg(this.src)">
-        <img src="images/543547722.jpg" loading="lazy" onclick="openFullImg(this.src)">
-        <img src="images/543547738.jpg" loading="lazy" onclick="openFullImg(this.src)">
-        <img src="images/543547766.jpg" loading="lazy" onclick="openFullImg(this.src)">
-        <img src="images/543547787.jpg" loading="lazy" onclick="openFullImg(this.src)">
-        <img src="images/543547828.jpg" loading="lazy" onclick="openFullImg(this.src)">
-        <img src="images/543547858.jpg" loading="lazy" onclick="openFullImg(this.src)">
-        <img src="images/543547881.jpg" loading="lazy" onclick="openFullImg(this.src)">
-        <img src="images/543547959.jpg" loading="lazy" onclick="openFullImg(this.src)">
-        <img src="images/543548062.jpg" loading="lazy" onclick="openFullImg(this.src)">
-        <img src="images/543548069.jpg" loading="lazy" onclick="openFullImg(this.src)">
-        <img src="images/543548104.jpg" loading="lazy" onclick="openFullImg(this.src)">
-        <img src="images/543548123.jpg" loading="lazy" onclick="openFullImg(this.src)">
-        <img src="images/543548127.jpg" loading="lazy" onclick="openFullImg(this.src)">
-        <img src="images/544029771.jpg" loading="lazy" onclick="openFullImg(this.src)">
-        <img src="images/559942633.jpg" loading="lazy" onclick="openFullImg(this.src)">
-        <img src="images/561993086.jpg" loading="lazy" onclick="openFullImg(this.src)">
-        <img src="images/561993189.jpg" loading="lazy" onclick="openFullImg(this.src)">
-        <img src="images/562295020.jpg" loading="lazy" onclick="openFullImg(this.src)">
-        <img src="images/562295
+        <img src="images/543547600.jpg" onclick="openFullImg(this.src)">
+        <img src="images/543547616.jpg" onclick="openFullImg(this.src)">
+        <img src="images/543547620.jpg" onclick="openFullImg(this.src)">
+        <img src="images/543547683.jpg" onclick="openFullImg(this.src)">
+        <img src="images/543547709.jpg" onclick="openFullImg(this.src)">
+        <img src="images/543547722.jpg" onclick="openFullImg(this.src)">
+        <img src="images/543547738.jpg" onclick="openFullImg(this.src)">
+        <img src="images/543547766.jpg" onclick="openFullImg(this.src)">
+        <img src="
