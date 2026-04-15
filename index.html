@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Umi B&B - Official Website</title>
-    
     <script>
         function showLang(langId, btn) {
             var contents = document.getElementsByClassName('lang-content');
@@ -15,269 +14,166 @@
             for (var k = 0; k < buttons.length; k++) { buttons[k].classList.remove('active'); }
             btn.classList.add('active');
         }
-
         function openFullImg(imgElement) {
             var modal = document.getElementById("imageModal");
             var modalImg = document.getElementById("imgFull");
             modal.style.display = "flex";
             modalImg.src = imgElement.src;
         }
-
         function closeFullImg() { document.getElementById("imageModal").style.display = "none"; }
     </script>
-
     <style>
-        :root { --primary: #003580; --accent: #00b4d8; --bg: #f0f2f5; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background: var(--bg); color: #333; line-height: 1.6; scroll-behavior: smooth; }
-        
+        :root { --primary: #003580; --bg: #f0f2f5; }
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; background: var(--bg); color: #333; line-height: 1.5; scroll-behavior: smooth; }
         nav { background: var(--primary); padding: 15px; position: sticky; top: 0; z-index: 1000; text-align: center; }
-        nav a { color: white; text-decoration: none; font-weight: bold; margin: 0 12px; text-transform: uppercase; font-size: 0.8rem; }
-        
-        .hero { 
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/header1.jpg'); 
-            background-size: cover; background-position: center; height: 350px; 
-            display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center;
-        }
-
+        nav a { color: white; text-decoration: none; font-weight: bold; margin: 0 10px; text-transform: uppercase; font-size: 0.75rem; }
+        .hero { background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/header1.jpg'); background-size: cover; background-position: center; height: 300px; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; }
         .container { max-width: 1100px; margin: auto; padding: 20px; }
-        .lang-switcher { text-align: center; margin: 20px 0; }
-        .lang-btn { background: white; border: 2px solid var(--primary); padding: 8px 18px; margin: 5px; cursor: pointer; border-radius: 25px; font-weight: bold; }
+        .lang-switcher { text-align: center; margin: 15px 0; }
+        .lang-btn { background: white; border: 2px solid var(--primary); padding: 6px 15px; margin: 3px; cursor: pointer; border-radius: 20px; font-weight: bold; }
         .lang-btn.active { background: var(--primary); color: white; }
-
-        .content-box { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-bottom: 30px; }
+        .content-box { background: white; padding: 25px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 25px; }
         .lang-content { display: none; }
-
-        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        .card { background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; }
-        .card h3 { margin-top: 0; color: var(--primary); font-size: 1.1rem; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 15px; }
-        
-        .row { display: flex; justify-content: space-between; border-bottom: 1px solid #f9f9f9; padding: 8px 0; font-size: 0.95rem; }
-        .dist { color: #666; font-weight: 500; }
-
-        .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; margin-top: 20px; }
-        .gallery img { width: 100%; height: 140px; object-fit: cover; border-radius: 8px; cursor: pointer; transition: 0.3s; }
-        .gallery img:hover { transform: scale(1.05); }
-
-        .modal { display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); align-items: center; justify-content: center; }
-        .modal-content { max-width: 90%; max-height: 85vh; border: 2px solid white; }
-
-        footer { background: #222; color: white; text-align: center; padding: 30px; margin-top: 50px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .item-card { border-bottom: 1px solid #eee; padding: 10px 0; }
+        .item-card:last-child { border-bottom: none; }
+        .label { font-weight: bold; color: var(--primary); display: block; margin-bottom: 5px; }
+        .val { display: flex; justify-content: space-between; }
+        .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 8px; }
+        .gallery img { width: 100%; height: 120px; object-fit: cover; border-radius: 4px; cursor: pointer; }
+        .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); align-items: center; justify-content: center; }
+        .modal-content { max-width: 90%; max-height: 80vh; }
+        ul { padding-left: 18px; margin: 5px 0; }
+        footer { background: #222; color: white; text-align: center; padding: 20px; margin-top: 40px; }
     </style>
 </head>
 <body>
 
-<div id="imageModal" class="modal" onclick="closeFullImg()">
-    <img class="modal-content" id="imgFull">
-</div>
+<div id="imageModal" class="modal" onclick="closeFullImg()"><img class="modal-content" id="imgFull"></div>
 
 <nav>
     <div class="lang-content nl" style="display: block;">
         <a href="#home">Home</a> <a href="#accommodation">Accommodatie</a> <a href="#rules">Huisregels</a> <a href="#faq">FAQ</a> <a href="#gallery">Galerij</a> <a href="#contact">Contact</a>
     </div>
     <div class="lang-content it">
-        <a href="#home">Home</a> <a href="#accommodation">Alloggio</a> <a href="#rules">Regole</a> <a href="#faq">Domande</a> <a href="#gallery">Galleria</a> <a href="#contact">Contatti</a>
+        <a href="#home">Home</a> <a href="#accommodation">Dintorni</a> <a href="#rules">Regole</a> <a href="#faq">Domande</a> <a href="#gallery">Galleria</a> <a href="#contact">Contatti</a>
     </div>
     <div class="lang-content en">
-        <a href="#home">Home</a> <a href="#accommodation">Accommodation</a> <a href="#rules">House Rules</a> <a href="#faq">FAQ</a> <a href="#gallery">Gallery</a> <a href="#contact">Contact</a>
+        <a href="#home">Home</a> <a href="#accommodation">Surroundings</a> <a href="#rules">Rules</a> <a href="#faq">FAQ</a> <a href="#gallery">Gallery</a> <a href="#contact">Contact</a>
     </div>
 </nav>
 
-<section class="hero" id="home">
-    <h1>UMI B&B</h1>
-    <p>Giulianova, Abruzzo, Italy</p>
-</section>
+<section class="hero" id="home"><h1>UMI B&B</h1><p>Giulianova, Italy</p></section>
 
 <div class="container">
     <div class="lang-switcher">
-        <button class="lang-btn active" onclick="showLang('nl', this)">🇳🇱 Nederlands</button>
-        <button class="lang-btn" onclick="showLang('it', this)">🇮🇹 Italiano</button>
-        <button class="lang-btn" onclick="showLang('en', this)">🇬🇧 English</button>
+        <button class="lang-btn active" onclick="showLang('nl', this)">🇳🇱 NL</button>
+        <button class="lang-btn" onclick="showLang('it', this)">🇮🇹 IT</button>
+        <button class="lang-btn" onclick="showLang('en', this)">🇬🇧 EN</button>
     </div>
 
     <div id="accommodation" class="content-box">
         <div class="lang-content nl" style="display: block;">
             <h2>Accommodatie-omgeving</h2>
-            <p>Gasten vinden dit gebied leuk vanwege: 🌊 Kust | 🧘 Wellness | 🍴 Eten en drinken</p>
-            <div class="grid-3">
-                <div class="card">
-                    <h3>🚶 In de buurt</h3>
-                    <div class="row"><span>Somersault</span><span class="dist">1,2 km</span></div>
-                    <div class="row"><span>Parco degli Eucalipti</span><span class="dist">1,8 km</span></div>
-                    <div class="row"><span>Anfiteatro Ennio Flaiano</span><span class="dist">2,2 km</span></div>
-                    <div class="row"><span>Parchetto Savini</span><span class="dist">3,9 km</span></div>
-                    <div class="row"><span>Riserva Naturale del Borsacchio</span><span class="dist">8 km</span></div>
-                    <div class="row"><span>Parco Mauro Laeng</span><span class="dist">9 km</span></div>
+            <p>Gasten waarderen: 🌊 Kust | 🧘 Wellness | 🍴 Eten & Drinken</p>
+            <div class="grid">
+                <div>
+                    <span class="label">🚶 In de buurt</span>
+                    <div class="val"><span>Somersault</span><span>1,2 km</span></div>
+                    <div class="val"><span>Parco degli Eucalipti</span><span>1,8 km</span></div>
+                    <div class="val"><span>Anfiteatro Ennio Flaiano</span><span>2,2 km</span></div>
+                    <div class="val"><span>Parchetto Savini</span><span>3,9 km</span></div>
+                    <div class="val"><span>Riserva Borsacchio</span><span>8 km</span></div>
                 </div>
-                <div class="card">
-                    <h3>🍴 Restaurants & cafés</h3>
-                    <div class="row"><span>Pizzeria del Popolo</span><span class="dist">400 m</span></div>
-                    <div class="row"><span>Aprudia</span><span class="dist">500 m</span></div>
-                    <div class="row"><span>Pizzeria del Paese</span><span class="dist">500 m</span></div>
-                    <h3 style="margin-top:20px">🌊 Stranden</h3>
-                    <div class="row"><span>Spiaggia Giulianova</span><span class="dist">1,6 km</span></div>
-                    <div class="row"><span>Spiaggia di Tortoreto Lido</span><span class="dist">4,4 km</span></div>
-                    <div class="row"><span>Spiaggia Roseto degli Abruzzi</span><span class="dist">8 km</span></div>
+                <div>
+                    <span class="label">🍴 Restaurants</span>
+                    <div class="val"><span>Pizzeria del Popolo</span><span>400 m</span></div>
+                    <div class="val"><span>Aprudia</span><span>500 m</span></div>
+                    <span class="label" style="margin-top:10px">🌊 Stranden</span>
+                    <div class="val"><span>Spiaggia Giulianova</span><span>1,6 km</span></div>
+                    <div class="val"><span>Tortoreto Lido</span><span>4,4 km</span></div>
                 </div>
-                <div class="card">
-                    <h3>🚆 Vervoer</h3>
-                    <div class="row"><span>Trein - Giulianova</span><span class="dist">1,3 km</span></div>
-                    <div class="row"><span>Trein - Mosciano Sant'Angelo</span><span class="dist">7 km</span></div>
-                    <h3 style="margin-top:20px">✈️ Luchthavens</h3>
-                    <div class="row"><span>Luchthaven Abruzzo</span><span class="dist">52 km</span></div>
+                <div>
+                    <span class="label">🚆 Vervoer</span>
+                    <div class="val"><span>Trein Giulianova</span><span>1,3 km</span></div>
+                    <div class="val"><span>Luchthaven Abruzzo</span><span>52 km</span></div>
                 </div>
             </div>
         </div>
-
-        <div class="lang-content it">
-            <h2>Dintorni dell'alloggio</h2>
-            <p>Gli ospiti apprezzano questa zona per: 🌊 Costa | 🧘 Wellness | 🍴 Cibo e bevande</p>
-            <div class="grid-3">
-                <div class="card">
-                    <h3>🚶 Cosa c'è in zona?</h3>
-                    <div class="row"><span>Somersault</span><span class="dist">1,2 km</span></div>
-                    <div class="row"><span>Parco degli Eucalipti</span><span class="dist">1,8 km</span></div>
-                    <div class="row"><span>Anfiteatro Ennio Flaiano</span><span class="dist">2,2 km</span></div>
-                    <div class="row"><span>Parchetto Savini</span><span class="dist">3,9 km</span></div>
-                    <div class="row"><span>Riserva Naturale del Borsacchio</span><span class="dist">8 km</span></div>
-                    <div class="row"><span>Parco Mauro Laeng</span><span class="dist">9 km</span></div>
-                </div>
-                <div class="card">
-                    <h3>🍴 Ristoranti e caffè</h3>
-                    <div class="row"><span>Pizzeria del Popolo</span><span class="dist">400 m</span></div>
-                    <div class="row"><span>Aprudia</span><span class="dist">500 m</span></div>
-                    <div class="row"><span>Pizzeria del Paese</span><span class="dist">500 m</span></div>
-                    <h3 style="margin-top:20px">🌊 Spiagge</h3>
-                    <div class="row"><span>Spiaggia Giulianova</span><span class="dist">1,6 km</span></div>
-                    <div class="row"><span>Spiaggia di Tortoreto Lido</span><span class="dist">4,4 km</span></div>
-                    <div class="row"><span>Spiaggia Roseto degli Abruzzi</span><span class="dist">8 km</span></div>
-                </div>
-                <div class="card">
-                    <h3>🚆 Trasporto pubblico</h3>
-                    <div class="row"><span>Treno - Giulianova</span><span class="dist">1,3 km</span></div>
-                    <div class="row"><span>Treno - Mosciano Sant'Angelo</span><span class="dist">7 km</span></div>
-                    <h3 style="margin-top:20px">✈️ Aeroporti</h3>
-                    <div class="row"><span>Aeroporto d'Abruzzo</span><span class="dist">52 km</span></div>
-                </div>
-            </div>
         </div>
-
-        <div class="lang-content en">
-            <h2>Accommodation Surroundings</h2>
-            <p>Guests love this area for: 🌊 Coast | 🧘 Wellness | 🍴 Food & Drink</p>
-            <div class="grid-3">
-                <div class="card">
-                    <h3>🚶 What's nearby?</h3>
-                    <div class="row"><span>Somersault</span><span class="dist">1.2 km</span></div>
-                    <div class="row"><span>Parco degli Eucalipti</span><span class="dist">1.8 km</span></div>
-                    <div class="row"><span>Anfiteatro Ennio Flaiano</span><span class="dist">2.2 km</span></div>
-                    <div class="row"><span>Parchetto Savini</span><span class="dist">3.9 km</span></div>
-                    <div class="row"><span>Borsacchio Nature Reserve</span><span class="dist">8 km</span></div>
-                    <div class="row"><span>Parco Mauro Laeng</span><span class="dist">9 km</span></div>
-                </div>
-                <div class="card">
-                    <h3>🍴 Restaurants & Cafés</h3>
-                    <div class="row"><span>Pizzeria del Popolo</span><span class="dist">400 m</span></div>
-                    <div class="row"><span>Aprudia</span><span class="dist">500 m</span></div>
-                    <div class="row"><span>Pizzeria del Paese</span><span class="dist">500 m</span></div>
-                    <h3 style="margin-top:20px">🌊 Beaches</h3>
-                    <div class="row"><span>Giulianova Beach</span><span class="dist">1.6 km</span></div>
-                    <div class="row"><span>Tortoreto Lido Beach</span><span class="dist">4.4 km</span></div>
-                    <div class="row"><span>Roseto degli Abruzzi Beach</span><span class="dist">8 km</span></div>
-                </div>
-                <div class="card">
-                    <h3>🚆 Public Transport</h3>
-                    <div class="row"><span>Train - Giulianova</span><span class="dist">1.3 km</span></div>
-                    <div class="row"><span>Train - Mosciano Sant'Angelo</span><span class="dist">7 km</span></div>
-                    <h3 style="margin-top:20px">✈️ Airports</h3>
-                    <div class="row"><span>Abruzzo Airport</span><span class="dist">52 km</span></div>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <div id="rules" class="content-box">
         <div class="lang-content nl" style="display: block;">
             <h2>Huisregels</h2>
-            <div class="grid-3">
-                <div class="card">
-                    <h3>🕒 Tijden</h3>
-                    <p><strong>Inchecken:</strong> 15:00 - 19:30</p>
-                    <p><strong>Uitchecken:</strong> 10:00 - 10:30</p>
-                </div>
-                <div class="card">
-                    <h3>👶 Kinderen & Bedden</h3>
-                    <p>0-3 jaar (Bedje): € 10 p.n.</p>
-                    <p>4+ jaar (Extra bed): € 20 p.n.</p>
-                </div>
-                <div class="card">
-                    <h3>🚫 Restricties</h3>
-                    <p>Geen huisdieren. Niet roken. Geen feesten.</p>
-                </div>
+            <div class="item-card"><span class="label">🕒 In- & Uitchecken</span>In: 15:00 - 19:30 | Uit: 10:00 - 10:30</div>
+            <div class="item-card"><span class="label">💳 Annuleren / Vooruitbetalen</span>Voorwaarden variëren per kamertype. Controleer de voorwaarden bij uw boeking.</div>
+            <div class="item-card">
+                <span class="label">👶 Kinderen en bedden</span>
+                <ul>
+                    <li>Kinderen van alle leeftijden zijn welkom.</li>
+                    <li>Vanaf 18 jaar worden zij als volwassenen gerekend.</li>
+                    <li>0-3 jaar: Kinderbedje op verzoek - <strong>€ 10 per kind per nacht</strong>.</li>
+                    <li>4+ jaar: Extra bed op verzoek - <strong>€ 20 per persoon per nacht</strong>.</li>
+                </ul>
             </div>
+            <div class="item-card"><span class="label">🚫 Beperkingen</span>Geen minimumleeftijd | Geen huisdieren | Niet roken | Geen feesten.</div>
         </div>
         <div class="lang-content it">
             <h2>Regole della casa</h2>
-            <div class="grid-3">
-                <div class="card">
-                    <h3>🕒 Orari</h3>
-                    <p><strong>Check-in:</strong> 15:00 - 19:30</p>
-                    <p><strong>Check-out:</strong> 10:00 - 10:30</p>
-                </div>
-                <div class="card">
-                    <h3>👶 Bambini e Letti</h3>
-                    <p>0-3 anni (Culla): € 10 p.n.</p>
-                    <p>4+ anni (Letto extra): € 20 p.n.</p>
-                </div>
-                <div class="card">
-                    <h3>🚫 Restrizioni</h3>
-                    <p>Animali non ammessi. Vietato fumare. No feste.</p>
-                </div>
-            </div>
+            <div class="item-card"><span class="label">🕒 Check-in & Check-out</span>In: 15:00 - 19:30 | Out: 10:00 - 10:30</div>
+            <div class="item-card"><span class="label">👶 Bambini e letti</span>Culla (0-3 anni): €10/notte. Letto extra (4+ anni): €20/notte. Gli adulti sono contati dai 18 anni.</div>
+            <div class="item-card"><span class="label">🚫 Restrizioni</span>Animali non ammessi. Vietato fumare. No feste.</div>
         </div>
         <div class="lang-content en">
             <h2>House Rules</h2>
-            <div class="grid-3">
-                <div class="card">
-                    <h3>🕒 Check-in/out</h3>
-                    <p><strong>Check-in:</strong> 15:00 - 19:30</p>
-                    <p><strong>Check-out:</strong> 10:00 - 10:30</p>
-                </div>
-                <div class="card">
-                    <h3>👶 Children & Beds</h3>
-                    <p>0-3 yrs (Crib): € 10 p.n.</p>
-                    <p>4+ yrs (Extra bed): € 20 p.n.</p>
-                </div>
-                <div class="card">
-                    <h3>🚫 Restrictions</h3>
-                    <p>No pets. No smoking. No parties.</p>
-                </div>
-            </div>
+            <div class="item-card"><span class="label">🕒 Check-in/out</span>In: 3 PM - 7:30 PM | Out: 10 AM - 10:30 AM</div>
+            <div class="item-card"><span class="label">👶 Children & Beds</span>Crib (0-3 yrs): €10/night. Extra bed (4+ yrs): €20/night. 18+ considered adults.</div>
+            <div class="item-card"><span class="label">🚫 Prohibitions</span>No pets. No smoking. No parties or events.</div>
         </div>
     </div>
 
     <div id="faq" class="content-box">
         <div class="lang-content nl" style="display: block;">
             <h2>Veelgestelde Vragen</h2>
-            <div class="grid-3">
-                <div class="card"><h3>Ontbijt?</h3><p>Score 8.8. Italiaans of À la carte.</p></div>
-                <div class="card"><h3>Afstanden?</h3><p>Centrum: 1,1 km. Strand: 1,4 km.</p></div>
-                <div class="card"><h3>Activiteiten?</h3><p>Hiking, Tennis, Live sport, Comedy, etc.</p></div>
+            <div class="grid">
+                <div class="item-card">
+                    <span class="label">Wat voor ontbijt is er?</span>
+                    Score 8,8. Opties: Italiaans of À la carte.
+                </div>
+                <div class="item-card">
+                    <span class="label">Wat is er te doen?</span>
+                    <ul>
+                        <li>Hiking & Tennis</li>
+                        <li>Bowlen & Aerobics</li>
+                        <li>Themadiners & Live sport</li>
+                        <li>Stand-up comedy & Livemuziek</li>
+                        <li>Filmavonden & Kunstgaleries</li>
+                    </ul>
+                </div>
+                <div class="item-card">
+                    <span class="label">Afstanden</span>
+                    Centrum: 1,1 km | Strand: 1,4 km.
+                </div>
+                <div class="item-card">
+                    <span class="label">Kamertype</span>
+                    Tweepersoonskamer.
+                </div>
             </div>
         </div>
         <div class="lang-content it">
             <h2>Domande Frequenti</h2>
-            <div class="grid-3">
-                <div class="card"><h3>Colazione?</h3><p>Punteggio 8.8. Italiana o À la carte.</p></div>
-                <div class="card"><h3>Distanze?</h3><p>Centro: 1,1 km. Spiaggia: 1,4 km.</p></div>
-                <div class="card"><h3>Attività?</h3><p>Escursionismo, Tennis, Sport dal vivo, etc.</p></div>
+            <div class="grid">
+                <div class="item-card"><span class="label">Colazione?</span>Punteggio 8,8. Italiana o À la carte.</div>
+                <div class="item-card"><span class="label">Attività?</span>Tennis, Bowling, Musica dal vivo, Trekking, Cinema.</div>
+                <div class="item-card"><span class="label">Distanze?</span>Centro: 1,1 km | Spiaggia: 1,4 km.</div>
             </div>
         </div>
         <div class="lang-content en">
             <h2>FAQ</h2>
-            <div class="grid-3">
-                <div class="card"><h3>Breakfast?</h3><p>Score 8.8. Italian or À la carte.</p></div>
-                <div class="card"><h3>Distances?</h3><p>Center: 1.1 km. Beach: 1.4 km.</p></div>
-                <div class="card"><h3>Activities?</h3><p>Hiking, Tennis, Live sports, etc.</p></div>
+            <div class="grid">
+                <div class="item-card"><span class="label">Breakfast?</span>Score 8.8. Italian or À la carte.</div>
+                <div class="item-card"><span class="label">Activities?</span>Hiking, Tennis, Bowling, Live music, Movie nights.</div>
+                <div class="item-card"><span class="label">Distances?</span>Center: 1.1 km | Beach: 1.4 km.</div>
             </div>
         </div>
     </div>
@@ -290,10 +186,9 @@
         </script>
     </div>
 
-    <div id="contact" class="content-box" style="margin-top: 50px; text-align: center;">
-        <div class="lang-content nl" style="display: block;"><h2>Contact</h2><p>📍 Giulianova, Italië</p></div>
-        <div class="lang-content it"><h2>Contatti</h2><p>📍 Giulianova, Italia</p></div>
-        <div class="lang-content en"><h2>Contact</h2><p>📍 Giulianova, Italy</p></div>
+    <div id="contact" class="content-box" style="margin-top: 30px; text-align: center;">
+        <h2>Contact</h2>
+        <p>📍 Giulianova, Abruzzo, Italy<br>📞 +39 000 000 0000 | ✉️ info@umibnb.com</p>
     </div>
 </div>
 
