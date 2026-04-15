@@ -1,24 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Umi B&B - Giulianova</title>
+    <title>Umi B&B - Officiële Website</title>
     
     <script>
         function showLang(langId, btn) {
             var contents = document.getElementsByClassName('lang-content');
-            for (var i = 0; i < contents.length; i++) {
-                contents[i].style.display = 'none';
-            }
+            for (var i = 0; i < contents.length; i++) { contents[i].style.display = 'none'; }
             var selected = document.getElementsByClassName(langId);
-            for (var j = 0; j < selected.length; j++) {
-                selected[j].style.display = 'block';
-            }
+            for (var j = 0; j < selected.length; j++) { selected[j].style.display = 'block'; }
             var buttons = document.getElementsByClassName('lang-btn');
-            for (var k = 0; k < buttons.length; k++) {
-                buttons[k].classList.remove('active');
-            }
+            for (var k = 0; k < buttons.length; k++) { buttons[k].classList.remove('active'); }
             btn.classList.add('active');
         }
 
@@ -29,41 +23,45 @@
             modalImg.src = imgElement.src;
         }
 
-        function closeFullImg() {
-            document.getElementById("imageModal").style.display = "none";
-        }
+        function closeFullImg() { document.getElementById("imageModal").style.display = "none"; }
     </script>
 
     <style>
-        :root { --primary: #003580; --secondary: #27ae60; --bg: #f4f7f6; }
-        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; background: var(--bg); scroll-behavior: smooth; color: #333; }
+        :root { --primary: #003580; --accent: #00b4d8; --bg: #f0f2f5; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background: var(--bg); color: #333; line-height: 1.6; }
         nav { background: var(--primary); padding: 15px; position: sticky; top: 0; z-index: 1000; text-align: center; }
         nav a { color: white; text-decoration: none; font-weight: bold; margin: 0 15px; text-transform: uppercase; font-size: 0.85rem; }
         
         .hero { 
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('images/header1.jpg'); 
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/header1.jpg'); 
             background-size: cover; background-position: center; height: 350px; 
             display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center;
         }
-        
-        .container { max-width: 1000px; margin: auto; padding: 20px; }
+
+        .container { max-width: 1100px; margin: auto; padding: 20px; }
         .lang-switcher { text-align: center; margin: 20px 0; }
         .lang-btn { background: white; border: 2px solid var(--primary); padding: 8px 18px; margin: 5px; cursor: pointer; border-radius: 25px; font-weight: bold; }
         .lang-btn.active { background: var(--primary); color: white; }
-        .content-box { background: white; padding: 25px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); margin-bottom: 30px; }
+
+        .content-box { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-bottom: 30px; }
         .lang-content { display: none; }
-        
-        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; }
+
+        /* FAQ Styling */
+        .faq-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .faq-card { background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; transition: 0.3s; }
+        .faq-card:hover { border-color: var(--accent); }
+        .faq-card h3 { margin-top: 0; color: var(--primary); font-size: 1.1rem; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+        .faq-card ul { padding-left: 20px; margin-bottom: 0; }
+
+        /* Gallery Styling */
+        .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; margin-top: 20px; }
         .gallery img { width: 100%; height: 180px; object-fit: cover; border-radius: 8px; cursor: pointer; transition: 0.3s; }
-        
+        .gallery img:hover { transform: scale(1.03); filter: brightness(0.9); }
+
         .modal { display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); align-items: center; justify-content: center; }
-        .modal-content { max-width: 90%; max-height: 85vh; }
-        
-        .faq-item { margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 15px; }
-        .faq-item strong { display: block; color: var(--primary); margin-bottom: 8px; font-size: 1.1rem; }
-        .faq-item p { margin: 0; line-height: 1.5; color: #555; }
-        
-        footer { background: #222; color: white; text-align: center; padding: 20px; margin-top: 40px; }
+        .modal-content { max-width: 90%; max-height: 85vh; border: 2px solid white; }
+
+        footer { background: #222; color: white; text-align: center; padding: 30px; margin-top: 50px; }
     </style>
 </head>
 <body>
@@ -73,126 +71,102 @@
 </div>
 
 <nav>
-    <a href="#about">About</a>
-    <a href="#facilities">Facilities</a>
-    <a href="#faq">FAQ</a>
-    <a href="#gallery">Gallery</a>
+    <a href="#about">Over ons</a>
+    <a href="#faq">Veelgestelde Vragen</a>
+    <a href="#gallery">Galerij</a>
 </nav>
 
 <section class="hero">
     <h1>UMI B&B</h1>
-    <p>Giulianova, Abruzzo, Italy</p>
+    <p>Giulianova, Abruzzo, Italië</p>
 </section>
 
 <div class="container">
     <div class="lang-switcher">
-        <button class="lang-btn active" onclick="showLang('en', this)">🇬🇧 English</button>
+        <button class="lang-btn active" onclick="showLang('nl', this)">🇳🇱 Nederlands</button>
         <button class="lang-btn" onclick="showLang('it', this)">🇮🇹 Italiano</button>
-        <button class="lang-btn" onclick="showLang('nl', this)">🇳🇱 Nederlands</button>
-    </div>
-
-    <div id="about" class="content-box">
-        <div class="lang-content en" style="display: block;">
-            <h2>Experience Umi B&B</h2>
-            <p>Umi B&B is a charming retreat in Giulianova, offering a peaceful garden and modern amenities. We are located just 1.6 km (about a 19-minute walk) from the beautiful Spiaggia Giulianova.</p>
-        </div>
-        <div class="lang-content it">
-            <h2>Scopri Umi B&B</h2>
-            <p>Umi B&B è un incantevole rifugio a Giulianova, che offre un giardino tranquillo e servizi moderni. Ci troviamo a soli 1,6 km (circa 19 minuti a piedi) dalla splendida Spiaggia di Giulianova.</p>
-        </div>
-        <div class="lang-content nl">
-            <h2>Ervaar Umi B&B</h2>
-            <p>Umi B&B is een charmant verblijf in Giulianova, met een rustige tuin en moderne voorzieningen. Wij zijn gevestigd op slechts 1,6 km (ongeveer 19 minuten lopen) van het prachtige Spiaggia Giulianova.</p>
-        </div>
+        <button class="lang-btn" onclick="showLang('en', this)">🇬🇧 English</button>
     </div>
 
     <div id="faq" class="content-box">
-        <div class="lang-content en" style="display: block;">
-            <h2>Frequently Asked Questions</h2>
-            <div class="faq-item">
-                <strong>Can I get a discount at Umi B&B?</strong>
-                <p>Yes! You may be eligible for a Genius discount. Simply sign in to check for available deals.</p>
-            </div>
-            <div class="faq-item">
-                <strong>How far is the beach?</strong>
-                <p>The nearest beach, Spiaggia Giulianova, is approximately 1.6 km away from the property.</p>
-            </div>
-            <div class="faq-item">
-                <strong>What are the check-in and check-out times?</strong>
-                <p>Check-in starts at 15:00 and ends at 20:00. Check-out is required by 10:00.</p>
-            </div>
-            <div class="faq-item">
-                <strong>What kind of rooms are available?</strong>
-                <p>We offer various room types. Please check availability to see specific options for your dates.</p>
-            </div>
-            <div class="faq-item">
-                <strong>Is there a terrace or balcony?</strong>
-                <p>Yes, some of our accommodations feature a terrace or a balcony for your enjoyment.</p>
+        <div class="lang-content nl" style="display: block;">
+            <h2>Veelgestelde Vragen over Umi B&B</h2>
+            <div class="faq-grid">
+                <div class="faq-card">
+                    <h3>Wat voor ontbijt is er bij Umi B&B?</h3>
+                    <p>Gasten kunnen genieten van een hoog beoordeeld ontbijt (score: 8,8). Opties:</p>
+                    <ul><li>Italiaans</li><li>À la carte</li></ul>
+                </div>
+                <div class="faq-card">
+                    <h3>Wat is er te doen?</h3>
+                    <ul>
+                        <li>Hiking & Bowlen</li>
+                        <li>Tennisbaan</li>
+                        <li>Themadiners</li>
+                        <li>Live sportevenementen</li>
+                        <li>Stand-up comedy & Aerobics</li>
+                        <li>Livemuziek & Filmavonden</li>
+                    </ul>
+                </div>
+                <div class="faq-card">
+                    <h3>In- en uitchecktijden</h3>
+                    <p>Inchecken: vanaf 15:00.<br>Uitchecken: tot 10:30.</p>
+                </div>
+                <div class="faq-card">
+                    <h3>Locatie & Afstand</h3>
+                    <p>Strand: 1,4 km van de B&B.<br>Centrum Giulianova: 1,1 km afstand.</p>
+                </div>
+                <div class="faq-card">
+                    <h3>Kamertypes</h3>
+                    <p>U kunt een <strong>Tweepersoonskamer</strong> boeken.</p>
+                </div>
             </div>
         </div>
 
         <div class="lang-content it">
             <h2>Domande Frequenti</h2>
-            <div class="faq-item">
-                <strong>Posso ricevere uno sconto presso Umi B&B?</strong>
-                <p>Sì! Potresti aver diritto a uno sconto Genius. Accedi per verificare le offerte disponibili.</p>
-            </div>
-            <div class="faq-item">
-                <strong>Quanto dista la spiaggia?</strong>
-                <p>La spiaggia più vicina, Spiaggia Giulianova, dista circa 1,6 km dalla struttura.</p>
-            </div>
-            <div class="faq-item">
-                <strong>Quali sono gli orari di check-in e check-out?</strong>
-                <p>Il check-in è disponibile dalle 15:00 alle 20:00. Il check-out deve essere effettuato entro le 10:00.</p>
-            </div>
-            <div class="faq-item">
-                <strong>Che tipo di camere sono disponibili?</strong>
-                <p>Offriamo diverse tipologie di camere. Verifica la disponibilità per vedere le opzioni per le tue date.</p>
-            </div>
-            <div class="faq-item">
-                <strong>C'è una terrazza o un balcone?</strong>
-                <p>Sì, alcune delle nostre sistemazioni dispongono di una terrazza или un balcone.</p>
-            </div>
-        </div>
-
-        <div class="lang-content nl">
-            <h2>Veelgestelde Vragen</h2>
-            <div class="faq-item">
-                <strong>Kan ik korting krijgen bij Umi B&B?</strong>
-                <p>Ja! Mogelijk komt u in aanmerking voor een Genius-korting. Log in om de beschikbare aanbiedingen te bekijken.</p>
-            </div>
-            <div class="faq-item">
-                <strong>Hoe ver is het strand?</strong>
-                <p>Het dichtstbijzijnde strand, Spiaggia Giulianova, ligt op ongeveer 1,6 km afstand van de accommodatie.</p>
-            </div>
-            <div class="faq-item">
-                <strong>Wat zijn de in- en uitchecktijden?</strong>
-                <p>Inchecken kan van 15:00 tot 20:00 uur. Uitchecken dient te gebeuren vóór 10:00 uur.</p>
-            </div>
-            <div class="faq-item">
-                <strong>Welke kamertypes zijn beschikbaar?</strong>
-                <p>Wij bieden diverse kamertypes aan. Controleer de beschikbaarheid voor de opties op uw data.</p>
-            </div>
-            <div class="faq-item">
-                <strong>Is er een terras of balkon?</strong>
-                <p>Ja, sommige van onze accommodaties hebben een terras of een balkon.</p>
+            <div class="faq-grid">
+                <div class="faq-card">
+                    <h3>Che colazione offrite?</h3>
+                    <p>Punteggio colazione: 8,8. Opzioni:</p>
+                    <ul><li>Italiana</li><li>À la carte</li></ul>
+                </div>
+                <div class="faq-card">
+                    <h3>Attività disponibili</h3>
+                    <p>Escursionismo, bowling, tennis, musica dal vivo, serate di cinema e altro ancora.</p>
+                </div>
+                <div class="faq-card">
+                    <h3>Distanze</h3>
+                    <p>Spiaggia: 1,4 km.<br>Centro: 1,1 km.</p>
+                </div>
             </div>
         </div>
     </div>
 
-    <h2 id="gallery" style="text-align: center;">Gallery</h2>
+    <h2 id="gallery" style="text-align: center;">Galerij</h2>
     <div class="gallery">
         <script>
-            const images = ["543547959.jpg", "544029771.jpg", "561993086.jpg", "562295020.jpg", "671618758.jpg", "676740710.jpg", "676741916.jpg", "676742323.jpg", "818741094.jpg"];
+            const images = [
+                "543547600.jpg", "543547616.jpg", "543547620.jpg", "543547683.jpg", "543547709.jpg",
+                "543547722.jpg", "543547738.jpg", "543547766.jpg", "543547787.jpg", "543547828.jpg",
+                "543547858.jpg", "543547881.jpg", "543547959.jpg", "543548062.jpg", "543548069.jpg",
+                "543548104.jpg", "543548123.jpg", "543548127.jpg", "544029771.jpg", "559942633.jpg",
+                "561993086.jpg", "561993189.jpg", "562295020.jpg", "562295445.jpg", "671618758.jpg",
+                "676738978.jpg", "676739022.jpg", "676739484.jpg", "676740204.jpg", "676740329.jpg",
+                "676740443.jpg", "676740544.jpg", "676740710.jpg", "676740990.jpg", "676741112.jpg",
+                "676741164.jpg", "676741228.jpg", "676741517.jpg", "676741598.jpg", "676741673.jpg",
+                "676741772.jpg", "676741916.jpg", "676742125.jpg", "676742323.jpg", "686495701.jpg",
+                "686495878.jpg", "686496190.jpg", "686496842.jpg", "818741094.jpg", "832992649.jpg"
+            ];
             images.forEach(img => {
-                document.write(`<img src="images/${img}" onclick="openFullImg(this)" loading="lazy">`);
+                document.write(`<img src="images/${img}" onclick="openFullImg(this)" loading="lazy" alt="Umi B&B Photo">`);
             });
         </script>
     </div>
 </div>
 
 <footer>
-    <p>&copy; 2026 Umi B&B - Giulianova, Italy</p>
+    <p>&copy; 2026 Umi B&B Giulianova - Italië</p>
 </footer>
 
 </body>
