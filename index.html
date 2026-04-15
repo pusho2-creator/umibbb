@@ -1,74 +1,63 @@
 <!DOCTYPE html>
-<html lang="bg">
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Umi B&B </title>
+    <title>Umi B&B - Giulianova, Italy</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0; color: #333; }
-        header { background: #2c3e50; color: white; padding: 2rem; text-align: center; }
-        nav { background: #ecf0f1; padding: 1rem; text-align: center; sticky: top; }
-        nav a { margin: 0 15px; text-decoration: none; color: #2c3e50; font-weight: bold; }
-        .container { max-width: 1000px; margin: auto; padding: 20px; }
-        .hero { background: #f9f9f9; padding: 40px; text-align: center; border-radius: 8px; margin-bottom: 20px; }
-        .rooms { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        .card { border: 1px solid #ddd; padding: 15px; border-radius: 8px; box-shadow: 2px 2px 10px rgba(0,0,0,0.1); }
-        .price { color: #e74c3c; font-size: 1.2rem; font-weight: bold; }
-        footer { background: #2c3e50; color: white; text-align: center; padding: 1rem; margin-top: 20px; }
-        .cta-button { background: #27ae60; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block; margin-top: 10px; }
+        body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; line-height: 1.6; margin: 0; color: #333; background-color: #f4f7f6; }
+        header { background: #004a7c; color: white; padding: 3rem 1rem; text-align: center; }
+        .container { max-width: 900px; margin: 20px auto; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .score { background: #003580; color: white; padding: 10px; border-radius: 5px; display: inline-block; margin-bottom: 20px; }
+        .feature-list { list-style: none; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .feature-list li::before { content: "✓ "; color: #27ae60; font-weight: bold; }
+        .location-info { background: #e8f4fd; padding: 20px; border-left: 5px solid #004a7c; margin-top: 20px; }
+        footer { text-align: center; padding: 20px; font-size: 0.9em; color: #777; }
     </style>
 </head>
 <body>
 
 <header>
     <h1>Umi B&B</h1>
-    <p>Уют и спокойствие в сърцето на Twekkelerveld, Енсхеде</p>
+    <p>Ontspanning en comfort nabij de Adriatische kust</p>
 </header>
 
-<nav>
-    <a href="#about">За нас</a>
-    <a href="#rooms">Стаи</a>
-    <a href="#location">Локация</a>
-    <a href="#contact">Контакт</a>
-</nav>
-
 <div class="container">
-    <section id="about" class="hero">
-        <h2>Добре дошли в Umi B&B</h2>
-        <p>Насладете се на гостоприемството в нашия малък хотел. Намираме се на тихата улица <strong>Roelof van Schevenstraat 16</strong>, само на крачки от Университета в Твенте.</p>
-    </section>
+    <div class="score">Locatiescore op Booking: 8,2 ★</div>
 
-    <section id="rooms">
-        <h2>Нашите Стаи</h2>
-        <div class="rooms">
-            <div class="card">
-                <h3>Стая с частна кухня</h3>
-                <p>Просторна стая (16 м²) с новообзаведена кухня, хладилник и пералня.</p>
-                <p class="price">€550 / месец (All-in)</p>
-                <a href="#contact" class="cta-button">Резервирай сега</a>
-            </div>
-            </div>
-    </section>
-
-    <section id="location" style="margin-top: 40px;">
-        <h2>Отлична локация</h2>
-        <ul>
-            <li>🚴 <strong>5 мин.</strong> до Университета в Твенте (UT)</li>
-            <li>🚴 <strong>8 мин.</strong> до гара Енсхеде / Saxion</li>
-            <li>🚶 <strong>5 мин.</strong> до търговски център (AH, Lidl)</li>
+    <section>
+        <h2>Over de accommodatie</h2>
+        <p><strong>Umi B&B</strong> bevindt zich op slechts 19 minuten lopen van <strong>Spiaggia Giulianova</strong>. Wij bieden een rustige tuin en moderne accommodaties met een eigen patio en gratis WiFi.</p>
+        
+        <ul class="feature-list">
+            <li>Terras</li>
+            <li>Airconditioning</li>
+            <li>Flatscreen-tv</li>
+            <li>Eigen badkamer met bidet</li>
+            <li>Gratis toiletartikelen</li>
+            <li>Gratis WiFi</li>
         </ul>
     </section>
 
-    <section id="contact" style="background: #ecf0f1; padding: 20px; border-radius: 8px; margin-top: 20px;">
-        <h2>Контакт и Резервации</h2>
-        <p>Имате въпроси? Свържете се с нас директно:</p>
-        <p>📧 Email: info@umibnb.nl (примерен)</p>
-        <p>📍 Адрес: Roelof van Schevenstraat 16, 7521SM Enschede</p>
+    <section class="location-info">
+        <h2>Ontdek de omgeving</h2>
+        <p>Onze gasten waarderen de locatie enorm, vooral voor reizen met z'n tweeën.</p>
+        <ul>
+            <li><strong>Spiaggia Giulianova:</strong> 19 min. lopen</li>
+            <li><strong>Stadion Riviera delle Palme:</strong> 23 km</li>
+            <li><strong>Treinstation San Benedetto del Tronto:</strong> 25 km</li>
+            <li><strong>Luchthaven Abruzzo:</strong> 52 km</li>
+        </ul>
+    </section>
+
+    <section style="text-align: center; margin-top: 30px;">
+        <p>Handdoeken en beddengoed kunnen tegen betaling worden verzorgd.</p>
+        <a href="mailto:info@umibnb.it" style="background: #27ae60; color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold;">Reserveer nu</a>
     </section>
 </div>
 
 <footer>
-    <p>&copy; 2026 Umi B&B Enschede. Всички права запазени.</p>
+    <p>&copy; 2026 Umi B&B Giulianova - Uw verblijf in Italië</p>
 </footer>
 
 </body>
