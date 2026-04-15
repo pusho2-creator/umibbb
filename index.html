@@ -10,32 +10,42 @@
         * { box-sizing: border-box; }
         body { font-family: 'Inter', sans-serif; margin: 0; background-color: var(--bg-light); color: var(--text-dark); scroll-behavior: smooth; line-height: 1.6; }
         
+        /* Taal Navigatie */
         .lang-nav { background: var(--white); padding: 10px; display: flex; justify-content: center; gap: 10px; border-bottom: 1px solid rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1100; }
         .lang-btn { background: none; border: 1px solid var(--accent); color: var(--accent); padding: 5px 15px; cursor: pointer; border-radius: 20px; font-weight: 600; font-size: 0.8rem; transition: all 0.3s; }
         .lang-btn.active { background: var(--accent); color: white; }
 
+        /* Hoofd Navigatie */
         nav { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); padding: 15px 20px; position: sticky; top: 45px; z-index: 1000; display: flex; justify-content: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
         nav a { color: var(--text-dark); text-decoration: none; margin: 0 12px; font-weight: 600; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; }
 
+        /* Header / Hero */
+        .hero { height: 50vh; background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4)), url('images/header1.jpg') center/cover; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center; }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: 4rem; margin: 0; }
+
+        .container { max-width: 1100px; margin: auto; padding: 40px 20px; }
+        
+        /* Taalbeheer: Verbergt inactieve talen strikt */
         .lang-content { display: none !important; }
         .lang-content.active-content { display: block !important; }
         .faq-grid.lang-content.active-content { display: grid !important; }
 
-        .container { max-width: 1100px; margin: auto; padding: 40px 20px; }
         .section-card { background: var(--white); border-radius: 20px; padding: 40px; margin-bottom: 30px; box-shadow: var(--shadow); border: 1px solid rgba(0,0,0,0.03); }
         h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--accent); margin-bottom: 25px; margin-top: 0; }
 
-        .umi-split { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: flex-start; }
-        .umi-image img { width: 100%; height: auto; border-radius: 15px; box-shadow: 10px 10px 0 #eef4ff; }
-
-        /* FAQ Grid Layout (PrintScreen) */
+        /* FAQ Layout (PrintScreen stijl) */
         .faq-grid { grid-template-columns: 1fr 1fr; gap: 20px; align-items: start; }
         .faq-column { display: flex; flex-direction: column; gap: 20px; }
         .faq-item { border: 1px solid #eee; border-radius: 12px; padding: 25px; background: #fff; }
-        .faq-q { font-weight: 700; color: var(--text-dark); display: block; margin-bottom: 12px; }
-        .faq-list { margin: 10px 0; padding-left: 20px; }
+        .faq-q { font-weight: 700; color: var(--text-dark); display: block; margin-bottom: 12px; font-size: 1.05rem; }
+        .faq-a { color: var(--text-light); font-size: 0.95rem; }
+        .faq-list { margin: 10px 0; padding-left: 18px; list-style-type: circle; }
 
-        @media (max-width: 850px) { .faq-grid { grid-template-columns: 1fr !important; } .umi-split { grid-template-columns: 1fr; } }
+        /* Gallery Grid */
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
+        .gallery-grid img { width: 100%; height: 140px; object-fit: cover; border-radius: 10px; cursor: pointer; transition: 0.3s; }
+
+        @media (max-width: 850px) { .faq-grid { grid-template-columns: 1fr !important; } .hero h1 { font-size: 2.5rem; } }
     </style>
     <script>
         function setLang(lang) {
@@ -63,66 +73,63 @@
     </a>
     <a href="#faq">FAQ</a>
     <a href="#galerij">Gallery</a>
+    <a href="#contact">Contact</a>
 </nav>
+
+<section class="hero" id="home">
+    <h1>Umi B&B</h1>
+    <p class="lang-content it active-content">Benvenuti a Giulianova, Abruzzo</p>
+    <p class="lang-content en">Welcome to Giulianova, Abruzzo</p>
+    <p class="lang-content nl">Welkom in Giulianova, Abruzzo</p>
+</section>
 
 <div class="container">
 
-    <section class="section-card" id="home">
-        <div class="umi-split">
-            <div class="umi-text">
-                <div class="lang-content it active-content">
-                    <h2>Chi è Umi?</h2>
-                    <p>Situato a 19 minuti a piedi dalla Spiaggia di Giulianova, l'Umi B&B offre un giardino, sistemazioni con patio e la connessione WiFi gratuita. Le unità sono dotate di terrazza, aria condizionata e TV a schermo piatto.</p>
-                </div>
-                <div class="lang-content en">
-                    <h2>Who is Umi?</h2>
-                    <p>Located a 19-minute walk from Giulianova Beach, Umi B&B offers a garden, accommodations with a patio, and free WiFi. Units feature a terrace, air conditioning, and a flat-screen TV.</p>
-                </div>
-                <div class="lang-content nl">
-                    <h2>Wie is Umi?</h2>
-                    <p>Umi B&B bevindt zich op 19 minuten lopen van Spiaggia Giulianova en biedt een tuin. De accommodaties hebben een patio en gratis WiFi. De units zijn voorzien van een terras, airconditioning en een flatscreen-tv.</p>
-                </div>
-            </div>
-            <div class="umi-image"><img src="images/544029771.jpg" alt="Umi B&B"></div>
-        </div>
+    <section id="omgeving" class="section-card">
+        <h2 class="lang-content it active-content">Dintorni</h2>
+        <h2 class="lang-content en">Surroundings</h2>
+        <h2 class="lang-content nl">Omgeving</h2>
+        <p class="lang-content it active-content">Situato a 19 minuti a piedi dalla Spiaggia di Giulianova, l'Umi B&B offre un giardino e sistemazioni con patio. Dista 23 km dallo Stadio Riviera delle Palme e 52 km dall'Aeroporto d'Abruzzo.</p>
+        <p class="lang-content en">Located 19 minutes from Giulianova Beach, Umi B&B offers a garden and patio. It is 23 km from Riviera delle Palme Stadium and 52 km from Abruzzo Airport.</p>
+        <p class="lang-content nl">Op 19 minuten lopen van Spiaggia Giulianova biedt Umi B&B een tuin en patio's. Het ligt op 23 km van het Stadion Riviera delle Palme en 52 km van vliegveld Abruzzo.</p>
     </section>
 
     <section id="faq" class="section-card">
-        <h2 class="lang-content nl">Veelgestelde Vragen over Umi B&B</h2>
         <h2 class="lang-content it active-content">Domande frequenti su Umi B&B</h2>
         <h2 class="lang-content en">Frequently Asked Questions</h2>
-
+        <h2 class="lang-content nl">Veelgestelde Vragen over Umi B&B</h2>
+        
         <div class="faq-grid lang-content nl">
             <div class="faq-column">
                 <div class="faq-item">
                     <span class="faq-q">Wat voor ontbijt is er bij Umi B&B?</span>
-                    <div class="faq-a">Gasten genieten van een hoog beoordeeld ontbijt (8,8). Opties: <ul><li>Italiaans</li><li>À la carte</li></ul></div>
+                    <div class="faq-a">Gasten genieten van een hoog beoordeeld ontbijt (8,8). Opties: <ul class="faq-list"><li>Italiaans</li><li>À la carte</li></ul></div>
                 </div>
                 <div class="faq-item">
                     <span class="faq-q">Welk kamertype kan ik boeken?</span>
-                    <div class="faq-a">Opties: <ul><li>Tweepersoons</li></ul></div>
+                    <div class="faq-a">Opties bij Umi B&B: <ul class="faq-list"><li>Tweepersoons</li></ul></div>
                 </div>
                 <div class="faq-item">
-                    <span class="faq-q">In- en uitchecktijden?</span>
+                    <span class="faq-q">Wat zijn de in- en uitchecktijden?</span>
                     <div class="faq-a">Inchecken vanaf 15:00. Uitchecken tot 10:30.</div>
                 </div>
                 <div class="faq-item">
-                    <span class="faq-q">Hoeveel kost het verblijf?</span>
-                    <div class="faq-a">Prijzen variëren per datum en kamertype.</div>
+                    <span class="faq-q">Hoeveel kost het om hier te verblijven?</span>
+                    <div class="faq-a">Prijzen variëren per datum en hotelvoorwaarden.</div>
                 </div>
             </div>
             <div class="faq-column">
                 <div class="faq-item">
                     <span class="faq-q">Wat is er te doen bij Umi B&B?</span>
-                    <div class="faq-a">Activiteiten: <ul><li>Hiking & Bowlen</li><li>Tennisbaan</li><li>Live muziek & Comedy</li></ul></div>
+                    <div class="faq-a">Activiteiten: <ul class="faq-list"><li>Hiking & Bowlen</li><li>Tennisbaan</li><li>Live muziek & Comedy</li></ul></div>
                 </div>
                 <div class="faq-item">
-                    <span class="faq-q">Afstand tot het centrum?</span>
+                    <span class="faq-q">Hoe ver ligt het van het centrum?</span>
                     <div class="faq-a">Umi B&B ligt op 1,1 km van het centrum van Giulianova.</div>
                 </div>
                 <div class="faq-item">
-                    <span class="faq-q">Afstand tot het strand?</span>
-                    <div class="faq-a">Het strand ligt op 1,4 km afstand.</div>
+                    <span class="faq-q">Hoe ver ligt het strand?</span>
+                    <div class="faq-a">Het dichtstbijzijnde strand ligt op 1,4 km afstand.</div>
                 </div>
             </div>
         </div>
@@ -131,33 +138,33 @@
             <div class="faq-column">
                 <div class="faq-item">
                     <span class="faq-q">Che tipo di colazione offre Umi B&B?</span>
-                    <div class="faq-a">Colazione molto apprezzata (8,8). Opzioni: <ul><li>Italiana</li><li>À la carte</li></ul></div>
+                    <div class="faq-a">Colazione molto apprezzata (8,8). Opzioni: <ul class="faq-list"><li>Italiana</li><li>À la carte</li></ul></div>
                 </div>
                 <div class="faq-item">
                     <span class="faq-q">Quali camere posso prenotare?</span>
-                    <div class="faq-a">Opzioni: <ul><li>Matrimoniale</li></ul></div>
+                    <div class="faq-a">Opzioni disponibili: <ul class="faq-list"><li>Matrimoniale</li></ul></div>
                 </div>
                 <div class="faq-item">
-                    <span class="faq-q">Orari di check-in/out?</span>
+                    <span class="faq-q">Quali sono gli orari di check-in/out?</span>
                     <div class="faq-a">Check-in dalle 15:00. Check-out fino alle 10:30.</div>
                 </div>
                 <div class="faq-item">
                     <span class="faq-q">Quanto costa il soggiorno?</span>
-                    <div class="faq-a">I prezzi dipendono dalle date selezionate.</div>
+                    <div class="faq-a">I prezzi dipendono dalle date e dalle condizioni.</div>
                 </div>
             </div>
             <div class="faq-column">
                 <div class="faq-item">
                     <span class="faq-q">Quali attività sono disponibili?</span>
-                    <div class="faq-a">Servizi: <ul><li>Escursionismo & Bowling</li><li>Campo da tennis</li><li>Musica dal vivo</li></ul></div>
+                    <div class="faq-a">Servizi: <ul class="faq-list"><li>Escursionismo & Bowling</li><li>Campo da tennis</li><li>Musica dal vivo</li></ul></div>
                 </div>
                 <div class="faq-item">
-                    <span class="faq-q">Distanza dal centro?</span>
-                    <div class="faq-a">Dista 1,1 km dal centro di Giulianova.</div>
+                    <span class="faq-q">Quanto dista dal centro?</span>
+                    <div class="faq-a">Umi B&B dista 1,1 km dal centro di Giulianova.</div>
                 </div>
                 <div class="faq-item">
-                    <span class="faq-q">Distanza dalla spiaggia?</span>
-                    <div class="faq-a">La spiaggia dista 1,4 km.</div>
+                    <span class="faq-q">Quanto dista la spiaggia?</span>
+                    <div class="faq-a">La spiaggia dista solo 1,4 km.</div>
                 </div>
             </div>
         </div>
@@ -166,45 +173,58 @@
             <div class="faq-column">
                 <div class="faq-item">
                     <span class="faq-q">What kind of breakfast is served?</span>
-                    <div class="faq-a">Rated 8.8. Options: <ul><li>Italian</li><li>À la carte</li></ul></div>
+                    <div class="faq-a">Breakfast score: 8.8. Options: <ul class="faq-list"><li>Italian</li><li>À la carte</li></ul></div>
                 </div>
                 <div class="faq-item">
-                    <span class="faq-q">Room types available?</span>
-                    <div class="faq-a">Options: <ul><li>Double Room</li></ul></div>
+                    <span class="faq-q">What room types can I book?</span>
+                    <div class="faq-a">Available options: <ul class="faq-list"><li>Double Room</li></ul></div>
                 </div>
                 <div class="faq-item">
-                    <span class="faq-q">Check-in/out times?</span>
-                    <div class="faq-a">Check-in: 3:00 PM. Check-out: 10:30 AM.</div>
+                    <span class="faq-q">Check-in and check-out times?</span>
+                    <div class="faq-a">In from 3:00 PM. Out until 10:30 AM.</div>
                 </div>
                 <div class="faq-item">
-                    <span class="faq-q">What is the cost?</span>
-                    <div class="faq-a">Prices vary based on dates.</div>
+                    <span class="faq-q">How much does a stay cost?</span>
+                    <div class="faq-a">Prices vary based on selected dates.</div>
                 </div>
             </div>
             <div class="faq-column">
                 <div class="faq-item">
-                    <span class="faq-q">What can I do there?</span>
-                    <div class="faq-a">Activities: <ul><li>Hiking & Bowling</li><li>Tennis court</li><li>Live music</li></ul></div>
+                    <span class="faq-q">What is there to do at Umi B&B?</span>
+                    <div class="faq-a">Activities: <ul class="faq-list"><li>Hiking & Bowling</li><li>Tennis court</li><li>Live music</li></ul></div>
                 </div>
                 <div class="faq-item">
-                    <span class="faq-q">Distance to center?</span>
-                    <div class="faq-a">1.1 km from Giulianova center.</div>
+                    <span class="faq-q">Distance from the center?</span>
+                    <div class="faq-a">Umi B&B is 1.1 km from Giulianova center.</div>
                 </div>
                 <div class="faq-item">
-                    <span class="faq-q">Distance to beach?</span>
-                    <div class="faq-a">The beach is 1.4 km away.</div>
+                    <span class="faq-q">Distance from the beach?</span>
+                    <div class="faq-a">The beach is 1.4 km from Umi B&B.</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="omgeving" class="section-card">
-        <h2 class="lang-content it active-content">Dintorni</h2>
-        <h2 class="lang-content en">Surroundings</h2>
-        <h2 class="lang-content nl">Omgeving</h2>
-        <p>Stadio Riviera delle Palme (23 km), Aeroporto d'Abruzzo (52 km).</p>
+    <section id="galerij" class="section-card">
+        <h2>Gallery</h2>
+        <div class="gallery-grid">
+            <script>
+                const imgs = ["543547600.jpg", "543547616.jpg", "544029771.jpg"];
+                imgs.forEach(i => document.write(`<img src="images/${i}">`));
+            </script>
+        </div>
+    </section>
+
+    <section id="contact" class="section-card" style="text-align: center;">
+        <h2>Contact</h2>
+        <p>📍 Via Cupa, Giulianova (TE), Italy</p>
     </section>
 
 </div>
+
+<footer style="text-align:center; padding: 40px; background:#1a1a1a; color:white;">
+    <p>&copy; 2026 Umi B&B Giulianova</p>
+</footer>
+
 </body>
 </html>
