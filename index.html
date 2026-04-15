@@ -6,7 +6,6 @@
     <title>Umi B&B - Giulianova</title>
     
     <script>
-        // Смяна на езиците
         function showLang(langId, btn) {
             var contents = document.getElementsByClassName('lang-content');
             for (var i = 0; i < contents.length; i++) {
@@ -23,7 +22,6 @@
             btn.classList.add('active');
         }
 
-        // Отваряне на снимка
         function openFullImg(imgElement) {
             var modal = document.getElementById("imageModal");
             var modalImg = document.getElementById("imgFull");
@@ -31,7 +29,6 @@
             modalImg.src = imgElement.src;
         }
 
-        // Затваряне на снимка
         function closeFullImg() {
             document.getElementById("imageModal").style.display = "none";
         }
@@ -40,46 +37,32 @@
     <style>
         :root { --primary: #003580; --secondary: #27ae60; --bg: #f4f7f6; }
         body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; background: var(--bg); scroll-behavior: smooth; }
-        
         nav { background: var(--primary); padding: 15px; position: sticky; top: 0; z-index: 1000; text-align: center; }
         nav a { color: white; text-decoration: none; font-weight: bold; margin: 0 15px; text-transform: uppercase; font-size: 0.85rem; }
-
-        /* HEADER С НОВАТА СНИМКА */
+        
         .hero { 
             background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('images/header1.jpg'); 
-            background-size: cover; 
-            background-position: center; 
-            height: 400px; 
-            display: flex; 
-            flex-direction: column; 
-            justify-content: center; 
-            align-items: center; 
-            color: white; 
-            text-align: center;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+            background-size: cover; background-position: center; height: 350px; 
+            display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center;
         }
-
-        .hero h1 { font-size: 3.5rem; margin: 0; letter-spacing: 2px; }
-        .container { max-width: 1000px; margin: auto; padding: 20px; }
         
+        .container { max-width: 1000px; margin: auto; padding: 20px; }
         .lang-switcher { text-align: center; margin: 20px 0; }
-        .lang-btn { background: white; border: 2px solid var(--primary); padding: 8px 18px; margin: 5px; cursor: pointer; border-radius: 25px; font-weight: bold; transition: 0.3s; }
+        .lang-btn { background: white; border: 2px solid var(--primary); padding: 8px 18px; margin: 5px; cursor: pointer; border-radius: 25px; font-weight: bold; }
         .lang-btn.active { background: var(--primary); color: white; }
-
         .content-box { background: white; padding: 25px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); margin-bottom: 30px; }
         .lang-content { display: none; }
-
+        
         .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; }
         .gallery img { width: 100%; height: 180px; object-fit: cover; border-radius: 8px; cursor: pointer; transition: 0.3s; }
-        .gallery img:hover { filter: brightness(0.85); transform: scale(1.02); }
-
-        .modal { display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); align-items: center; justify-content: center; cursor: pointer; }
-        .modal-content { max-width: 90%; max-height: 85vh; border: 3px solid white; border-radius: 5px; }
         
-        ul { columns: 2; list-style-type: none; padding: 0; }
-        li { padding: 8px 0; border-bottom: 1px solid #eee; font-size: 0.95rem; }
-
-        footer { background: #222; color: white; text-align: center; padding: 30px; margin-top: 50px; }
+        .modal { display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); align-items: center; justify-content: center; }
+        .modal-content { max-width: 90%; max-height: 85vh; }
+        
+        .faq-item { margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+        .faq-item strong { display: block; color: var(--primary); margin-bottom: 5px; }
+        
+        footer { background: #222; color: white; text-align: center; padding: 20px; margin-top: 40px; }
     </style>
 </head>
 <body>
@@ -91,13 +74,13 @@
 <nav>
     <a href="#about">About</a>
     <a href="#facilities">Facilities</a>
+    <a href="#faq">FAQ</a>
     <a href="#gallery">Gallery</a>
-    <a href="#contact">Contact</a>
 </nav>
 
 <section class="hero">
     <h1>UMI B&B</h1>
-    <p>Giulianova, Abruzzo, Italy</p>
+    <p>Giulianova, Italy</p>
 </section>
 
 <div class="container">
@@ -109,84 +92,53 @@
 
     <div id="about" class="content-box">
         <div class="lang-content en" style="display: block;">
-            <h2>Welcome</h2>
-            <p>Enjoy a comfortable stay at Umi B&B, perfectly located for your Italian getaway.</p>
+            <h2>About Umi B&B</h2>
+            <p>Umi B&B is located 19 minutes walk from Spiaggia Giulianova and offers a garden.</p>
         </div>
         <div class="lang-content it">
-            <h2>Benvenuti</h2>
-            <p>Godetevi un soggiorno confortevole all'Umi B&B, in posizione perfetta per la vostra vacanza italiana.</p>
+            <h2>Informazioni su Umi B&B</h2>
+            <p>L'Umi B&B si trova a 19 minuti a piedi dalla Spiaggia di Giulianova e offre un giardino.</p>
         </div>
         <div class="lang-content nl">
-            <h2>Welkom</h2>
-            <p>Geniet van een comfortabel verblijf bij Umi B&B, ideaal gelegen voor uw Italiaanse vakantie.</p>
+            <h2>Over Umi B&B</h2>
+            <p>Umi B&B bevindt zich op 19 minuten lopen van Spiaggia Giulianova en biedt een tuin.</p>
         </div>
     </div>
 
-    <div id="facilities" class="content-box">
+    <div id="faq" class="content-box">
         <div class="lang-content en" style="display: block;">
-            <h2>Facilities</h2>
-            <ul>
-                <li>✅ Free WiFi</li>
-                <li>✅ Air Conditioning</li>
-                <li>✅ Private Bathroom</li>
-                <li>✅ Coffee/Tea Maker</li>
-                <li>✅ Flat-screen TV</li>
-                <li>✅ Garden & Patio</li>
-            </ul>
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item"><strong>What are the check-in and check-out times?</strong> Check-in is from 15:00 and check-out is until 10:00.</div>
+            <div class="faq-item"><strong>Does Umi B&B have a terrace?</strong> Yes, some options have a terrace or balcony.</div>
+            <div class="faq-item"><strong>Is there parking available?</strong> Yes, free public parking is available nearby.</div>
         </div>
         <div class="lang-content it">
-            <h2>Servizi</h2>
-            <ul>
-                <li>✅ WiFi gratuito</li>
-                <li>✅ Aria condizionata</li>
-                <li>✅ Bagno privato</li>
-                <li>✅ Macchina caffè/tè</li>
-                <li>✅ TV a schermo piatto</li>
-                <li>✅ Giardino e patio</li>
-            </ul>
+            <h2>Domande Frequenti</h2>
+            <div class="faq-item"><strong>Quali sono gli orari di check-in e check-out?</strong> Il check-in è dalle 15:00 e il check-out è fino alle 10:00.</div>
+            <div class="faq-item"><strong>L'Umi B&B ha una terrazza?</strong> Sì, alcune opzioni dispongono di terrazza o balcone.</div>
+            <div class="faq-item"><strong>C'è un parcheggio disponibile?</strong> Sì, è disponibile un parcheggio pubblico gratuito nelle vicinanze.</div>
         </div>
         <div class="lang-content nl">
-            <h2>Faciliteiten</h2>
-            <ul>
-                <li>✅ Gratis WiFi</li>
-                <li>✅ Airconditioning</li>
-                <li>✅ Eigen badkamer</li>
-                <li>✅ Koffie/thee zetapparaat</li>
-                <li>✅ Flatscreen-tv</li>
-                <li>✅ Tuin & terras</li>
-            </ul>
+            <h2>Veelgestelde Vragen</h2>
+            <div class="faq-item"><strong>Hoe laat kan ik in- en uitchecken?</strong> Inchecken kan vanaf 15:00 en uitchecken tot 10:00.</div>
+            <div class="faq-item"><strong>Heeft Umi B&B een terras?</strong> Ja, sommige accommodaties hebben een terras of balkon.</div>
+            <div class="faq-item"><strong>Is er parkeergelegenheid?</strong> Ja, er is gratis openbare parkeergelegenheid in de buurt.</div>
         </div>
     </div>
 
     <h2 id="gallery" style="text-align: center;">Gallery</h2>
     <div class="gallery">
         <script>
-            // Всички твои снимки
-            const images = [
-                "543547600.jpg", "543547616.jpg", "543547620.jpg", "543547683.jpg", "543547709.jpg",
-                "543547722.jpg", "543547738.jpg", "543547766.jpg", "543547787.jpg", "543547828.jpg",
-                "543547858.jpg", "543547881.jpg", "543547959.jpg", "543548062.jpg", "543548069.jpg",
-                "543548104.jpg", "543548123.jpg", "543548127.jpg", "544029771.jpg", "559942633.jpg",
-                "561993086.jpg", "561993189.jpg", "562295020.jpg", "562295445.jpg", "671618758.jpg",
-                "676738978.jpg", "676739022.jpg", "676739484.jpg", "676740204.jpg", "676740329.jpg",
-                "676740443.jpg", "676740544.jpg", "676740710.jpg", "676740990.jpg", "676741112.jpg",
-                "676741164.jpg", "676741228.jpg", "676741517.jpg", "676741598.jpg", "676741673.jpg",
-                "676741772.jpg", "676741916.jpg", "676742125.jpg", "676742323.jpg", "686495701.jpg",
-                "686495878.jpg", "686496190.jpg", "686496842.jpg", "818741094.jpg", "832992649.jpg"
-            ];
+            const images = ["543547600.jpg", "543547616.jpg", "543547620.jpg", "543547959.jpg", "544029771.jpg", "561993086.jpg", "671618758.jpg", "676742323.jpg", "818741094.jpg"];
             images.forEach(img => {
                 document.write(`<img src="images/${img}" onclick="openFullImg(this)" loading="lazy">`);
             });
         </script>
     </div>
-
-    <div id="contact" style="text-align: center; margin: 60px 0;">
-        <a href="mailto:info@umibnb.it" style="background: var(--secondary); color: white; padding: 18px 40px; text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 1.1rem; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">BOOK NOW</a>
-    </div>
 </div>
 
 <footer>
-    <p>&copy; 2026 Umi B&B | Giulianova, Italy</p>
+    <p>&copy; 2026 Umi B&B - Giulianova, Italy</p>
 </footer>
 
 </body>
