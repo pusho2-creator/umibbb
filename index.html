@@ -1,4 +1,131 @@
-<div class="faq-card">
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Umi B&B - Official Website</title>
+    
+    <script>
+        function showLang(langId, btn) {
+            var contents = document.getElementsByClassName('lang-content');
+            for (var i = 0; i < contents.length; i++) { contents[i].style.display = 'none'; }
+            var selected = document.getElementsByClassName(langId);
+            for (var j = 0; j < selected.length; j++) { selected[j].style.display = 'block'; }
+            var buttons = document.getElementsByClassName('lang-btn');
+            for (var k = 0; k < buttons.length; k++) { buttons[k].classList.remove('active'); }
+            btn.classList.add('active');
+        }
+
+        function openFullImg(imgElement) {
+            var modal = document.getElementById("imageModal");
+            var modalImg = document.getElementById("imgFull");
+            modal.style.display = "flex";
+            modalImg.src = imgElement.src;
+        }
+
+        function closeFullImg() { document.getElementById("imageModal").style.display = "none"; }
+    </script>
+
+    <style>
+        :root { --primary: #003580; --accent: #00b4d8; --bg: #f0f2f5; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background: var(--bg); color: #333; line-height: 1.6; }
+        nav { background: var(--primary); padding: 15px; position: sticky; top: 0; z-index: 1000; text-align: center; }
+        nav a { color: white; text-decoration: none; font-weight: bold; margin: 0 15px; text-transform: uppercase; font-size: 0.85rem; }
+        
+        .hero { 
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/671618758.jpg'); 
+            background-size: cover; background-position: center; height: 300px; 
+            display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center;
+        }
+
+        .container { max-width: 1100px; margin: auto; padding: 20px; }
+        .lang-switcher { text-align: center; margin: 20px 0; }
+        .lang-btn { background: white; border: 2px solid var(--primary); padding: 8px 18px; margin: 5px; cursor: pointer; border-radius: 25px; font-weight: bold; }
+        .lang-btn.active { background: var(--primary); color: white; }
+
+        .content-box { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-bottom: 30px; }
+        .lang-content { display: none; }
+
+        .faq-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 20px; }
+        .faq-card { background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; }
+        .faq-card h3 { margin-top: 0; color: var(--primary); font-size: 1.1rem; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+        .faq-card ul { padding-left: 20px; margin: 10px 0; }
+        
+        .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 10px; margin-top: 20px; }
+        .gallery img { width: 100%; height: 160px; object-fit: cover; border-radius: 8px; cursor: pointer; transition: 0.3s; }
+        .gallery img:hover { transform: scale(1.03); }
+
+        .modal { display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); align-items: center; justify-content: center; }
+        .modal-content { max-width: 90%; max-height: 85vh; border: 2px solid white; }
+
+        footer { background: #222; color: white; text-align: center; padding: 30px; margin-top: 50px; }
+        @media (max-width: 600px) { .faq-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+
+<div id="imageModal" class="modal" onclick="closeFullImg()">
+    <img class="modal-content" id="imgFull">
+</div>
+
+<nav>
+    <a href="#faq">FAQ</a>
+    <a href="#gallery">Галерия</a>
+</nav>
+
+<section class="hero">
+    <h1>UMI B&B</h1>
+    <p>Giulianova, Italy</p>
+</section>
+
+<div class="container">
+    <div class="lang-switcher">
+        <button class="lang-btn active" onclick="showLang('nl', this)">🇳🇱 Nederlands</button>
+        <button class="lang-btn" onclick="showLang('it', this)">🇮🇹 Italiano</button>
+        <button class="lang-btn" onclick="showLang('en', this)">🇬🇧 English</button>
+    </div>
+
+    <div id="faq" class="content-box">
+
+        <!-- NEDERLANDS -->
+        <div class="lang-content nl" style="display: block;">
+            <h2>Veelgestelde Vragen over Umi B&B</h2>
+            <div class="faq-grid">
+                <div class="faq-card">
+                    <h3>Wat voor ontbijt is er bij Umi B&B?</h3>
+                    <p>Gasten van Umi B&B kunnen tijdens hun verblijf genieten van een hoog beoordeeld ontbijt (gastbeoordelingsscore: 8,8).</p>
+                    <p>Dit zijn de ontbijtopties:</p>
+                    <ul><li>Italiaans</li><li>À la carte</li></ul>
+                </div>
+                <div class="faq-card">
+                    <h3>Wat is er te doen bij Umi B&B?</h3>
+                    <p>Umi B&B biedt de volgende activiteiten/services (mogelijk tegen een toeslag):</p>
+                    <ul>
+                        <li>Hiking</li>
+                        <li>Bowlen</li>
+                        <li>Tennisbaan</li>
+                        <li>Diners met een thema</li>
+                        <li>Live sportevenementen (uitzendingen)</li>
+                        <li>Stand-up comedy</li>
+                        <li>Aerobics</li>
+                        <li>Livemuziek/optreden</li>
+                        <li>Tijdelijke kunstgaleries</li>
+                        <li>Filmavonden</li>
+                    </ul>
+                </div>
+                <div class="faq-card">
+                    <h3>Welk kamertype kan ik bij Umi B&B boeken?</h3>
+                    <p>Dit zijn de kameropties bij Umi B&B: <strong>Tweepersoons</strong></p>
+                </div>
+                <div class="faq-card">
+                    <h3>Wat zijn de in- en uitchecktijden bij Umi B&B?</h3>
+                    <p>Inchecken bij Umi B&B is mogelijk vanaf 15:00. Uitchecken is mogelijk tot 10:30.</p>
+                </div>
+                <div class="faq-card">
+                    <h3>Hoeveel kost het om bij Umi B&B te verblijven?</h3>
+                    <p>De prijzen bij Umi B&B kunnen afhankelijk zijn van je verblijf (bijv. data die je selecteert, hotelvoorwaarden enz.). Je ziet de prijzen door data in te vullen.</p>
+                </div>
+                <div class="faq-card">
                     <h3>Hoe ver ligt Umi B&B van het centrum van Giulianova?</h3>
                     <p>Umi B&B ligt op 1,1 km van het centrum van Giulianova.</p>
                 </div>
@@ -6,3 +133,134 @@
                     <h3>Hoe ver ligt het strand van Umi B&B?</h3>
                     <p>Het dichtstbijzijnde strand ligt op maar 1,4 km van Umi B&B.</p>
                 </div>
+            </div>
+        </div>
+
+        <!-- ITALIANO -->
+        <div class="lang-content it">
+            <h2>Domande Frequenti su Umi B&B</h2>
+            <div class="faq-grid">
+                <div class="faq-card">
+                    <h3>Che tipo di colazione è disponibile?</h3>
+                    <p>Gli ospiti possono godere di una colazione molto apprezzata (punteggio: 8,8).</p>
+                    <p>Le opzioni disponibili sono:</p>
+                    <ul><li>Italiana</li><li>À la carte</li></ul>
+                </div>
+                <div class="faq-card">
+                    <h3>Quali attività sono disponibili?</h3>
+                    <p>Umi B&B offre le seguenti attività/servizi (possibilmente a pagamento):</p>
+                    <ul>
+                        <li>Escursionismo</li>
+                        <li>Bowling</li>
+                        <li>Campo da tennis</li>
+                        <li>Cene a tema</li>
+                        <li>Sport dal vivo (trasmissioni)</li>
+                        <li>Stand-up comedy</li>
+                        <li>Aerobica</li>
+                        <li>Musica dal vivo</li>
+                        <li>Gallerie d'arte temporanee</li>
+                        <li>Serate cinema</li>
+                    </ul>
+                </div>
+                <div class="faq-card">
+                    <h3>Che tipo di camera posso prenotare?</h3>
+                    <p>Le opzioni di camera disponibili presso Umi B&B: <strong>Matrimoniale/Doppia</strong></p>
+                </div>
+                <div class="faq-card">
+                    <h3>Quali sono gli orari di check-in e check-out?</h3>
+                    <p>Il check-in presso Umi B&B è possibile dalle 15:00. Il check-out è possibile fino alle 10:30.</p>
+                </div>
+                <div class="faq-card">
+                    <h3>Quanto costa soggiornare presso Umi B&B?</h3>
+                    <p>I prezzi presso Umi B&B possono variare in base al soggiorno (es. date selezionate, condizioni dell'hotel, ecc.). Inserisci le date per visualizzare i prezzi.</p>
+                </div>
+                <div class="faq-card">
+                    <h3>A che distanza si trova Umi B&B dal centro di Giulianova?</h3>
+                    <p>Umi B&B si trova a 1,1 km dal centro di Giulianova.</p>
+                </div>
+                <div class="faq-card">
+                    <h3>A che distanza si trova la spiaggia da Umi B&B?</h3>
+                    <p>La spiaggia più vicina si trova a soli 1,4 km da Umi B&B.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ENGLISH -->
+        <div class="lang-content en">
+            <h2>Frequently Asked Questions about Umi B&B</h2>
+            <div class="faq-grid">
+                <div class="faq-card">
+                    <h3>What breakfast options are available at Umi B&B?</h3>
+                    <p>Guests at Umi B&B can enjoy a top-rated breakfast during their stay (guest review score: 8.8).</p>
+                    <p>Breakfast options include:</p>
+                    <ul><li>Italian</li><li>À la carte</li></ul>
+                </div>
+                <div class="faq-card">
+                    <h3>What activities are available at Umi B&B?</h3>
+                    <p>Umi B&B offers the following activities/services (may be subject to a charge):</p>
+                    <ul>
+                        <li>Hiking</li>
+                        <li>Bowling</li>
+                        <li>Tennis court</li>
+                        <li>Themed dinners</li>
+                        <li>Live sports events (broadcasts)</li>
+                        <li>Stand-up comedy</li>
+                        <li>Aerobics</li>
+                        <li>Live music/performances</li>
+                        <li>Temporary art galleries</li>
+                        <li>Movie nights</li>
+                    </ul>
+                </div>
+                <div class="faq-card">
+                    <h3>What room type can I book at Umi B&B?</h3>
+                    <p>The room options at Umi B&B: <strong>Double room</strong></p>
+                </div>
+                <div class="faq-card">
+                    <h3>What are the check-in and check-out times at Umi B&B?</h3>
+                    <p>Check-in at Umi B&B is available from 15:00. Check-out is until 10:30.</p>
+                </div>
+                <div class="faq-card">
+                    <h3>How much does it cost to stay at Umi B&B?</h3>
+                    <p>Prices at Umi B&B may vary depending on your stay (e.g. dates selected, hotel conditions, etc.). Enter your dates to see prices.</p>
+                </div>
+                <div class="faq-card">
+                    <h3>How far is Umi B&B from the centre of Giulianova?</h3>
+                    <p>Umi B&B is located 1.1 km from the centre of Giulianova.</p>
+                </div>
+                <div class="faq-card">
+                    <h3>How far is the beach from Umi B&B?</h3>
+                    <p>The nearest beach is just 1.4 km from Umi B&B.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <h2 id="gallery" style="text-align: center;">Галерия (50 снимки)</h2>
+    <div class="gallery">
+        <script>
+            const images = [
+                "543547600.jpg", "543547616.jpg", "543547620.jpg", "543547683.jpg", "543547709.jpg",
+                "543547722.jpg", "543547738.jpg", "543547766.jpg", "543547787.jpg", "543547828.jpg",
+                "543547858.jpg", "543547881.jpg", "543547959.jpg", "543548062.jpg", "543548069.jpg",
+                "543548104.jpg", "543548123.jpg", "543548127.jpg", "544029771.jpg", "559942633.jpg",
+                "561993086.jpg", "561993189.jpg", "562295020.jpg", "562295445.jpg", "671618758.jpg",
+                "676738978.jpg", "676739022.jpg", "676739484.jpg", "676740204.jpg", "676740329.jpg",
+                "676740443.jpg", "676740544.jpg", "676740710.jpg", "676740990.jpg", "676741112.jpg",
+                "676741164.jpg", "676741228.jpg", "676741517.jpg", "676741598.jpg", "676741673.jpg",
+                "676741772.jpg", "676741916.jpg", "676742125.jpg", "676742323.jpg", "686495701.jpg",
+                "686495878.jpg", "686496190.jpg", "686496842.jpg", "818741094.jpg", "832992649.jpg"
+            ];
+            images.forEach(img => {
+                document.write(`<img src="images/${img}" onclick="openFullImg(this)" loading="lazy">`);
+            });
+        </script>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2026 Umi B&B Giulianova</p>
+</footer>
+
+</body>
+</html>
