@@ -10,7 +10,6 @@
         * { box-sizing: border-box; }
         body { font-family: 'Inter', sans-serif; margin: 0; background-color: var(--bg-light); color: var(--text-dark); scroll-behavior: smooth; }
         
-        /* Language & Nav */
         .lang-nav { background: var(--white); padding: 10px; display: flex; justify-content: center; gap: 10px; border-bottom: 1px solid rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1100; }
         .lang-btn { background: none; border: 1px solid var(--accent); color: var(--accent); padding: 5px 15px; cursor: pointer; border-radius: 20px; font-weight: 600; font-size: 0.8rem; transition: all 0.3s; }
         .lang-btn.active { background: var(--accent); color: white; }
@@ -24,7 +23,6 @@
         .container { max-width: 1100px; margin: auto; padding: 40px 20px; }
         .lang-content { display: none !important; }
         .lang-content.active-content { display: block !important; }
-        .faq-grid.lang-content.active-content { display: grid !important; }
 
         .section-card { background: var(--white); border-radius: 20px; padding: 40px; margin-bottom: 30px; box-shadow: var(--shadow); border: 1px solid rgba(0,0,0,0.03); }
         h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--accent); margin-bottom: 25px; margin-top: 0; }
@@ -32,18 +30,23 @@
         .umi-split { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: center; }
         .umi-image img { width: 100%; height: auto; border-radius: 15px; box-shadow: 10px 10px 0 #eef4ff; }
 
-        /* FAQ Layout */
-        .faq-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
-        .faq-column { display: flex; flex-direction: column; gap: 20px; }
-        .faq-item { background: #fafafa; border-radius: 12px; padding: 25px; border: 1px solid #f0f0f0; }
-        .faq-q { font-weight: 700; color: var(--accent); display: block; margin-bottom: 10px; }
+        .grid-info { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .info-list { list-style: none; padding: 0; margin: 0; }
+        .info-list li { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #f0f0f0; }
+        .dist-badge { background: #eef4ff; color: var(--accent); padding: 4px 10px; border-radius: 6px; font-weight: 700; font-size: 0.8rem; }
 
-        /* Gallery */
+        .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .faq-column { display: flex; flex-direction: column; gap: 20px; }
+        .faq-item { background: #fafafa; border-radius: 12px; padding: 20px; border: 1px solid #f0f0f0; }
+        .faq-q { font-weight: 700; color: var(--accent); display: block; margin-bottom: 8px; }
+
         .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
         .gallery-grid img { width: 100%; height: 140px; object-fit: cover; border-radius: 10px; cursor: pointer; transition: 0.3s; }
 
         .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); align-items: center; justify-content: center; }
         .modal img { max-width: 90%; max-height: 80vh; border-radius: 10px; }
+
+        footer { background: var(--text-dark); color: white; text-align: center; padding: 60px 20px; margin-top: 40px; }
 
         @media (max-width: 850px) { .umi-split, .faq-grid { grid-template-columns: 1fr !important; } }
     </style>
@@ -66,9 +69,9 @@
 
 <nav>
     <a href="#home">Home</a>
-    <a href="#omgeving">Omgeving</a>
+    <a href="#omgeving"><span class="lang-content it active-content">Dintorni</span><span class="lang-content en">Surroundings</span><span class="lang-content nl">Omgeving</span></a>
     <a href="#faq">FAQ</a>
-    <a href="#galerij">Galerij</a>
+    <a href="#galerij"><span class="lang-content it active-content">Galleria</span><span class="lang-content en">Gallery</span><span class="lang-content nl">Galerij</span></a>
     <a href="#contact">Contact</a>
 </nav>
 
@@ -79,26 +82,47 @@
 
 <div class="container">
 
-    <section class="section-card" id="omgeving">
+    <section class="section-card">
         <div class="umi-split">
             <div class="umi-text">
                 <div class="lang-content nl">
                     <h2>Over de accommodatie</h2>
-                    <p>Umi B&B bevindt zich op 19 minuten lopen van Spiaggia Giulianova en biedt een tuin. De accommodaties hebben een patio en gratis WiFi. De units zijn voorzien van een terras, airconditioning, een flatscreen-tv en een eigen badkamer met bidet en gratis toiletartikelen. Tegen betaling kan de accommodatie handdoeken en beddengoed verzorgen.</p>
+                    <p>Umi B&B bevindt zich op 19 minuten lopen van Spiaggia Giulianova en biedt een tuin. De accommodaties hebben een patio en gratis WiFi.</p>
+                    <p>De units zijn voorzien van een terras, airconditioning, een flatscreen-tv en een eigen badkamer met bidet en gratis toiletartikelen. Tegen betaling kan de accommodatie handdoeken en beddengoed verzorgen.</p>
                     <p>Stadion Riviera delle Palme ligt op 23 km van de bed & breakfast, en treinstation San Benedetto de Tronto ligt 25 km verderop. Vliegveld Luchthaven Abruzzo ligt op 52 km van de accommodatie.</p>
                 </div>
                 <div class="lang-content it active-content">
                     <h2>Informazioni sulla struttura</h2>
-                    <p>Situato a 19 minuti a piedi dalla Spiaggia di Giulianova, l'Umi B&B offre un giardino, sistemazioni con patio e la connessione WiFi gratuita. Le unità sono dotate di terrazza, aria condizionata, TV a schermo piatto e bagno privato con bidet e set di cortesia. A un costo aggiuntivo, la struttura può fornire asciugamani e biancheria da letto.</p>
-                    <p>Lo Stadio Riviera delle Palme si trova a 23 km dal B&B, mentre la stazione ferroviaria di San Benedetto del Tronto dista 25 km. L'aeroporto d'Abruzzo dista 52 km dalla struttura.</p>
+                    <p>L'Umi B&B si trova a 19 minuti a piedi dalla spiaggia di Giulianova e offre un giardino, sistemazioni con patio e WiFi gratuito.</p>
+                    <p>Le unità dispongono di terrazza, aria condizionata, TV a schermo piatto e bagno privato con bidet e set di cortesia. Asciugamani e biancheria da letto possono essere forniti a un costo aggiuntief.</p>
+                    <p>Lo Stadio Riviera delle Palme si trova a 23 km dal bed & breakfast, mentre la stazione ferroviaria di San Benedetto del Tronto dista 25 km. L'aeroporto d'Abruzzo si trova a 52 km dalla struttura.</p>
                 </div>
                 <div class="lang-content en">
                     <h2>About the property</h2>
-                    <p>Located a 19-minute walk from Giulianova Beach, Umi B&B offers a garden, accommodations with a patio, and free WiFi. Units feature a terrace, air conditioning, a flat-screen TV, and a private bathroom with a bidet and free toiletries. For an additional fee, the property can provide towels and bed linen.</p>
-                    <p>Riviera delle Palme Stadium is 23 km from the B&B, and San Benedetto del Tronto railway station is 25 km away. Abruzzo Airport is 52 km from the property.</p>
+                    <p>Umi B&B is located a 19-minute walk from Giulianova Beach and offers a garden. The accommodations feature a patio and free WiFi.</p>
+                    <p>Units are equipped with a terrace, air conditioning, a flat-screen TV, and a private bathroom with a bidet and free toiletries. Towels and bed linen can be provided for a fee.</p>
+                    <p>Riviera delle Palme Stadium is 23 km from the B&B, and San Benedetto de Tronto Train Station is 25 km away. Abruzzo Airport is 52 km from the property.</p>
                 </div>
             </div>
             <div class="umi-image"><img src="images/544029771.jpg" alt="Umi B&B"></div>
+        </div>
+    </section>
+
+    <section id="omgeving" class="section-card">
+        <h2 class="lang-content it active-content">Dintorni</h2>
+        <h2 class="lang-content en">Surroundings</h2>
+        <h2 class="lang-content nl">De Omgeving</h2>
+        <div class="grid-info">
+            <ul class="info-list">
+                <li>Somersault <span class="dist-badge">1,2 km</span></li>
+                <li>Parco degli Eucalipti <span class="dist-badge">1,8 km</span></li>
+                <li>Spiaggia Giulianova <span class="dist-badge">1,6 km</span></li>
+            </ul>
+            <ul class="info-list">
+                <li>Riserva del Borsacchio <span class="dist-badge">8 km</span></li>
+                <li>Stazione Giulianova <span class="dist-badge">1,3 km</span></li>
+                <li>Aeroporto Abruzzo <span class="dist-badge">52 km</span></li>
+            </ul>
         </div>
     </section>
 
@@ -106,28 +130,28 @@
         <h2>FAQ</h2>
         <div class="faq-grid lang-content nl">
             <div class="faq-column">
-                <div class="faq-item"><span class="faq-q">Wat voor ontbijt is er?</span>Gasten genieten van een hoog beoordeeld ontbijt (8,8). Opties: Italiaans, À la carte.</div>
-                <div class="faq-item"><span class="faq-q">Welk kamertype kan ik boeken?</span>U kunt een Tweepersoonskamer boeken.</div>
-                <div class="faq-item"><span class="faq-q">In- en uitchecktijden?</span>Inchecken vanaf 15:00. Uitchecken tot 10:30.</div>
-                <div class="faq-item"><span class="faq-q">Wat zijn de kosten?</span>Prijzen variëren per datum en kamer.</div>
+                <div class="faq-item"><span class="faq-q">1. Wat voor ontbijt is er?</span>Score 8.8. Opties: Italiaans of À la carte.</div>
+                <div class="faq-item"><span class="faq-q">2. Welke activiteiten zijn er?</span>Tennis, Wandelen, Live muziek, Filmavonden.</div>
+                <div class="faq-item"><span class="faq-q">3. Welke kamers kan ik boeken?</span>Tweepersoonskamer.</div>
+                <div class="faq-item"><span class="faq-q">4. In- en uitchecktijden?</span>Vanaf 15:00 / Tot 10:30.</div>
             </div>
             <div class="faq-column">
-                <div class="faq-item"><span class="faq-q">Wat is er te doen?</span>Activiteiten: Tennis, Wandelen, Live muziek, Filmavonden.</div>
-                <div class="faq-item"><span class="faq-q">Afstand tot centrum?</span>Umi B&B ligt op 1,1 km van het centrum van Giulianova.</div>
-                <div class="faq-item"><span class="faq-q">Afstand tot strand?</span>Het strand ligt op 1,4 km afstand.</div>
+                <div class="faq-item"><span class="faq-q">5. Wat kost een verblijf?</span>Prijzen variëren per datum en kamer.</div>
+                <div class="faq-item"><span class="faq-q">6. Afstand tot het centrum?</span>1,1 km van het centrum van Giulianova.</div>
+                <div class="faq-item"><span class="faq-q">7. Afstand tot het strand?</span>Het strand ligt op 1,4 km afstand.</div>
             </div>
         </div>
         <div class="faq-grid lang-content it active-content">
             <div class="faq-column">
-                <div class="faq-item"><span class="faq-q">Colazione?</span>Punteggio 8.8. Italiana o À la carte.</div>
-                <div class="faq-item"><span class="faq-q">Camere?</span>Offriamo camere Matrimoniali.</div>
-                <div class="faq-item"><span class="faq-q">Orari?</span>Check-in 15:00 / Check-out 10:30.</div>
-                <div class="faq-item"><span class="faq-q">Prezzi?</span>Variano in base alla stagione.</div>
+                <div class="faq-item"><span class="faq-q">1. Com'è la colazione?</span>Punteggio 8.8. Opzioni: Italiana o À la carte.</div>
+                <div class="faq-item"><span class="faq-q">2. Quali attività sono disponibili?</span>Tennis, Hiking, Musica dal vivo, Cinema.</div>
+                <div class="faq-item"><span class="faq-q">3. Che tipo di camera posso prenotare?</span>Camera Matrimoniale.</div>
+                <div class="faq-item"><span class="faq-q">4. Orari check-in/out?</span>Dalle 15:00 / Fino alle 10:30.</div>
             </div>
             <div class="faq-column">
-                <div class="faq-item"><span class="faq-q">Attività?</span>Tennis, Escursionismo, Musica, Cinema.</div>
-                <div class="faq-item"><span class="faq-q">Centro?</span>Dista 1,1 km dal centro.</div>
-                <div class="faq-item"><span class="faq-q">Spiaggia?</span>La spiaggia dista 1,4 km.</div>
+                <div class="faq-item"><span class="faq-q">5. Quanto costa il soggiorno?</span>I prezzi variano in base alle date.</div>
+                <div class="faq-item"><span class="faq-q">6. Distanza dal centro?</span>1,1 km dal centro di Giulianova.</div>
+                <div class="faq-item"><span class="faq-q">7. Distanza dalla spiaggia?</span>La spiaggia è a 1,4 km.</div>
             </div>
         </div>
     </section>
@@ -136,7 +160,7 @@
         <h2>Gallery</h2>
         <div class="gallery-grid">
             <script>
-                const imgs = ["543547600.jpg", "543547616.jpg", "543547620.jpg", "543547683.jpg", "543547709.jpg", "544029771.jpg", "559942633.jpg", "561993086.jpg", "561993189.jpg", "562295020.jpg", "671618758.jpg", "676738978.jpg"];
+                const imgs = ["543547600.jpg", "543547616.jpg", "543547620.jpg", "543547683.jpg", "543547709.jpg", "543547722.jpg", "543547738.jpg", "543547766.jpg", "543547787.jpg", "543547828.jpg", "543547858.jpg", "543547881.jpg", "543547959.jpg", "543548062.jpg", "543548069.jpg", "543548104.jpg", "543548123.jpg", "543548127.jpg", "544029771.jpg", "559942633.jpg", "561993086.jpg", "561993189.jpg", "562295020.jpg", "562295445.jpg", "671618758.jpg", "676738978.jpg", "676739022.jpg", "676739484.jpg", "676740204.jpg", "676740329.jpg", "676740443.jpg", "676740544.jpg", "676740710.jpg", "676740990.jpg", "676741112.jpg", "676741164.jpg", "676741228.jpg", "676741517.jpg", "676741598.jpg", "676741673.jpg", "676741772.jpg", "676741916.jpg", "676742125.jpg", "676742323.jpg", "686495701.jpg", "686495878.jpg", "686496190.jpg", "686496842.jpg", "818741094.jpg", "832992649.jpg"];
                 imgs.forEach(i => document.write(`<img src="images/${i}" onclick="document.getElementById('imgFull').src=this.src; document.getElementById('imageModal').style.display='flex'">`));
             </script>
         </div>
