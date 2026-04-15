@@ -35,7 +35,7 @@
         .content-box { background: white; padding: 25px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 25px; }
         .lang-content { display: none; }
         .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
-        .card { border: 1px solid #eee; border-radius: 8px; padding: 15px; margin-bottom: 10px; }
+        .card { border: 1px solid #eee; border-radius: 8px; padding: 15px; margin-bottom: 10px; height: 100%; box-sizing: border-box; }
         .card h3 { margin-top: 0; color: var(--primary); font-size: 1rem; border-bottom: 1px solid #eee; padding-bottom: 8px; }
         .row { display: flex; justify-content: space-between; padding: 5px 0; border-bottom: 1px solid #f9f9f9; font-size: 0.85rem; }
         .dist { font-weight: bold; color: #666; }
@@ -59,7 +59,7 @@
         <a href="#home">Home</a> <a href="#accommodation">Dintorni</a> <a href="#rules">Regole</a> <a href="#faq">Domande</a> <a href="#gallery">Galleria</a> <a href="#contact">Contatti</a>
     </div>
     <div class="lang-content en">
-        <a href="#home">Home</a> <a href="#accommodation">Surroundings</a> <a href="#rules">Rules</a> <a href="#faq">FAQ</a> <a href="#gallery">Gallery</a> <a href="#contact">Contact</a>
+        <a href="#home">Home</a> <a href="#accommodation">Surroundings</a> <a href="#rules">House Rules</a> <a href="#faq">FAQ</a> <a href="#gallery">Gallery</a> <a href="#contact">Contact</a>
     </div>
 </nav>
 
@@ -82,20 +82,21 @@
                     <div class="row"><span>Parco degli Eucalipti</span><span class="dist">1,8 km</span></div>
                     <div class="row"><span>Anfiteatro Ennio Flaiano</span><span class="dist">2,2 km</span></div>
                     <div class="row"><span>Parchetto Savini</span><span class="dist">3,9 km</span></div>
+                    <div class="row"><span>Riserva Naturale del Borsacchio</span><span class="dist">8 km</span></div>
                 </div>
                 <div class="card">
                     <h3>🍴 Restaurants & cafés</h3>
                     <div class="row"><span>Pizzeria del Popolo</span><span class="dist">400 m</span></div>
                     <div class="row"><span>Aprudia</span><span class="dist">500 m</span></div>
                     <div class="row"><span>Pizzeria del Paese</span><span class="dist">500 m</span></div>
-                    <h3 style="margin-top:10px">🏞️ Natuurwonderen</h3>
-                    <div class="row"><span>Riserva Naturale del Borsacchio</span><span class="dist">8 km</span></div>
-                    <div class="row"><span>Parco Mauro Laeng</span><span class="dist">9 km</span></div>
+                    <h3 style="margin-top:10px">🌊 Stranden</h3>
+                    <div class="row"><span>Spiaggia Giulianova</span><span class="dist">1,6 km</span></div>
+                    <div class="row"><span>Spiaggia di Tortoreto Lido</span><span class="dist">4,4 km</span></div>
                 </div>
                 <div class="card">
-                    <h3>🚆 Openbaar vervoer / Stranden</h3>
+                    <h3>🚆 Vervoer</h3>
                     <div class="row"><span>Trein - Giulianova</span><span class="dist">1,3 km</span></div>
-                    <div class="row"><span>Spiaggia Giulianova</span><span class="dist">1,6 km</span></div>
+                    <div class="row"><span>Trein - Mosciano Sant'Angelo</span><span class="dist">7 km</span></div>
                     <div class="row"><span>Luchthaven Abruzzo</span><span class="dist">52 km</span></div>
                 </div>
             </div>
@@ -108,18 +109,23 @@
                     <div class="row"><span>Somersault</span><span class="dist">1,2 km</span></div>
                     <div class="row"><span>Parco degli Eucalipti</span><span class="dist">1,8 km</span></div>
                     <div class="row"><span>Anfiteatro Ennio Flaiano</span><span class="dist">2,2 km</span></div>
+                    <div class="row"><span>Parchetto Savini</span><span class="dist">3,9 km</span></div>
+                    <div class="row"><span>Riserva Naturale del Borsacchio</span><span class="dist">8 km</span></div>
                 </div>
                 <div class="card">
                     <h3>🍴 Ristoranti e caffè</h3>
                     <div class="row"><span>Pizzeria del Popolo</span><span class="dist">400 m</span></div>
                     <div class="row"><span>Aprudia</span><span class="dist">500 m</span></div>
-                    <h3 style="margin-top:10px">🏞️ Bellezze naturali</h3>
-                    <div class="row"><span>Riserva Naturale del Borsacchio</span><span class="dist">8 km</span></div>
+                    <div class="row"><span>Pizzeria del Paese</span><span class="dist">500 m</span></div>
+                    <h3 style="margin-top:10px">🌊 Spiagge</h3>
+                    <div class="row"><span>Spiaggia Giulianova</span><span class="dist">1,6 km</span></div>
+                    <div class="row"><span>Spiaggia di Tortoreto Lido</span><span class="dist">4,4 km</span></div>
                 </div>
                 <div class="card">
-                    <h3>🚆 Trasporti / Spiagge</h3>
-                    <div class="row"><span>Stazione Giulianova</span><span class="dist">1,3 km</span></div>
-                    <div class="row"><span>Spiaggia Giulianova</span><span class="dist">1,6 km</span></div>
+                    <h3>🚆 Trasporti</h3>
+                    <div class="row"><span>Treno - Giulianova</span><span class="dist">1,3 km</span></div>
+                    <div class="row"><span>Treno - Mosciano Sant'Angelo</span><span class="dist">7 km</span></div>
+                    <div class="row"><span>Aeroporto d'Abruzzo</span><span class="dist">52 km</span></div>
                 </div>
             </div>
         </div>
@@ -127,22 +133,27 @@
             <h2>Surroundings</h2>
             <div class="grid-3">
                 <div class="card">
-                    <h3>🚶 Nearby</h3>
+                    <h3>🚶 What's nearby?</h3>
                     <div class="row"><span>Somersault</span><span class="dist">1.2 km</span></div>
                     <div class="row"><span>Parco degli Eucalipti</span><span class="dist">1.8 km</span></div>
                     <div class="row"><span>Anfiteatro Ennio Flaiano</span><span class="dist">2.2 km</span></div>
+                    <div class="row"><span>Parchetto Savini</span><span class="dist">3.9 km</span></div>
+                    <div class="row"><span>Borsacchio Nature Reserve</span><span class="dist">8 km</span></div>
                 </div>
                 <div class="card">
                     <h3>🍴 Restaurants & Cafés</h3>
                     <div class="row"><span>Pizzeria del Popolo</span><span class="dist">400 m</span></div>
                     <div class="row"><span>Aprudia</span><span class="dist">500 m</span></div>
-                    <h3 style="margin-top:10px">🏞️ Natural Beauty</h3>
-                    <div class="row"><span>Borsacchio Nature Reserve</span><span class="dist">8 km</span></div>
+                    <div class="row"><span>Pizzeria del Paese</span><span class="dist">500 m</span></div>
+                    <h3 style="margin-top:10px">🌊 Beaches</h3>
+                    <div class="row"><span>Giulianova Beach</span><span class="dist">1.6 km</span></div>
+                    <div class="row"><span>Tortoreto Lido Beach</span><span class="dist">4.4 km</span></div>
                 </div>
                 <div class="card">
-                    <h3>🚆 Transport / Beaches</h3>
-                    <div class="row"><span>Giulianova Train Station</span><span class="dist">1.3 km</span></div>
-                    <div class="row"><span>Giulianova Beach</span><span class="dist">1.6 km</span></div>
+                    <h3>🚆 Transport</h3>
+                    <div class="row"><span>Train - Giulianova</span><span class="dist">1.3 km</span></div>
+                    <div class="row"><span>Train - Mosciano Sant'Angelo</span><span class="dist">7 km</span></div>
+                    <div class="row"><span>Abruzzo Airport</span><span class="dist">52 km</span></div>
                 </div>
             </div>
         </div>
@@ -154,79 +165,83 @@
             <div class="card">
                 <div class="row"><span><b>Inchecken</b></span><span>15:00 - 19:30</span></div>
                 <div class="row"><span><b>Uitchecken</b></span><span>10:00 - 10:30</span></div>
-                <div class="row"><span><b>Annuleren / Vooruitbetaling</b></span><span>Voorwaarden variëren per accommodatietype.</span></div>
+                <div class="row"><span><b>Annuleren</b></span><span>Voorwaarden variëren per accommodatietype.</span></div>
             </div>
             <div class="card">
                 <h3>👶 Kinderen en bedden</h3>
                 <ul>
                     <li>Kinderen van alle leeftijden zijn welkom.</li>
-                    <li>Vanaf 18 jaar worden zij bij deze accommodatie als volwassenen gerekend.</li>
-                    <li><b>Babybedje (0-3 jaar):</b> € 10 per kind, per nacht (op verzoek).</li>
-                    <li><b>Extra bed (4+ jaar):</b> € 20 per persoon, per nacht (op verzoek).</li>
+                    <li>Vanaf 18 jaar worden zij als volwassenen gerekend.</li>
+                    <li><b>Babybedje (0-3 jaar):</b> € 10 per kind, per nacht.</li>
+                    <li><b>Extra bed (4+ jaar):</b> € 20 per persoon, per nacht.</li>
                 </ul>
             </div>
             <div class="card">
                 <div class="row"><span><b>Huisdieren</b></span><span>Niet toegestaan.</span></div>
-                <div class="row"><span><b>Feesten / Bijeenkomsten</b></span><span>Niet toegestaan.</span></div>
+                <div class="row"><span><b>Feesten</b></span><span>Niet toegestaan.</span></div>
             </div>
         </div>
+        <div class="lang-content it">
+            <h2>Regole della casa</h2>
+            <div class="card">
+                <div class="row"><span><b>Check-in</b></span><span>15:00 - 19:30</span></div>
+                <div class="row"><span><b>Check-out</b></span><span>10:00 - 10:30</span></div>
+                <div class="row"><span><b>Cancellazione</b></span><span>Le condizioni variano a seconda della tipologia.</span></div>
+            </div>
+            <div class="card">
+                <h3>👶 Bambini e letti</h3>
+                <ul>
+                    <li>I bambini di tutte le età sono i benvenuti.</li>
+                    <li>Dai 18 anni sono considerati adulti.</li>
+                    <li><b>Culla (0-3 anni):</b> € 10 per bambino a notte.</li>
+                    <li><b>Letto extra (4+ anni):</b> € 20 per persona a notte.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <div class="row"><span><b>Animali</b></span><span>Non ammessi.</span></div>
+                <div class="row"><span><b>Feste</b></span><span>Non ammesse.</span></div>
+            </div>
         </div>
+        <div class="lang-content en">
+            <h2>House Rules</h2>
+            <div class="card">
+                <div class="row"><span><b>Check-in</b></span><span>3:00 PM - 7:30 PM</span></div>
+                <div class="row"><span><b>Check-out</b></span><span>10:00 AM - 10:30 AM</span></div>
+                <div class="row"><span><b>Cancellation</b></span><span>Policies vary according to accommodation type.</span></div>
+            </div>
+            <div class="card">
+                <h3>👶 Children and beds</h3>
+                <ul>
+                    <li>Children of all ages are welcome.</li>
+                    <li>18 years and above are considered adults.</li>
+                    <li><b>Crib (0-3 years):</b> € 10 per child, per night.</li>
+                    <li><b>Extra bed (4+ years):</b> € 20 per person, per night.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <div class="row"><span><b>Pets</b></span><span>Not allowed.</span></div>
+                <div class="row"><span><b>Parties</b></span><span>Not allowed.</span></div>
+            </div>
+        </div>
+    </div>
 
     <div id="faq" class="content-box">
         <div class="lang-content nl" style="display: block;">
-            <h2>Veelgestelde vragen over Umi B&B</h2>
+            <h2>Veelgestelde vragen</h2>
             <div class="grid-3">
-                <div class="card">
-                    <h3>1. Wat voor ontbijt wordt er geserveerd?</h3>
-                    <p>Gasten krijgen een ontbijt met een hoge score (8.8). Opties: Italiaans, À la carte.</p>
-                </div>
-                <div class="card">
-                    <h3>2. Wat is er te doen bij Umi B&B?</h3>
-                    <ul>
-                        <li>Tennis, Hiking, Boogschieten, Aerobics</li>
-                        <li>Live sportevenementen, Live muziek/optredens</li>
-                        <li>Filmavonden, Comedy, Kunstgaleries</li>
-                        <li>Themadiners, Kroegtochten, Wandelingen</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h3>3. Welke kamers kan ik boeken?</h3>
-                    <p>U kunt een Tweepersoonskamer boeken.</p>
-                </div>
-                <div class="card">
-                    <h3>4. Wat zijn de inchecktijden?</h3>
-                    <p>Inchecken vanaf 15:00, uitchecken tot 10:30.</p>
-                </div>
-                <div class="card">
-                    <h3>5. Hoeveel kost een verblijf?</h3>
-                    <p>Prijzen zijn afhankelijk van uw data en kamertype.</p>
-                </div>
-                <div class="card">
-                    <h3>6. Hoe ver van het centrum?</h3>
-                    <p>Umi B&B ligt op 1,1 km van het centrum van Giulianova.</p>
-                </div>
-                <div class="card">
-                    <h3>7. Hoe ver van het strand?</h3>
-                    <p>Het dichtstbijzijnde strand ligt op slechts 1,4 km.</p>
-                </div>
+                <div class="card"><h3>1. Ontbijt?</h3><p>Score 8.8. Italiaans of À la carte.</p></div>
+                <div class="card"><h3>2. Activiteiten?</h3><ul><li>Tennis, Hiking, Boogschieten, Aerobics</li><li>Live sport, Live muziek, Comedy, Filmavonden</li><li>Kunstgaleries, Themadiners, Wandelingen</li></ul></div>
+                <div class="card"><h3>3. Kamertype?</h3><p>Tweepersoonskamer.</p></div>
+                <div class="card"><h3>4. Tijden?</h3><p>Incheck: 15:00. Uitcheck: 10:30.</p></div>
+                <div class="card"><h3>5. Prijs?</h3><p>Afhankelijk van data en kamertype.</p></div>
+                <div class="card"><h3>6. Afstand centrum?</h3><p>1,1 km van het centrum.</p></div>
+                <div class="card"><h3>7. Afstand strand?</h3><p>Slechts 1,4 km.</p></div>
             </div>
         </div>
-        </div>
-
-    <h2 id="gallery" style="text-align: center;">Galerij</h2>
-    <div class="gallery">
-        <script>
-            const images = ["543547600.jpg", "543547616.jpg", "543547620.jpg", "543547683.jpg", "543547709.jpg", "543547722.jpg", "543547738.jpg", "543547766.jpg", "543547787.jpg", "543547828.jpg", "543547858.jpg", "543547881.jpg", "543547959.jpg", "543548062.jpg", "543548069.jpg", "543548104.jpg", "543548123.jpg", "543548127.jpg", "544029771.jpg", "559942633.jpg", "561993086.jpg", "561993189.jpg", "562295020.jpg", "562295445.jpg", "671618758.jpg", "676738978.jpg", "676739022.jpg", "676739484.jpg", "676740204.jpg", "676740329.jpg", "676740443.jpg", "676740544.jpg", "676740710.jpg", "676740990.jpg", "676741112.jpg", "676741164.jpg", "676741228.jpg", "676741517.jpg", "676741598.jpg", "676741673.jpg", "676741772.jpg", "676741916.jpg", "676742125.jpg", "676742323.jpg", "686495701.jpg", "686495878.jpg", "686496190.jpg", "686496842.jpg", "818741094.jpg", "832992649.jpg"];
-            images.forEach(img => document.write(`<img src="images/${img}" onclick="openFullImg(this)" loading="lazy">`));
-        </script>
-    </div>
-
-    <div id="contact" class="content-box" style="margin-top: 30px; text-align: center;">
-        <h2>Contact</h2>
-        <p>📍 Giulianova, Abruzzo, Italië<br>📞 +39 347 123 4567 | ✉️ info@umibnb.com</p>
-    </div>
-</div>
-
-<footer><p>&copy; 2026 Umi B&B Giulianova</p></footer>
-</body>
-</html>
+        <div class="lang-content it">
+            <h2>Domande Frequenti</h2>
+            <div class="grid-3">
+                <div class="card"><h3>1. Colazione?</h3><p>Punteggio 8.8. Italiana o À la carte.</p></div>
+                <div class="card"><h3>2. Attività?</h3><ul><li>Tennis, Trekking, Tiro con l'arco, Aerobica</li><li>Sport dal vivo, Musica dal vivo, Cinema</li><li>Gallerie d'arte, Cene a tema, Tour a piedi</li></ul></div>
+                <div class="card"><h3>3. Camere?</h3><p>Camera Matrimoniale.</p></div>
+                <div class="card"><h3>4. Orari?</h3><p
