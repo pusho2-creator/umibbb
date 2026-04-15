@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
     <style>
         :root {
-            --accent: #003580; /* Booking.com Blauw voor vertrouwen */
+            --accent: #003580;
             --accent-light: #eef4ff;
             --text-dark: #1a1a1a;
             --text-light: #595959;
@@ -26,7 +26,6 @@
             line-height: 1.6;
         }
 
-        /* --- Language Switcher (Top Bar) --- */
         .lang-nav { 
             background: var(--white); 
             padding: 10px; 
@@ -51,10 +50,8 @@
             align-items: center;
             gap: 5px;
         }
-        .lang-btn:hover { border-color: var(--accent); background-color: var(--accent-light); }
         .lang-btn.active { background: var(--accent); color: white; border-color: var(--accent); }
 
-        /* --- Navigatie --- */
         nav {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
@@ -74,11 +71,8 @@
             font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 1px;
-            transition: color 0.3s;
         }
-        nav a:hover { color: var(--accent); }
 
-        /* --- Hero Section (Grote Foto) --- */
         .hero {
             height: 75vh;
             background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5)), url('images/header1.jpg') center/cover no-repeat;
@@ -90,153 +84,44 @@
             text-align: center;
             padding: 0 20px;
         }
-        .hero h1 { 
-            font-family: 'Playfair Display', serif; 
-            font-size: 4.5rem; 
-            margin: 0 0 10px 0; 
-            line-height: 1.1;
-        }
-        .hero p { 
-            font-size: 1.5rem; 
-            font-weight: 300; 
-            margin: 0 0 30px 0;
-            font-family: 'Playfair Display', serif;
-            font-style: italic;
-        }
-        .btn-hero {
-            background-color: var(--accent);
-            color: white;
-            text-decoration: none;
-            padding: 15px 35px;
-            border-radius: 30px;
-            font-weight: 700;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-            transition: background 0.3s;
-            box-shadow: 0 4px 15px rgba(0,53,128,0.3);
-        }
-        .btn-hero:hover { background-color: #002559; }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: 4.5rem; margin: 0; }
+        .hero p { font-size: 1.5rem; font-family: 'Playfair Display', serif; font-style: italic; margin-bottom: 30px; }
+        .btn-hero { background: var(--accent); color: white; text-decoration: none; padding: 15px 35px; border-radius: 30px; font-weight: 700; text-transform: uppercase; font-size: 0.9rem; }
 
-        /* --- Container --- */
         .container { max-width: 1100px; margin: auto; padding: 60px 20px; }
-        
-        /* --- Content Switching --- */
         .lang-content { display: none; }
         .active-content { display: block; }
 
-        /* --- Intro Sectie (Wie is Umi) met foto --- */
-        .intro-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-            margin-bottom: 60px;
-        }
-        .intro-text h2 { 
-            font-family: 'Playfair Display', serif; 
-            font-size: 2.8rem; 
-            color: var(--accent); 
-            margin: 0 0 20px 0; 
-        }
-        .intro-text p { 
-            color: var(--text-light); 
-            font-size: 1.1rem; 
-            margin-bottom: 20px;
-        }
-        .intro-featured-img {
-            width: 100%;
-            border-radius: 15px;
-            box-shadow: 20px 20px 0 var(--accent-light);
-            object-fit: cover;
-            height: 400px;
-        }
+        .section-card { background: var(--white); border-radius: 20px; padding: 50px; margin-bottom: 40px; box-shadow: var(--shadow); }
+        .section-card h3 { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--text-dark); margin-bottom: 30px; display: flex; align-items: center; gap: 15px; }
+        .section-card h3::before { content:''; width: 10px; height: 40px; background-color: var(--accent); border-radius: 5px; }
 
-        /* --- Kaarten Secties (Omgeving, Regels, FAQ) --- */
-        .section-card {
-            background: var(--white);
-            border-radius: 20px;
-            padding: 50px;
-            margin-bottom: 40px;
-            box-shadow: var(--shadow);
-            border: 1px solid rgba(0,0,0,0.02);
-        }
-        .section-card h3 { 
-            font-family: 'Playfair Display', serif; 
-            font-size: 2.2rem; 
-            color: var(--text-dark); 
-            margin: 0 0 30px 0; 
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        .section-card h3::before {
-            content:'';
-            width: 10px; height: 40px;
-            background-color: var(--accent);
-            border-radius: 5px;
-        }
+        .intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+        .intro-featured-img { width: 100%; border-radius: 15px; box-shadow: 20px 20px 0 var(--accent-light); object-fit: cover; height: 400px; }
 
-        /* Grids */
         .grid-info { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
-        
-        /* Info Lijsten */
-        .info-list { list-style: none; padding: 0; margin: 0; }
-        .info-list li {
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center;
-            padding: 15px 0; 
-            border-bottom: 1px solid #f0f0f0;
-            font-size: 1rem;
-        }
-        .info-list li:last-child { border-bottom: none; }
-        .info-list li strong { color: var(--text-dark); }
-        .dist-badge { 
-            background: var(--accent-light); 
-            color: var(--accent); 
-            padding: 5px 12px; 
-            border-radius: 20px; 
-            font-weight: 700; 
-            font-size: 0.85rem; 
-        }
+        .info-list { list-style: none; padding: 0; }
+        .info-list li { display: flex; justify-content: space-between; padding: 15px 0; border-bottom: 1px solid #f0f0f0; }
+        .dist-badge { background: var(--accent-light); color: var(--accent); padding: 5px 12px; border-radius: 20px; font-weight: 700; }
 
-        /* FAQ */
         .faq-grid { display: grid; gap: 20px; }
-        .faq-item { background: #fafafa; border-radius: 12px; padding: 25px; border: 1px solid #eee; transition: border-color 0.3s; }
-        .faq-item:hover { border-color: var(--accent); }
-        .faq-q { font-weight: 700; color: var(--accent); display: block; margin-bottom: 10px; font-size: 1.1rem; }
-        .faq-a { color: var(--text-light); font-size: 1rem; }
+        .faq-item { background: #fafafa; border-radius: 12px; padding: 25px; border: 1px solid #eee; }
+        .faq-q { font-weight: 700; color: var(--accent); display: block; margin-bottom: 10px; }
 
-        /* Gallery */
         .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 15px; }
-        .gallery-grid img { width: 100%; height: 160px; object-fit: cover; border-radius: 12px; cursor: pointer; transition: transform 0.3s, box-shadow 0.3s; }
-        .gallery-grid img:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        .gallery-grid img { width: 100%; height: 160px; object-fit: cover; border-radius: 12px; cursor: pointer; transition: 0.3s; }
+        .gallery-grid img:hover { transform: translateY(-5px); }
 
-        /* Modal */
         .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); align-items: center; justify-content: center; }
-        .modal img { max-width: 90%; max-height: 85vh; border-radius: 10px; box-shadow: 0 0 30px rgba(0,0,0,0.5); }
+        .modal img { max-width: 90%; max-height: 85vh; border-radius: 10px; }
 
-        /* Footer */
-        footer { background: var(--text-dark); color: white; text-align: center; padding: 80px 20px; margin-top: 60px; }
-        footer h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin: 0 0 10px 0; }
-        footer p { opacity: 0.7; font-weight: 300; margin: 5px 0; }
-
-        /* Responsive */
-        @media (max-width: 850px) {
-            .intro-grid { grid-template-columns: 1fr; gap: 30px; }
-            .intro-featured-img { height: 300px; box-shadow: 10px 10px 0 var(--accent-light); }
-            .hero h1 { font-size: 3rem; }
-            .hero p { font-size: 1.2rem; }
-            .section-card { padding: 30px; }
-        }
+        footer { background: var(--text-dark); color: white; text-align: center; padding: 60px; }
     </style>
     <script>
         function setLang(lang) {
             document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active-content'));
             document.querySelectorAll('.' + lang).forEach(el => el.classList.add('active-content'));
             document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-            // Zoek de knop die geklikt is en maak deze actief
             event.currentTarget.classList.add('active');
         }
     </script>
@@ -256,9 +141,181 @@
     <a href="#omgeving" class="lang-content it active-content">Dintorni</a>
     <a href="#omgeving" class="lang-content en">Surroundings</a>
     <a href="#omgeving" class="lang-content nl">Omgeving</a>
-    <a href="#regels" class="lang-content it active-content">Regole</a>
-    <a href="#regels" class="lang-content en">House Rules</a>
-    <a href="#regels" class="lang-content nl">Huisregels</a>
+    <a href="#faq">FAQ</a>
+    <a href="#galerij" class="lang-content it active-content">Galleria</a>
+    <a href="#galerij" class="lang-content en">Gallery</a>
+    <a href="#galerij" class="lang-content nl">Galerij</a>
+    <a href="#contact" class="lang-content it active-content">Contatti</a>
+    <a href="#contact" class="lang-content en">Contact</a>
+    <a href="#contact" class="lang-content nl">Contact</a>
+</nav>
+
+<section class="hero" id="home">
+    <div class="lang-content it active-content">
+        <h1>Umi B&B</h1>
+        <p>Il vostro rifugio sereno a Giulianova</p>
+        <a href="#galerij" class="btn-hero">Esplora la Galleria</a>
+    </div>
+    <div class="lang-content en">
+        <h1>Umi B&B</h1>
+        <p>Your serene getaway in Giulianova</p>
+        <a href="#galerij" class="btn-hero">Explore Gallery</a>
+    </div>
+    <div class="lang-content nl">
+        <h1>Umi B&B</h1>
+        <p>Uw rustgevende verblijf in Giulianova</p>
+        <a href="#galerij" class="btn-hero">Ontdek de Galerij</a>
+    </div>
+</section>
+
+<div class="container">
+
+    <section id="umi" class="intro-grid section-card">
+        <div class="intro-text">
+            <div class="lang-content it active-content">
+                <h2>Benvenuti da Umi</h2><!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Umi B&B | Giulianova Official | Benvenuti</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --accent: #003580;
+            --accent-light: #eef4ff;
+            --text-dark: #1a1a1a;
+            --text-light: #595959;
+            --bg-light: #f7f9fb;
+            --white: #ffffff;
+            --shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        * { box-sizing: border-box; }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            margin: 0; 
+            background-color: var(--bg-light); 
+            color: var(--text-dark);
+            scroll-behavior: smooth;
+            line-height: 1.6;
+        }
+
+        .lang-nav { 
+            background: var(--white); 
+            padding: 10px; 
+            display: flex; 
+            justify-content: center; 
+            gap: 10px; 
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            position: relative;
+            z-index: 1100;
+        }
+        .lang-btn { 
+            background: none; 
+            border: 1px solid #ddd; 
+            color: var(--text-dark); 
+            padding: 6px 16px; 
+            cursor: pointer; 
+            border-radius: 20px; 
+            font-weight: 600;
+            font-size: 0.8rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .lang-btn.active { background: var(--accent); color: white; border-color: var(--accent); }
+
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        nav a {
+            color: var(--text-dark);
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero {
+            height: 75vh;
+            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5)), url('images/header1.jpg') center/cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 0 20px;
+        }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: 4.5rem; margin: 0; }
+        .hero p { font-size: 1.5rem; font-family: 'Playfair Display', serif; font-style: italic; margin-bottom: 30px; }
+        .btn-hero { background: var(--accent); color: white; text-decoration: none; padding: 15px 35px; border-radius: 30px; font-weight: 700; text-transform: uppercase; font-size: 0.9rem; }
+
+        .container { max-width: 1100px; margin: auto; padding: 60px 20px; }
+        .lang-content { display: none; }
+        .active-content { display: block; }
+
+        .section-card { background: var(--white); border-radius: 20px; padding: 50px; margin-bottom: 40px; box-shadow: var(--shadow); }
+        .section-card h3 { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--text-dark); margin-bottom: 30px; display: flex; align-items: center; gap: 15px; }
+        .section-card h3::before { content:''; width: 10px; height: 40px; background-color: var(--accent); border-radius: 5px; }
+
+        .intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+        .intro-featured-img { width: 100%; border-radius: 15px; box-shadow: 20px 20px 0 var(--accent-light); object-fit: cover; height: 400px; }
+
+        .grid-info { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+        .info-list { list-style: none; padding: 0; }
+        .info-list li { display: flex; justify-content: space-between; padding: 15px 0; border-bottom: 1px solid #f0f0f0; }
+        .dist-badge { background: var(--accent-light); color: var(--accent); padding: 5px 12px; border-radius: 20px; font-weight: 700; }
+
+        .faq-grid { display: grid; gap: 20px; }
+        .faq-item { background: #fafafa; border-radius: 12px; padding: 25px; border: 1px solid #eee; }
+        .faq-q { font-weight: 700; color: var(--accent); display: block; margin-bottom: 10px; }
+
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 15px; }
+        .gallery-grid img { width: 100%; height: 160px; object-fit: cover; border-radius: 12px; cursor: pointer; transition: 0.3s; }
+        .gallery-grid img:hover { transform: translateY(-5px); }
+
+        .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); align-items: center; justify-content: center; }
+        .modal img { max-width: 90%; max-height: 85vh; border-radius: 10px; }
+
+        footer { background: var(--text-dark); color: white; text-align: center; padding: 60px; }
+    </style>
+    <script>
+        function setLang(lang) {
+            document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active-content'));
+            document.querySelectorAll('.' + lang).forEach(el => el.classList.add('active-content'));
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+        }
+    </script>
+</head>
+<body>
+
+<div class="lang-nav">
+    <button class="lang-btn active" onclick="setLang('it')"><span>🇮🇹</span> ITALIANO</button>
+    <button class="lang-btn" onclick="setLang('en')"><span>🇬🇧</span> ENGLISH</button>
+    <button class="lang-btn" onclick="setLang('nl')"><span>🇳🇱</span> NEDERLANDS</button>
+</div>
+
+<div id="imageModal" class="modal" onclick="this.style.display='none'"><img id="imgFull" src=""></div>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#omgeving" class="lang-content it active-content">Dintorni</a>
+    <a href="#omgeving" class="lang-content en">Surroundings</a>
+    <a href="#omgeving" class="lang-content nl">Omgeving</a>
     <a href="#faq">FAQ</a>
     <a href="#galerij" class="lang-content it active-content">Galleria</a>
     <a href="#galerij" class="lang-content en">Gallery</a>
@@ -292,143 +349,83 @@
         <div class="intro-text">
             <div class="lang-content it active-content">
                 <h2>Benvenuti da Umi</h2>
-                <p>Nato dalla passione per l'accoglienza e per la nostra terra, Umi B&B offre un'esperienza unica nel cuore di Giulianova. "Umi" significa mare, simbolo di pace, freschezza en vitalità.</p>
-                <p>La nostra struttura moderna en curata nei minimi dettagli è pensata per offrirvi il massimo comfort, sia che siate qui per affari o per una vacanza rilassante.</p>
+                <p>Umi B&B offre un'esperienza unica nel cuore di Giulianova. "Umi" significa mare, simbolo di pace e freschezza.</p>
             </div>
             <div class="lang-content en">
                 <h2>Welcome to Umi</h2>
-                <p>Born from a passion for hospitality and our land, Umi B&B offers a unique experience in the heart of Giulianova. "Umi" means sea, a symbol of peace, freshness, and vitality.</p>
-                <p>Our modern structure, with attention to every detail, is designed to offer you maximum comfort, whether you are here for business or a relaxing holiday.</p>
+                <p>Umi B&B offers a unique experience in the heart of Giulianova. "Umi" means sea, symbol of peace and freshness.</p>
             </div>
             <div class="lang-content nl">
                 <h2>Welkom bij Umi</h2>
-                <p>Geboren uit passie voor gastvrijheid en ons land, biedt Umi B&B een unieke ervaring in het hart van Giulianova. "Umi" betekent zee, een symbool van rust, frisheid en vitaliteit.</p>
-                <p>Onze moderne structuur, met aandacht voor elk detail, is ontworpen om u maximaal comfort te bieden, of u nu hier bent voor zaken of een ontspannen vakantie.</p>
+                <p>Umi B&B biedt een unieke ervaring in het hart van Giulianova. "Umi" betekent zee, symbool van rust en frisheid.</p>
             </div>
         </div>
-        <img src="images/544029771.jpg" alt="Umi B&B Ambiente" class="intro-featured-img">
-    </section>
-
-    <section id="omgeving" class="section-card">
-        <div class="lang-content it active-content"><h3>Esplora i Dintorni</h3></div>
-        <div class="lang-content en"><h3>Explore Surroundings</h3></div>
-        <div class="lang-content nl"><h3>Ontdek de Omgeving</h3></div>
-        
-        <div class="grid-info">
-            <ul class="info-list">
-                <li><strong>Somersault</strong> <span class="dist-badge">1,2 km</span></li>
-                <li><strong>Parco degli Eucalipti</strong> <span class="dist-badge">1,8 km</span></li>
-                <li><strong>Anfiteatro Ennio Flaiano</strong> <span class="dist-badge">2,2 km</span></li>
-                <li><strong>Parchetto Savini</strong> <span class="dist-badge">3,9 km</span></li>
-            </ul>
-            <ul class="info-list">
-                <li><strong>Spiaggia Giulianova</strong> <span class="dist-badge">1,6 km</span></li>
-                <li><strong>Tortoreto Lido</strong> <span class="dist-badge">4,4 km</span></li>
-                <li><strong>Riserva Naturale Borsacchio</strong> <span class="dist-badge">8 km</span></li>
-                <li><strong>Stazione Giulianova</strong> <span class="dist-badge">1,3 km</span></li>
-                <li><strong>Aeroporto Abruzzo (PSR)</strong> <span class="dist-badge">52 km</span></li>
-            </ul>
-        </div>
-    </section>
-
-    <section id="regels" class="section-card">
-        <div class="lang-content it active-content"><h3>Regole della Casa</h3></div>
-        <div class="lang-content en"><h3>House Rules</h3></div>
-        <div class="lang-content nl"><h3>Huisregels</h3></div>
-        
-        <div class="grid-info">
-            <ul class="info-list">
-                <li>
-                    <span class="lang-content it active-content"><strong>Check-in</strong></span>
-                    <span class="lang-content en"><strong>Check-in</strong></span>
-                    <span class="lang-content nl"><strong>Inchecken</strong></span>
-                    <span>15:00 - 19:30</span>
-                </li>
-                <li>
-                    <span class="lang-content it active-content"><strong>Check-out</strong></span>
-                    <span class="lang-content en"><strong>Check-out</strong></span>
-                    <span class="lang-content nl"><strong>Uitchecken</strong></span>
-                    <span>10:00 - 10:30</span>
-                </li>
-            </ul>
-            <ul class="info-list">
-                <li>
-                    <span class="lang-content it active-content"><strong>Culla</strong> (0-3 anni, su richiesta)</span>
-                    <span class="lang-content en"><strong>Crib</strong> (0-3 yrs, on request)</span>
-                    <span class="lang-content nl"><strong>Babybedje</strong> (0-3 jr, op aanvraag)</span>
-                    <span class="dist-badge">€ 10 p.n.</span>
-                </li>
-                <li>
-                    <span class="lang-content it active-content"><strong>Letto Extra</strong> (4+ anni)</span>
-                    <span class="lang-content en"><strong>Extra Bed</strong> (4+ yrs)</span>
-                    <span class="lang-content nl"><strong>Extra Bed</strong> (4+ jr)</span>
-                    <span class="dist-badge">€ 20 p.n.</span>
-                </li>
-            </ul>
-        </div>
+        <img src="images/544029771.jpg" alt="Umi B&B" class="intro-featured-img">
     </section>
 
     <section id="faq" class="section-card">
         <h3>FAQ</h3>
-        
-        <div class="faq-grid lang-content it active-content">
-            <div class="faq-item"><span class="faq-q">1. Com'è la colazione?</span><span class="faq-a">I nostri ospiti danno un punteggio di 8.8 alla colazione. Opzioni: Italiana o À la carte.</span></div>
-            <div class="faq-item"><span class="faq-q">2. Quali attività sono disponibili?</span><span class="faq-a">Tennis, Hiking, Aerobica, Tiro con l'arco, Musica dal vivo, Cinema, Stand-up comedy, Gallerie d'arte.</span></div>
-            <div class="faq-item"><span class="faq-q">3. Che tipo di camera posso prenotare?</span><span class="faq-a">Offriamo confortevoli Camere Matrimoniali.</span></div>
-            <div class="faq-item"><span class="faq-q">4. Quali sono gli orari di check-in/out?</span><span class="faq-a">Check-in dalle 15:00, check-out fino alle 10:30.</span></div>
-            <div class="faq-item"><span class="faq-q">5. Quanto costa il soggiorno?</span><span class="faq-a">I prezzi variano in base alle date selezionate, alla tipologia di camera en alle condizioni dell'hotel.</span></div>
-            <div class="faq-item"><span class="faq-q">6. Quanto dista dal centro?</span><span class="faq-a">Umi B&B si trova a 1,1 km dal centro di Giulianova.</span></div>
-            <div class="faq-item"><span class="faq-q">7. Quanto dista dalla spiaggia?</span><span class="faq-a">La spiaggia più vicina dista solo 1,4 km.</span></div>
-        </div>
-
-        <div class="faq-grid lang-content en">
-            <div class="faq-item"><span class="faq-q">1. How is the breakfast?</span><span class="faq-a">Our guests give the breakfast a score of 8.8. Options: Italian or À la carte.</span></div>
-            <div class="faq-item"><span class="faq-q">2. What activities are available?</span><span class="faq-a">Tennis court, Hiking, Aerobics, Archery, Live music, Movie nights, Comedy, Art galleries.</span></div>
-            <div class="faq-item"><span class="faq-q">3. What room type can I book?</span><span class="faq-a">We offer comfortable Double Rooms.</span></div>
-            <div class="faq-item"><span class="faq-q">4. Check-in/out times?</span><span class="faq-a">Check-in from 3:00 PM, check-out until 10:30 AM.</span></div>
-            <div class="faq-item"><span class="faq-q">5. How much does a stay cost?</span><span class="faq-a">Prices vary based on selected dates, room type, and hotel conditions.</span></div>
-            <div class="faq-item"><span class="faq-q">6. Distance from the center?</span><span class="faq-a">Umi B&B is located 1.1 km from the center of Giulianova.</span></div>
-            <div class="faq-item"><span class="faq-q">7. Distance from the beach?</span><span class="faq-a">The nearest beach is just 1.4 km away.</span></div>
-        </div>
-
         <div class="faq-grid lang-content nl">
-            <div class="faq-item"><span class="faq-q">1. Wat voor ontbijt wordt er geserveerd?</span><span class="faq-a">Onze gasten geven het ontbijt een score van 8.8. Opties: Italiaans of À la carte.</span></div>
-            <div class="faq-item"><span class="faq-q">2. Welke activiteiten zijn er?</span><span class="faq-a">Tennisbaan, Wandelen, Aerobics, Boogschieten, Live muziek, Filmavonden, Comedy, Kunstgaleries.</span></div>
-            <div class="faq-item"><span class="faq-q">3. Welke kamers kan ik boeken?</span><span class="faq-a">Wij bieden comfortabele Tweepersoonskamers aan.</span></div>
-            <div class="faq-item"><span class="faq-q">4. In- en uitchecktijden?</span><span class="faq-a">Inchecken vanaf 15:00, uitchecken tot 10:30.</span></div>
-            <div class="faq-item"><span class="faq-q">5. Wat kost een verblijf?</span><span class="faq-a">Prijzen variëren op basis van geselecteerde data, kamertype en hotelvoorwaarden.</span></div>
-            <div class="faq-item"><span class="faq-q">6. Afstand tot het centrum?</span><span class="faq-a">Umi B&B ligt op 1,1 km van het centrum van Giulianova.</span></div>
-            <div class="faq-item"><span class="faq-q">7. Afstand tot het strand?</span><span class="faq-a">Het dichtstbijzijnde strand ligt op slechts 1,4 km afstand.</span></div>
+            <div class="faq-item"><span class="faq-q">1. Ontbijt?</span><span class="faq-a">Onze gasten geven het ontbijt een 8.8. Italiaans of À la carte.</span></div>
+            <div class="faq-item"><span class="faq-q">2. Activiteiten?</span><span class="faq-a">Tennis, Wandelen, Boogschieten, Live muziek, Filmavonden, Kunst.</span></div>
+            <div class="faq-item"><span class="faq-q">3. Kamers?</span><span class="faq-a">Wij bieden comfortabele Tweepersoonskamers.</span></div>
+            <div class="faq-item"><span class="faq-q">4. Tijden?</span><span class="faq-a">Inchecken vanaf 15:00, uitchecken tot 10:30.</span></div>
+            <div class="faq-item"><span class="faq-q">5. Prijs?</span><span class="faq-a">Prijzen variëren per datum en kamertype.</span></div>
+            <div class="faq-item"><span class="faq-q">6. Centrum?</span><span class="faq-a">Het B&B ligt op 1,1 km van het centrum van Giulianova.</span></div>
+            <div class="faq-item"><span class="faq-q">7. Strand?</span><span class="faq-a">Het strand ligt op slechts 1,4 km afstand.</span></div>
         </div>
-    </section>
+        </section>
 
     <section id="galerij" class="section-card">
-        <div class="lang-content it active-content"><h3>Galleria</h3></div>
-        <div class="lang-content en"><h3>Gallery</h3></div>
-        <div class="lang-content nl"><h3>Galerij</h3></div>
+        <h3>Galleria</h3>
         <div class="gallery-grid">
             <script>
-                const imgs = ["543547600.jpg", "543547616.jpg", "543547620.jpg", "543547683.jpg", "543547709.jpg", "543547722.jpg", "543547738.jpg", "543547766.jpg", "543547787.jpg", "54354728.jpg", "543547858.jpg", "543547881.jpg", "543547959.jpg", "543548062.jpg", "543548069.jpg", "543548104.jpg", "543548123.jpg", "543548127.jpg", "544029771.jpg", "559942633.jpg", "561993086.jpg", "561993189.jpg", "562295020.jpg", "562295445.jpg", "671618758.jpg", "676738978.jpg", "676739022.jpg", "676739484.jpg", "676740204.jpg", "676740329.jpg", "676740443.jpg", "676740544.jpg", "676740710.jpg", "676740990.jpg", "676741112.jpg", "676741164.jpg", "676741228.jpg", "676741517.jpg", "676741598.jpg", "676741673.jpg", "676741772.jpg", "676741916.jpg", "676742125.jpg", "676742323.jpg", "686495701.jpg", "686495878.jpg", "686496190.jpg", "686496842.jpg", "818741094.jpg", "832992649.jpg"];
-                imgs.forEach(i => document.write(`<img src="images/${i}" onclick="document.getElementById('imgFull').src=this.src; document.getElementById('imageModal').style.display='flex'" alt="Umi B&B Gallery Image">`));
+                // Gecorrigeerde lijst: 543547828 hersteld
+                const imgs = ["543547600.jpg", "543547616.jpg", "543547620.jpg", "543547683.jpg", "543547709.jpg", "543547722.jpg", "543547738.jpg", "543547766.jpg", "543547787.jpg", "543547828.jpg", "543547858.jpg", "543547881.jpg", "543547959.jpg", "543548062.jpg", "543548069.jpg", "543548104.jpg", "543548123.jpg", "543548127.jpg", "544029771.jpg", "559942633.jpg", "561993086.jpg", "561993189.jpg", "562295020.jpg", "562295445.jpg", "671618758.jpg", "676738978.jpg", "676739022.jpg", "676739484.jpg", "676740204.jpg", "676740329.jpg", "676740443.jpg", "676740544.jpg", "676740710.jpg", "676740990.jpg", "676741112.jpg", "676741164.jpg", "676741228.jpg", "676741517.jpg", "676741598.jpg", "676741673.jpg", "676741772.jpg", "676741916.jpg", "676742125.jpg", "676742323.jpg", "686495701.jpg", "686495878.jpg", "686496190.jpg", "686496842.jpg", "818741094.jpg", "832992649.jpg"];
+                imgs.forEach(i => document.write(`<img src="images/${i}" onclick="document.getElementById('imgFull').src=this.src; document.getElementById('imageModal').style.display='flex'">`));
             </script>
         </div>
-    </section>
-
-    <section id="contact" class="section-card contact-section" style="text-align: center;">
-        <div class="lang-content it active-content"><h3>Contatti</h3></div>
-        <div class="lang-content en"><h3>Contact</h3></div>
-        <div class="lang-content nl"><h3>Contact</h3></div>
-        <p>📍 Via Cupa, Giulianova (TE), Italy</p>
-        <p>✉️ info@umibnb.it | 📞 +39 347 123 4567</p>
     </section>
 
 </div>
 
 <footer>
     <h2>UMI B&B</h2>
-    <p>Giulianova, Abruzzo, Italy</p>
-    <p style="opacity: 0.5; font-size: 0.8rem; margin-top: 20px;">&copy; 2026 Umi B&B. Designed for comfort.</p>
+    <p>&copy; 2026 Umi B&B Giulianova</p>
 </footer>
 
 </body>
 </html>
+                <p>Umi B&B offre un'esperienza unica nel cuore di Giulianova. "Umi" significa mare, simbolo di pace e freschezza.</p>
+            </div>
+            <div class="lang-content en">
+                <h2>Welcome to Umi</h2>
+                <p>Umi B&B offers a unique experience in the heart of Giulianova. "Umi" means sea, symbol of peace and freshness.</p>
+            </div>
+            <div class="lang-content nl">
+                <h2>Welkom bij Umi</h2>
+                <p>Umi B&B biedt een unieke ervaring in het hart van Giulianova. "Umi" betekent zee, symbool van rust en frisheid.</p>
+            </div>
+        </div>
+        <img src="images/544029771.jpg" alt="Umi B&B" class="intro-featured-img">
+    </section>
+
+    <section id="faq" class="section-card">
+        <h3>FAQ</h3>
+        <div class="faq-grid lang-content nl">
+            <div class="faq-item"><span class="faq-q">1. Ontbijt?</span><span class="faq-a">Onze gasten geven het ontbijt een 8.8. Italiaans of À la carte.</span></div>
+            <div class="faq-item"><span class="faq-q">2. Activiteiten?</span><span class="faq-a">Tennis, Wandelen, Boogschieten, Live muziek, Filmavonden, Kunst.</span></div>
+            <div class="faq-item"><span class="faq-q">3. Kamers?</span><span class="faq-a">Wij bieden comfortabele Tweepersoonskamers.</span></div>
+            <div class="faq-item"><span class="faq-q">4. Tijden?</span><span class="faq-a">Inchecken vanaf 15:00, uitchecken tot 10:30.</span></div>
+            <div class="faq-item"><span class="faq-q">5. Prijs?</span><span class="faq-a">Prijzen variëren per datum en kamertype.</span></div>
+            <div class="faq-item"><span class="faq-q">6. Centrum?</span><span class="faq-a">Het B&B ligt op 1,1 km van het centrum van Giulianova.</span></div>
+            <div class="faq-item"><span class="faq-q">7. Strand?</span><span class="faq-a">Het strand ligt op slechts 1,4 km afstand.</span></div>
+        </div>
+        </section>
+
+    <section id="galerij" class="section-card">
+        <h3>Galleria</h3>
+        <div class="gallery-grid">
+            <script>
+                // Gecorrigeerde lijst: 543547828 hersteld
+                const imgs = ["543547600.jpg", "543547616.jpg", "543547620.jpg", "543547683.jpg", "543547709.jpg", "543547722.jpg", "543547738.jpg", "543547766.jpg", "543547787.jpg", "543547828.jpg", "543547858.jpg", "543547881.jpg", "543547959.jpg", "543548062.jpg", "543548069.jpg", "543548104.jpg", "543548123.jpg", "543548127.jpg", "544029771.jpg", "559942633.jpg", "561993086.jpg", "561993189.jpg", "562295020.jpg", "562295445.jpg", "671618758.jpg", "676738978.jpg", "676739022.jpg", "676739484.jpg", "676740204.jpg", "676740329.jpg", "676740443.jpg", "676740544.jpg",
