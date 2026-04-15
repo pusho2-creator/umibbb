@@ -126,8 +126,8 @@
 
         /* FAQ */
         .faq-grid { display: grid; gap: 15px; }
-        .faq-item { background: #fafafa; border-radius: 12px; padding: 20px; }
-        .faq-q { font-weight: 700; color: var(--accent); display: block; margin-bottom: 10px; }
+        .faq-item { background: #fafafa; border-radius: 12px; padding: 20px; border-left: 4px solid var(--accent); }
+        .faq-q { font-weight: 700; color: var(--accent); display: block; margin-bottom: 8px; }
 
         /* Gallery */
         .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
@@ -142,6 +142,7 @@
         @media (max-width: 768px) {
             .umi-split { grid-template-columns: 1fr; }
             .umi-image { order: -1; margin-bottom: 20px; }
+            .hero h1 { font-size: 2.5rem; }
         }
     </style>
     <script>
@@ -165,10 +166,10 @@
 
 <nav>
     <a href="#home">Home</a>
-    <a href="#omgeving">Dintorni</a>
+    <a href="#omgeving">Info</a>
     <a href="#faq">FAQ</a>
-    <a href="#galerij">Galleria</a>
-    <a href="#contact">Contatti</a>
+    <a href="#galerij">Gallery</a>
+    <a href="#contact">Contact</a>
 </nav>
 
 <section class="hero" id="home">
@@ -189,7 +190,7 @@
                     <div class="desc-text">
                         Situato a 19 minuti a piedi dalla Spiaggia di Giulianova, l'Umi B&B offre un giardino, sistemazioni con patio e la connessione WiFi gratuita.<br><br>
                         Le unità sono dotate di terrazza, aria condizionata, TV a schermo piatto e bagno privato con bidet e set di cortesia. La struttura può fornire asciugamani e biancheria da letto a un costo aggiuntivo.<br><br>
-                        Il B&B dista 23 km dallo Stadio Riviera delle Palme en 25 km dalla stazione ferroviaria di San Benedetto del Tronto. L'Aeroporto d'Abruzzo si trova a 52 km.
+                        Il B&B dista 23 km dallo Stadio Riviera delle Palme e 25 km dalla stazione ferroviaria di San Benedetto del Tronto. L'Aeroporto d'Abruzzo si trova a 52 km.
                     </div>
                 </div>
 
@@ -219,40 +220,37 @@
         </div>
     </section>
 
-    <section id="omgeving" class="section-card">
-        <h2 class="lang-content it active-content">Dintorni</h2>
-        <h2 class="lang-content en">Surroundings</h2>
-        <h2 class="lang-content nl">De Omgeving</h2>
-        <div class="grid-info">
-            <ul class="info-list">
-                <li>Somersault <span class="dist-badge">1,2 km</span></li>
-                <li>Parco degli Eucalipti <span class="dist-badge">1,8 km</span></li>
-                <li>Spiaggia Giulianova <span class="dist-badge">1,6 km</span></li>
-            </ul>
-            <ul class="info-list">
-                <li>Riserva del Borsacchio <span class="dist-badge">8 km</span></li>
-                <li>Stazione Giulianova <span class="dist-badge">1,3 km</span></li>
-                <li>Aeroporto Abruzzo <span class="dist-badge">52 km</span></li>
-            </ul>
-        </div>
-    </section>
-
     <section id="faq" class="section-card">
         <h2>FAQ</h2>
-        <div class="faq-grid lang-content nl">
-            <div class="faq-item"><span class="faq-q">1. Ontbijt?</span>Score 8.8. Italiaans of À la carte.</div>
-            <div class="faq-item"><span class="faq-q">2. Activiteiten?</span>Tennis, Wandelen, Live muziek, Filmavonden.</div>
-            <div class="faq-item"><span class="faq-q">3. Kamers?</span>Tweepersoonskamer.</div>
-        </div>
+        
         <div class="faq-grid lang-content it active-content">
-            <div class="faq-item"><span class="faq-q">1. Colazione?</span>Punteggio 8.8. Italiana o À la carte.</div>
-            <div class="faq-item"><span class="faq-q">2. Attività?</span>Tennis, Escursioni, Musica dal vivo, Cinema.</div>
-            <div class="faq-item"><span class="faq-q">3. Camere?</span>Camera Matrimoniale.</div>
+            <div class="faq-item"><span class="faq-q">1. Com'è la colazione?</span>Punteggio 8.8. Opzioni: Italiana o À la carte.</div>
+            <div class="faq-item"><span class="faq-q">2. Quali attività sono disponibili?</span>Tennis, Hiking, Aerobica, Tiro con l'arco, Musica dal vivo, Cinema, Stand-up comedy, Gallerie d'arte.</div>
+            <div class="faq-item"><span class="faq-q">3. Che tipo di camera posso prenotare?</span>Camera Matrimoniale.</div>
+            <div class="faq-item"><span class="faq-q">4. Orari di check-in/out?</span>Check-in dalle 15:00, check-out fino alle 10:30.</div>
+            <div class="faq-item"><span class="faq-q">5. Quanto costa il soggiorno?</span>I prezzi variano in base alle date e alla camera scelta.</div>
+            <div class="faq-item"><span class="faq-q">6. Quanto dista dal centro?</span>Siamo a 1,1 km dal centro di Giulianova.</div>
+            <div class="faq-item"><span class="faq-q">7. Quanto dista dalla spiaggia?</span>La spiaggia si trova a soli 1,4 km.</div>
         </div>
+
         <div class="faq-grid lang-content en">
-            <div class="faq-item"><span class="faq-q">1. Breakfast?</span>Score 8.8. Italian or À la carte.</div>
-            <div class="faq-item"><span class="faq-q">2. Activities?</span>Tennis, Hiking, Live music, Movie nights.</div>
-            <div class="faq-item"><span class="faq-q">3. Rooms?</span>Double Room.</div>
+            <div class="faq-item"><span class="faq-q">1. How is the breakfast?</span>Score 8.8. Options: Italian or À la carte.</div>
+            <div class="faq-item"><span class="faq-q">2. What activities are available?</span>Tennis, Hiking, Aerobics, Archery, Live music, Movie nights, Comedy, Art galleries.</div>
+            <div class="faq-item"><span class="faq-q">3. What room type can I book?</span>Double Room.</div>
+            <div class="faq-item"><span class="faq-q">4. Check-in/out times?</span>In from 3:00 PM, out until 10:30 AM.</div>
+            <div class="faq-item"><span class="faq-q">5. How much does a stay cost?</span>Prices depend on dates and room type.</div>
+            <div class="faq-item"><span class="faq-q">6. Distance from the center?</span>We are 1.1 km from Giulianova center.</div>
+            <div class="faq-item"><span class="faq-q">7. Distance from the beach?</span>The beach is just 1.4 km away.</div>
+        </div>
+
+        <div class="faq-grid lang-content nl">
+            <div class="faq-item"><span class="faq-q">1. Wat voor ontbijt wordt er geserveerd?</span>Score 8.8. Opties: Italiaans of À la carte.</div>
+            <div class="faq-item"><span class="faq-q">2. Welke activiteiten zijn er te doen?</span>Tennisbaan, Wandelen, Aerobics, Boogschieten, Live muziek, Filmavonden, Comedy, Kunstgaleries.</div>
+            <div class="faq-item"><span class="faq-q">3. Welke kamers kan ik boeken?</span>Wij bieden comfortabele Tweepersoonskamers aan.</div>
+            <div class="faq-item"><span class="faq-q">4. Wat zijn de in- en uitchecktijden?</span>Inchecken vanaf 15:00, uitchecken tot 10:30.</div>
+            <div class="faq-item"><span class="faq-q">5. Wat kost een verblijf?</span>Prijzen variëren op basis van geselecteerde data, kamertype en hotelvoorwaarden.</div>
+            <div class="faq-item"><span class="faq-q">6. Hoe ver ligt het van het centrum?</span>Umi B&B ligt op 1,1 km van het centrum van Giulianova.</div>
+            <div class="faq-item"><span class="faq-q">7. Hoe ver ligt het van het strand?</span>Het dichtstbijzijnde strand ligt op slechts 1,4 km afstand.</div>
         </div>
     </section>
 
