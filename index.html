@@ -106,9 +106,48 @@
             object-fit: cover;
             border-radius: 10px;
             transition: 0.3s;
+            cursor: pointer; /* Показва, че може да се клика */
         }
 
-        .gallery img:hover { transform: translateY(-5px); }
+        .gallery img:hover { transform: translateY(-5px); filter: brightness(0.9); }
+
+        /* Image Modal (Оригинален размер) */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            padding-top: 50px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            cursor: zoom-out;
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 85vh;
+            border-radius: 5px;
+            animation: zoom 0.3s;
+        }
+
+        @keyframes zoom {
+            from {transform:scale(0)} 
+            to {transform:scale(1)}
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
 
         .cta-container { text-align: center; margin-top: 50px; }
         .cta-button {
@@ -131,6 +170,11 @@
     </style>
 </head>
 <body>
+
+<div id="imageModal" class="modal" onclick="this.style.display='none'">
+    <span class="close-modal">&times;</span>
+    <img class="modal-content" id="imgFull">
+</div>
 
 <nav>
     <a href="#about">About</a>
@@ -170,98 +214,30 @@
     </div>
 
     <h2 id="gallery" style="text-align: center; margin-top: 50px;">Gallery</h2>
-<div class="gallery">
-    <img src="images/543547600.jpg" loading="lazy">
-    <img src="images/543547616.jpg" loading="lazy">
-    <img src="images/543547620.jpg" loading="lazy">
-    <img src="images/543547683.jpg" loading="lazy">
-    <img src="images/543547709.jpg" loading="lazy">
-    <img src="images/543547722.jpg" loading="lazy">
-    <img src="images/543547738.jpg" loading="lazy">
-    <img src="images/543547766.jpg" loading="lazy">
-    <img src="images/543547787.jpg" loading="lazy">
-    <img src="images/543547828.jpg" loading="lazy">
-    <img src="images/543547858.jpg" loading="lazy">
-    <img src="images/543547881.jpg" loading="lazy">
-    <img src="images/543547959.jpg" loading="lazy">
-    <img src="images/543548062.jpg" loading="lazy">
-    <img src="images/543548069.jpg" loading="lazy">
-    <img src="images/543548104.jpg" loading="lazy">
-    <img src="images/543548123.jpg" loading="lazy">
-    <img src="images/543548127.jpg" loading="lazy">
-    <img src="images/544029771.jpg" loading="lazy">
-    <img src="images/559942633.jpg" loading="lazy">
-    <img src="images/561993086.jpg" loading="lazy">
-    <img src="images/561993189.jpg" loading="lazy">
-    <img src="images/562295020.jpg" loading="lazy">
-    <img src="images/562295445.jpg" loading="lazy">
-    <img src="images/671618758.jpg" loading="lazy">
-    <img src="images/676738978.jpg" loading="lazy">
-    <img src="images/676739022.jpg" loading="lazy">
-    <img src="images/676739484.jpg" loading="lazy">
-    <img src="images/676740204.jpg" loading="lazy">
-    <img src="images/676740329.jpg" loading="lazy">
-    <img src="images/676740443.jpg" loading="lazy">
-    <img src="images/676740544.jpg" loading="lazy">
-    <img src="images/676740710.jpg" loading="lazy">
-    <img src="images/676740990.jpg" loading="lazy">
-    <img src="images/676741112.jpg" loading="lazy">
-    <img src="images/676741164.jpg" loading="lazy">
-    <img src="images/676741228.jpg" loading="lazy">
-    <img src="images/676741517.jpg" loading="lazy">
-    <img src="images/676741598.jpg" loading="lazy">
-    <img src="images/676741673.jpg" loading="lazy">
-    <img src="images/676741772.jpg" loading="lazy">
-    <img src="images/676741916.jpg" loading="lazy">
-    <img src="images/676742125.jpg" loading="lazy">
-    <img src="images/676742323.jpg" loading="lazy">
-    <img src="images/686495701.jpg" loading="lazy">
-    <img src="images/686495878.jpg" loading="lazy">
-    <img src="images/686496190.jpg" loading="lazy">
-    <img src="images/686496842.jpg" loading="lazy">
-    <img src="images/818741094.jpg" loading="lazy">
-    <img src="images/832992649.jpg" loading="lazy">
-</div>
-
-    <div id="facilities" class="content-box" style="margin-top: 40px;">
-        <h3>Main Facilities</h3>
-        <ul style="columns: 2;">
-            <li>✅ Free Parking</li>
-            <li>✅ Free WiFi</li>
-            <li>✅ Air Conditioning</li>
-            <li>✅ Family Rooms</li>
-            <li>✅ Coffee/Tea Maker</li>
-            <li>✅ Private Garden</li>
-        </ul>
-    </div>
-
-    <div id="contact" class="cta-container">
-        <p>We speak <strong>Bulgarian, English and Italian!</strong></p>
-        <a href="mailto:info@umibnb.it" class="cta-button">BOOK NOW</a>
-    </div>
-</div>
-
-<footer>
-    <p>Umi B&B | Roelof van Schevenstraat 16 (Representative Office)</p>
-    <p>Giulianova, Italy</p>
-    <p>&copy; 2026 Umi B&B - All Rights Reserved</p>
-</footer>
-
-<script>
-    function showLang(langId) {
-        // Hide all content
-        const contents = document.querySelectorAll('.lang-content');
-        contents.forEach(content => content.classList.remove('active'));
-        
-        // Show selected content
-        document.getElementById(langId).classList.add('active');
-        
-        // Update buttons
-        const buttons = document.querySelectorAll('.lang-btn');
-        buttons.forEach(btn => btn.classList.remove('active'));
-        event.currentTarget.classList.add('active');
-    }
-</script>
-
-</body>
-</html>
+    <p style="text-align: center; color: #666; font-size: 0.9rem;">(Click on any image to enlarge)</p>
+    
+    <div class="gallery">
+        <img src="images/543547600.jpg" loading="lazy" onclick="openFullImg(this.src)">
+        <img src="images/543547616.jpg" loading="lazy" onclick="openFullImg(this.src)">
+        <img src="images/543547620.jpg" loading="lazy" onclick="openFullImg(this.src)">
+        <img src="images/543547683.jpg" loading="lazy" onclick="openFullImg(this.src)">
+        <img src="images/543547709.jpg" loading="lazy" onclick="openFullImg(this.src)">
+        <img src="images/543547722.jpg" loading="lazy" onclick="openFullImg(this.src)">
+        <img src="images/543547738.jpg" loading="lazy" onclick="openFullImg(this.src)">
+        <img src="images/543547766.jpg" loading="lazy" onclick="openFullImg(this.src)">
+        <img src="images/543547787.jpg" loading="lazy" onclick="openFullImg(this.src)">
+        <img src="images/543547828.jpg" loading="lazy" onclick="openFullImg(this.src)">
+        <img src="images/543547858.jpg" loading="lazy" onclick="openFullImg(this.src)">
+        <img src="images/543547881.jpg" loading="lazy" onclick="openFullImg(this.src)">
+        <img src="images/543547959.jpg" loading="lazy" onclick="openFullImg(this.src)">
+        <img src="images/543548062.jpg" loading="lazy" onclick="openFullImg(this.src)">
+        <img src="images/543548069.jpg" loading="lazy" onclick="openFullImg(this.src)">
+        <img src="images/543548104.jpg" loading="lazy" onclick="openFullImg(this.src)">
+        <img src="images/543548123.jpg" loading="lazy" onclick="openFullImg(this.src)">
+        <img src="images/543548127.jpg" loading="lazy" onclick="openFullImg(this.src)">
+        <img src="images/544029771.jpg" loading="lazy" onclick="openFullImg(this.src)">
+        <img src="images/559942633.jpg" loading="lazy" onclick="openFullImg(this.src)">
+        <img src="images/561993086.jpg" loading="lazy" onclick="openFullImg(this.src)">
+        <img src="images/561993189.jpg" loading="lazy" onclick="openFullImg(this.src)">
+        <img src="images/562295020.jpg" loading="lazy" onclick="openFullImg(this.src)">
+        <img src="images/562295
