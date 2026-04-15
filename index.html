@@ -33,8 +33,8 @@
         nav a { color: white; text-decoration: none; font-weight: bold; margin: 0 15px; text-transform: uppercase; font-size: 0.85rem; }
         
         .hero { 
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/header1.jpg'); 
-            background-size: cover; background-position: center; height: 350px; 
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/671618758.jpg'); 
+            background-size: cover; background-position: center; height: 300px; 
             display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center;
         }
 
@@ -46,11 +46,11 @@
         .content-box { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-bottom: 30px; }
         .lang-content { display: none; }
 
-        .faq-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .faq-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 20px; }
         .faq-card { background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; }
         .faq-card h3 { margin-top: 0; color: var(--primary); font-size: 1.1rem; border-bottom: 1px solid #eee; padding-bottom: 10px; }
-        .faq-card ul { padding-left: 20px; margin-bottom: 0; }
-
+        .faq-card ul { padding-left: 20px; margin: 10px 0; }
+        
         .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 10px; margin-top: 20px; }
         .gallery img { width: 100%; height: 160px; object-fit: cover; border-radius: 8px; cursor: pointer; transition: 0.3s; }
         .gallery img:hover { transform: scale(1.03); }
@@ -59,6 +59,7 @@
         .modal-content { max-width: 90%; max-height: 85vh; border: 2px solid white; }
 
         footer { background: #222; color: white; text-align: center; padding: 30px; margin-top: 50px; }
+        @media (max-width: 600px) { .faq-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
@@ -69,12 +70,12 @@
 
 <nav>
     <a href="#faq">FAQ</a>
-    <a href="#gallery">Galerij</a>
+    <a href="#gallery">Галерия</a>
 </nav>
 
 <section class="hero">
     <h1>UMI B&B</h1>
-    <p>Giulianova, Abruzzo, Italië</p>
+    <p>Giulianova, Italy</p>
 </section>
 
 <div class="container">
@@ -90,24 +91,39 @@
             <h2>Veelgestelde Vragen over Umi B&B</h2>
             <div class="faq-grid">
                 <div class="faq-card">
-                    <h3>Wat voor ontbijt is er?</h3>
-                    <p>Gasten genieten van een ontbijt met een score van 8,8. Opties:</p>
+                    <h3>Wat voor ontbijt is er bij Umi B&B?</h3>
+                    <p>Gasten van Umi B&B kunnen tijdens hun verblijf genieten van een hoog beoordeeld ontbijt (gastbeoordelingsscore: 8,8).</p>
+                    <p>Dit zijn de ontbijtopties:</p>
                     <ul><li>Italiaans</li><li>À la carte</li></ul>
                 </div>
                 <div class="faq-card">
-                    <h3>Wat is er te doen?</h3>
+                    <h3>Wat is er te doen bij Umi B&B?</h3>
+                    <p>Umi B&B biedt de volgende activiteiten/services (mogelijk tegen een toeslag):</p>
                     <ul>
-                        <li>Hiking, Bowlen, Tennis</li>
+                        <li>Hiking | Bowlen | Tennisbaan</li>
                         <li>Diners met een thema</li>
-                        <li>Live sportevenementen</li>
-                        <li>Stand-up comedy, Aerobics</li>
-                        <li>Livemuziek, Filmavonden</li>
+                        <li>Live sportevenementen (uitzendingen)</li>
+                        <li>Stand-up comedy | Aerobics</li>
+                        <li>Livemuziek/optreden</li>
+                        <li>Tijdelijke kunstgaleries | Filmavonden</li>
                     </ul>
                 </div>
                 <div class="faq-card">
-                    <h3>Tijden & Locatie</h3>
-                    <p>Inchecken: 15:00 | Uitchecken: 10:30</p>
-                    <p>Centrum: 1,1 km | Strand: 1,4 km</p>
+                    <h3>Welk kamertype kan ik bij Umi B&B boeken?</h3>
+                    <p>Dit zijn de kameropties bij Umi B&B: <strong>Tweepersoons</strong></p>
+                </div>
+                <div class="faq-card">
+                    <h3>Wat zijn de in- en uitchecktijden bij Umi B&B?</h3>
+                    <p>Inchecken bij Umi B&B is mogelijk vanaf 15:00. Uitchecken is mogelijk tot 10:30.</p>
+                </div>
+                <div class="faq-card">
+                    <h3>Hoeveel kost het om bij Umi B&B te verblijven?</h3>
+                    <p>De prijzen bij Umi B&B kunnen afhankelijk zijn van je verblijf (bijv. data die je selecteert, hotelvoorwaarden enz.).</p>
+                </div>
+                <div class="faq-card">
+                    <h3>Afstanden</h3>
+                    <p><strong>Centrum:</strong> Umi B&B ligt op 1,1 km van het centrum van Giulianova.</p>
+                    <p><strong>Strand:</strong> Het dichtstbijzijnde strand ligt op maar 1,4 km van Umi B&B.</p>
                 </div>
             </div>
         </div>
@@ -116,23 +132,27 @@
             <h2>Domande Frequenti su Umi B&B</h2>
             <div class="faq-grid">
                 <div class="faq-card">
-                    <h3>Che colazione è disponibile?</h3>
-                    <p>Gli ospiti apprezzano molto la colazione (punteggio 8,8). Opzioni:</p>
+                    <h3>Che tipo di colazione è disponibile?</h3>
+                    <p>Gli ospiti possono godere di una colazione molto apprezzata (punteggio: 8,8).</p>
                     <ul><li>Italiana</li><li>À la carte</li></ul>
                 </div>
                 <div class="faq-card">
-                    <h3>Quali attività offrite?</h3>
+                    <h3>Quali attività sono disponibili?</h3>
                     <ul>
-                        <li>Escursionismo, Bowling, Tennis</li>
-                        <li>Cene a tema, Sport dal vivo</li>
-                        <li>Stand-up comedy, Aerobica</li>
-                        <li>Musica dal vivo, Serate cinema</li>
+                        <li>Escursionismo | Bowling | Tennis</li>
+                        <li>Cene a tema | Sport dal vivo</li>
+                        <li>Stand-up comedy | Aerobica</li>
+                        <li>Musica dal vivo | Cinema</li>
                     </ul>
                 </div>
                 <div class="faq-card">
-                    <h3>Orari e Posizione</h3>
-                    <p>Check-in: 15:00 | Check-out: 10:30</p>
-                    <p>Centro: 1,1 km | Spiaggia: 1,4 km</p>
+                    <h3>Orari e Prezzi</h3>
+                    <p>Check-in: dalle 15:00. Check-out: entro le 10:30.</p>
+                    <p>I prezzi variano in base alle date e alle condizioni della prenotazione.</p>
+                </div>
+                <div class="faq-card">
+                    <h3>Posizione</h3>
+                    <p>Distanza dal centro: 1,1 km. Distanza dalla spiaggia: 1,4 km.</p>
                 </div>
             </div>
         </div>
@@ -141,29 +161,29 @@
             <h2>Frequently Asked Questions</h2>
             <div class="faq-grid">
                 <div class="faq-card">
-                    <h3>What kind of breakfast is served?</h3>
-                    <p>Guests enjoy a high-rated breakfast (score 8.8). Options:</p>
+                    <h3>What breakfast options are available?</h3>
+                    <p>Guests can enjoy a top-rated breakfast (score: 8.8). Options include:</p>
                     <ul><li>Italian</li><li>À la carte</li></ul>
                 </div>
                 <div class="faq-card">
-                    <h3>What activities are available?</h3>
+                    <h3>What activities can I do?</h3>
                     <ul>
-                        <li>Hiking, Bowling, Tennis</li>
-                        <li>Themed dinners, Live sports</li>
-                        <li>Stand-up comedy, Aerobics</li>
-                        <li>Live music, Movie nights</li>
+                        <li>Hiking | Bowling | Tennis</li>
+                        <li>Themed dinners | Live sports</li>
+                        <li>Stand-up comedy | Aerobics</li>
+                        <li>Live music | Movie nights</li>
                     </ul>
                 </div>
                 <div class="faq-card">
-                    <h3>Times & Distance</h3>
-                    <p>Check-in: 3:00 PM | Check-out: 10:30 AM</p>
-                    <p>Center: 1.1 km | Beach: 1.4 km</p>
+                    <h3>Check-in/out & Distance</h3>
+                    <p>Check-in: from 15:00. Check-out: until 10:30.</p>
+                    <p>Center: 1.1 km away. Beach: 1.4 km away.</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <h2 id="gallery" style="text-align: center;">Galerij</h2>
+    <h2 id="gallery" style="text-align: center;">Галерия (50 снимки)</h2>
     <div class="gallery">
         <script>
             const images = [
@@ -179,7 +199,7 @@
                 "686495878.jpg", "686496190.jpg", "686496842.jpg", "818741094.jpg", "832992649.jpg"
             ];
             images.forEach(img => {
-                document.write(`<img src="images/${img}" onclick="openFullImg(this)" loading="lazy" alt="Umi B&B Photo">`);
+                document.write(`<img src="images/${img}" onclick="openFullImg(this)" loading="lazy">`);
             });
         </script>
     </div>
