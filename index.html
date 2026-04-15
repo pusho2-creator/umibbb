@@ -1,164 +1,99 @@
-Faciliteiten in Umi B&B
-Geweldige faciliteiten - score 8,9
-Bekijk beschikbaarheid
-Populairste faciliteiten
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Umi B&B - Giulianova, Italië</title>
+    <style>
+        :root { --primary: #003580; --accent: #e67e22; --light: #fdfdfd; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; color: #333; background: #f0f3f5; }
+        
+        /* Navigation */
+        nav { background: white; padding: 15px; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 5px rgba(0,0,0,0.1); text-align: center; }
+        nav a { margin: 0 15px; text-decoration: none; color: var(--primary); font-weight: bold; }
 
-    Gratis parkeergelegenheid
-    Gratis WiFi
-    Rookvrije kamers
-    Familiekamers
-    Thee/koffiefaciliteiten in de kamer
-    Ontbijt 
+        /* Hero Image */
+        .hero { 
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('561993086.jpg'); 
+            background-size: cover; background-position: center;
+            height: 60vh; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center;
+        }
 
-Ideaal voor je verblijf
+        .container { max-width: 1100px; margin: auto; padding: 20px; }
+        
+        /* Gallery Grid */
+        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-top: 30px; }
+        .gallery img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; transition: 0.3s; cursor: pointer; }
+        .gallery img:hover { transform: scale(1.03); }
 
-    Parkeren
-    Eigen badkamer
-    Gratis parkeergelegenheid
-    Airconditioning
-    Gratis WiFi
-    Familiekamers
-    Rookvrije kamers
-    Flatscreen-tv
-    Terras
-    Uitzicht 
+        .info-card { background: white; padding: 30px; border-radius: 12px; margin-bottom: 30px; border-left: 8px solid var(--primary); }
+        .btn-book { background: #27ae60; color: white; padding: 15px 40px; text-decoration: none; border-radius: 30px; font-size: 1.2rem; display: inline-block; }
+        
+        footer { background: var(--primary); color: white; text-align: center; padding: 40px; margin-top: 50px; }
+    </style>
+</head>
+<body>
 
-Badkamer
+<nav>
+    <a href="#about">Over Ons</a>
+    <a href="#gallery">Foto's</a>
+    <a href="#facilities">Faciliteiten</a>
+    <a href="#contact">Contact</a>
+</nav>
 
-    Toiletpapier
-    Handdoeken
-    Bidet
-    Handdoeken/lakens (toeslag)
-    Extra wc
-    Bad of douche
-    Eigen badkamer
-    Wc
-    Gratis toiletartikelen
-    Föhn
-    Douche 
+<section class="hero">
+    <h1 style="font-size: 3.5rem; margin: 0;">UMI B&B</h1>
+    <p style="font-size: 1.5rem;">Giulianova, Italië - Score 8,9 ★</p>
+</section>
 
-Slaapkamer
+<div class="container">
+    <section id="about" class="info-card">
+        <h2>Welkom bij Umi B&B</h2>
+        <p>Geniet van een onvergetelijk verblijf in onze B&B op slechts <strong>19 minuten lopen от Spiaggia Giulianova</strong>. Wij bieden moderne kamers met airconditioning, flatscreen-tv en een eigen patio.</p>
+        <p>Onze gasten waarderen de locatie met een <strong>8,2</strong> и de uitstekende faciliteiten met een <strong>8,9</strong>!</p>
+    </section>
 
-    Beddengoed
-    (Kleding)kast
-    Wekker 
+    <h2 id="gallery">Onze Kamers & Tuin</h2>
+    <div class="gallery">
+        <img src="671618758.jpg" alt="Kamer met hemelbed">
+        <img src="543547959.jpg" alt="Bureau en interieur">
+        <img src="676742323.jpg" alt="Keuken faciliteiten">
+        <img src="676741916.jpg" alt="Buitenterras">
+        <img src="544029771.jpg" alt="Slaapkamer detail">
+        <img src="818741094.jpg" alt="Koffie en thee hoek">
+    </div>
 
-Uitzicht
+    <section id="facilities" style="margin-top: 50px;">
+        <h2>Waarom kiezen voor Umi B&B?</h2>
+        <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+            <div style="flex: 1; min-width: 250px;">
+                <h3>Faciliteiten</h3>
+                <ul>
+                    <li>Gratis WiFi & Parkeren</li>
+                    <li>Airconditioning & Verwarming</li>
+                    <li>Eigen badkamer met bidet</li>
+                    <li>Terras, Patio & Tuin</li>
+                </ul>
+            </div>
+            <div style="flex: 1; min-width: 250px;">
+                <h3>Omgeving</h3>
+                <p>📍 1,5 km от het strand</p>
+                <p>📍 23 km от Stadion Riviera delle Palme</p>
+                <p>📍 52 km от Luchthaven Abruzzo</p>
+            </div>
+        </div>
+    </section>
 
-    Uitzicht op de tuin
-    Uitzicht 
+    <section id="contact" style="text-align: center; padding: 50px 0;">
+        <h2>Reserveer uw verblijf</h2>
+        <p>Wij spreken Bulgaars, Engels и Italiaans!</p>
+        <a href="mailto:info@umibnb.it" class="btn-book">Stuur een E-mail за Boeking</a>
+    </section>
+</div>
 
-Buiten
+<footer>
+    <p>&copy; 2026 Umi B&B Giulianova - Italië</p>
+</footer>
 
-    Buitenmeubels
-    Patio
-    Terras
-    Tuin 
-
-Keuken
-
-    Gedeelde keuken
-    Schoonmaakmiddelen
-    Elektrische waterkoker 
-
-Kamerfaciliteiten
-
-    Stopcontact bij het bed
-    Droogrek voor kleding
-    Kledingrek 
-
-Activiteiten
-
-    Aerobics
-    ToeslagNabij de accommodatie
-    Live sportevenementen (uitzendingen)
-    ToeslagNabij de accommodatie
-    Livemuziek/optreden
-    ToeslagNabij de accommodatie
-    Diners met een thema
-    ToeslagNabij de accommodatie
-    Filmavonden
-    ToeslagNabij de accommodatie
-    Stand-up comedy
-    ToeslagNabij de accommodatie
-    Tijdelijke kunstgaleries
-    ToeslagNabij de accommodatie
-    Bowlen
-    ToeslagNabij de accommodatie
-    Hiking
-    ToeslagNabij de accommodatie
-    Tennisbaan
-    ToeslagNabij de accommodatie
-
-Woonruimte
-
-    Zithoek
-    Bureau 
-
-Media & Technologie
-
-    Flatscreen-tv
-    Satellietzenders
-    Radio
-    Tv 
-
-Eten & Drinken
-
-    Thee- en koffiefaciliteiten 
-
-Internet
-WiFi is beschikbaar in de gehele accommodatie. Deze service is gratis.
-Parkeerplaats
-Openbaar parkeren is gratis. Je kunt parkeren in de buurt van de accommodatie. Reserveren is niet noodzakelijk.
-
-Diensten
-
-    Boodschappendienst
-    Toeslag
-    Persoonlijk in- en uitchecken
-    Versneld in- en uitchecken
-    Toeslag
-    Businesscentrum
-    Toeslag
-
-Diensten receptie
-
-    Factuur wordt verstrekt 
-
-Entertainment en familiediensten
-
-    Bordspellen/puzzels
-    Boeken, dvd's of muziek voor kinderen
-    Bordspellen/puzzels 
-
-Veiligheid
-
-    Brandblussers
-    Camerabewaking buiten
-    Camerabewaking in gemeenschappelijke ruimtes
-    Rookmelder
-    Toegang met sleutels 
-
-Algemeen
-
-    Airconditioning
-    Niet-roken in gehele accommodatie
-    Betegelde/marmeren vloer
-    Verwarming
-    Geluidsisolatie
-    Eigen ingang
-    Vloerbedekking
-    Geluiddichte kamers
-    Ventilator
-    Familiekamers
-    Rookvrije kamers 
-
-Toegankelijkheid
-
-    Gehele unit op de begane grond 
-
-Gesproken talen
-
-    Bulgaars
-    Engels
-    Italiaans 
+</body>
+</html>
