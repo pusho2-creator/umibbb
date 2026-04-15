@@ -36,7 +36,7 @@
 
     <style>
         :root { --primary: #003580; --secondary: #27ae60; --bg: #f4f7f6; }
-        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; background: var(--bg); scroll-behavior: smooth; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; background: var(--bg); scroll-behavior: smooth; color: #333; }
         nav { background: var(--primary); padding: 15px; position: sticky; top: 0; z-index: 1000; text-align: center; }
         nav a { color: white; text-decoration: none; font-weight: bold; margin: 0 15px; text-transform: uppercase; font-size: 0.85rem; }
         
@@ -59,8 +59,9 @@
         .modal { display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); align-items: center; justify-content: center; }
         .modal-content { max-width: 90%; max-height: 85vh; }
         
-        .faq-item { margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
-        .faq-item strong { display: block; color: var(--primary); margin-bottom: 5px; }
+        .faq-item { margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 15px; }
+        .faq-item strong { display: block; color: var(--primary); margin-bottom: 8px; font-size: 1.1rem; }
+        .faq-item p { margin: 0; line-height: 1.5; color: #555; }
         
         footer { background: #222; color: white; text-align: center; padding: 20px; margin-top: 40px; }
     </style>
@@ -80,7 +81,7 @@
 
 <section class="hero">
     <h1>UMI B&B</h1>
-    <p>Giulianova, Italy</p>
+    <p>Giulianova, Abruzzo, Italy</p>
 </section>
 
 <div class="container">
@@ -92,44 +93,97 @@
 
     <div id="about" class="content-box">
         <div class="lang-content en" style="display: block;">
-            <h2>About Umi B&B</h2>
-            <p>Umi B&B is located 19 minutes walk from Spiaggia Giulianova and offers a garden.</p>
+            <h2>Experience Umi B&B</h2>
+            <p>Umi B&B is a charming retreat in Giulianova, offering a peaceful garden and modern amenities. We are located just 1.6 km (about a 19-minute walk) from the beautiful Spiaggia Giulianova.</p>
         </div>
         <div class="lang-content it">
-            <h2>Informazioni su Umi B&B</h2>
-            <p>L'Umi B&B si trova a 19 minuti a piedi dalla Spiaggia di Giulianova e offre un giardino.</p>
+            <h2>Scopri Umi B&B</h2>
+            <p>Umi B&B è un incantevole rifugio a Giulianova, che offre un giardino tranquillo e servizi moderni. Ci troviamo a soli 1,6 km (circa 19 minuti a piedi) dalla splendida Spiaggia di Giulianova.</p>
         </div>
         <div class="lang-content nl">
-            <h2>Over Umi B&B</h2>
-            <p>Umi B&B bevindt zich op 19 minuten lopen van Spiaggia Giulianova en biedt een tuin.</p>
+            <h2>Ervaar Umi B&B</h2>
+            <p>Umi B&B is een charmant verblijf in Giulianova, met een rustige tuin en moderne voorzieningen. Wij zijn gevestigd op slechts 1,6 km (ongeveer 19 minuten lopen) van het prachtige Spiaggia Giulianova.</p>
         </div>
     </div>
 
     <div id="faq" class="content-box">
         <div class="lang-content en" style="display: block;">
             <h2>Frequently Asked Questions</h2>
-            <div class="faq-item"><strong>What are the check-in and check-out times?</strong> Check-in is from 15:00 and check-out is until 10:00.</div>
-            <div class="faq-item"><strong>Does Umi B&B have a terrace?</strong> Yes, some options have a terrace or balcony.</div>
-            <div class="faq-item"><strong>Is there parking available?</strong> Yes, free public parking is available nearby.</div>
+            <div class="faq-item">
+                <strong>Can I get a discount at Umi B&B?</strong>
+                <p>Yes! You may be eligible for a Genius discount. Simply sign in to check for available deals.</p>
+            </div>
+            <div class="faq-item">
+                <strong>How far is the beach?</strong>
+                <p>The nearest beach, Spiaggia Giulianova, is approximately 1.6 km away from the property.</p>
+            </div>
+            <div class="faq-item">
+                <strong>What are the check-in and check-out times?</strong>
+                <p>Check-in starts at 15:00 and ends at 20:00. Check-out is required by 10:00.</p>
+            </div>
+            <div class="faq-item">
+                <strong>What kind of rooms are available?</strong>
+                <p>We offer various room types. Please check availability to see specific options for your dates.</p>
+            </div>
+            <div class="faq-item">
+                <strong>Is there a terrace or balcony?</strong>
+                <p>Yes, some of our accommodations feature a terrace or a balcony for your enjoyment.</p>
+            </div>
         </div>
+
         <div class="lang-content it">
             <h2>Domande Frequenti</h2>
-            <div class="faq-item"><strong>Quali sono gli orari di check-in e check-out?</strong> Il check-in è dalle 15:00 e il check-out è fino alle 10:00.</div>
-            <div class="faq-item"><strong>L'Umi B&B ha una terrazza?</strong> Sì, alcune opzioni dispongono di terrazza o balcone.</div>
-            <div class="faq-item"><strong>C'è un parcheggio disponibile?</strong> Sì, è disponibile un parcheggio pubblico gratuito nelle vicinanze.</div>
+            <div class="faq-item">
+                <strong>Posso ricevere uno sconto presso Umi B&B?</strong>
+                <p>Sì! Potresti aver diritto a uno sconto Genius. Accedi per verificare le offerte disponibili.</p>
+            </div>
+            <div class="faq-item">
+                <strong>Quanto dista la spiaggia?</strong>
+                <p>La spiaggia più vicina, Spiaggia Giulianova, dista circa 1,6 km dalla struttura.</p>
+            </div>
+            <div class="faq-item">
+                <strong>Quali sono gli orari di check-in e check-out?</strong>
+                <p>Il check-in è disponibile dalle 15:00 alle 20:00. Il check-out deve essere effettuato entro le 10:00.</p>
+            </div>
+            <div class="faq-item">
+                <strong>Che tipo di camere sono disponibili?</strong>
+                <p>Offriamo diverse tipologie di camere. Verifica la disponibilità per vedere le opzioni per le tue date.</p>
+            </div>
+            <div class="faq-item">
+                <strong>C'è una terrazza o un balcone?</strong>
+                <p>Sì, alcune delle nostre sistemazioni dispongono di una terrazza или un balcone.</p>
+            </div>
         </div>
+
         <div class="lang-content nl">
             <h2>Veelgestelde Vragen</h2>
-            <div class="faq-item"><strong>Hoe laat kan ik in- en uitchecken?</strong> Inchecken kan vanaf 15:00 en uitchecken tot 10:00.</div>
-            <div class="faq-item"><strong>Heeft Umi B&B een terras?</strong> Ja, sommige accommodaties hebben een terras of balkon.</div>
-            <div class="faq-item"><strong>Is er parkeergelegenheid?</strong> Ja, er is gratis openbare parkeergelegenheid in de buurt.</div>
+            <div class="faq-item">
+                <strong>Kan ik korting krijgen bij Umi B&B?</strong>
+                <p>Ja! Mogelijk komt u in aanmerking voor een Genius-korting. Log in om de beschikbare aanbiedingen te bekijken.</p>
+            </div>
+            <div class="faq-item">
+                <strong>Hoe ver is het strand?</strong>
+                <p>Het dichtstbijzijnde strand, Spiaggia Giulianova, ligt op ongeveer 1,6 km afstand van de accommodatie.</p>
+            </div>
+            <div class="faq-item">
+                <strong>Wat zijn de in- en uitchecktijden?</strong>
+                <p>Inchecken kan van 15:00 tot 20:00 uur. Uitchecken dient te gebeuren vóór 10:00 uur.</p>
+            </div>
+            <div class="faq-item">
+                <strong>Welke kamertypes zijn beschikbaar?</strong>
+                <p>Wij bieden diverse kamertypes aan. Controleer de beschikbaarheid voor de opties op uw data.</p>
+            </div>
+            <div class="faq-item">
+                <strong>Is er een terras of balkon?</strong>
+                <p>Ja, sommige van onze accommodaties hebben een terras of een balkon.</p>
+            </div>
         </div>
     </div>
 
     <h2 id="gallery" style="text-align: center;">Gallery</h2>
     <div class="gallery">
         <script>
-            const images = ["543547600.jpg", "543547616.jpg", "543547620.jpg", "543547959.jpg", "544029771.jpg", "561993086.jpg", "671618758.jpg", "676742323.jpg", "818741094.jpg"];
+            const images = ["543547959.jpg", "544029771.jpg", "561993086.jpg", "562295020.jpg", "671618758.jpg", "676740710.jpg", "676741916.jpg", "676742323.jpg", "818741094.jpg"];
             images.forEach(img => {
                 document.write(`<img src="images/${img}" onclick="openFullImg(this)" loading="lazy">`);
             });
