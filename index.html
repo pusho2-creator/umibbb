@@ -3,113 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Umi B&B | Giulianova</title>
+    <title>Umi B&B | Giulianova Official</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
         :root { --accent: #003580; --text: #1a1a1a; --bg: #f7f9fb; --white: #ffffff; }
         body { font-family: 'Inter', sans-serif; margin: 0; background-color: var(--bg); color: var(--text); scroll-behavior: smooth; }
         
         /* Navigatie */
-        nav { background: white; padding: 15px; position: sticky; top: 0; z-index: 1000; display: flex; justify-content: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-        nav a { color: var(--text); text-decoration: none; margin: 0 15px; font-weight: 600; font-size: 0.85rem; text-transform: uppercase; }
+        nav { background: white; padding: 20px; position: sticky; top: 0; z-index: 1000; display: flex; justify-content: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        nav a { color: var(--text); text-decoration: none; margin: 0 15px; font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; }
+        nav a:hover { color: var(--accent); }
+
+        /* Hero / Home Header */
+        .hero { 
+            height: 60vh; 
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('images/header1.jpg') center/cover; 
+            display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center;
+        }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: 4rem; margin: 0; }
+        .hero p { font-size: 1.2rem; font-weight: 300; }
 
         .container { max-width: 1100px; margin: auto; padding: 40px 20px; }
-        .section { background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); margin-bottom: 40px; }
-        h2 { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--accent); margin-top: 0; }
+        .section { background: white; padding: 50px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); margin-bottom: 40px; }
+        h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--accent); margin-top: 0; }
+        
+        /* Wie is Umi (Home Info) */
+        .intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+        .intro-grid img { width: 100%; border-radius: 15px; }
 
-        /* FAQ Styling - Exact 7 Items */
+        /* FAQ Styling - De 7 vragen */
         .faq-grid { display: grid; gap: 15px; }
-        .faq-item { background: #f9f9f9; padding: 20px; border-radius: 10px; border-left: 5px solid var(--accent); }
-        .faq-q { font-weight: 700; display: block; margin-bottom: 5px; color: var(--accent); }
+        .faq-item { background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 6px solid var(--accent); }
+        .faq-q { font-weight: 700; display: block; margin-bottom: 8px; color: var(--accent); font-size: 1.1rem; }
 
-        /* Galerij Styling */
-        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
-        .gallery-grid img { width: 100%; height: 120px; object-fit: cover; border-radius: 8px; cursor: pointer; transition: 0.3s; }
-        .gallery-grid img:hover { transform: scale(1.05); }
+        /* Huisregels & Omgeving */
+        .info-row { display: flex; justify-content: space-between; border-bottom: 1px solid #eee; padding: 12px 0; }
+        .dist-badge { color: var(--accent); font-weight: 700; }
 
-        /* Lightbox (Klik op foto) */
-        .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); align-items: center; justify-content: center; cursor: pointer; }
-        .modal img { max-width: 90%; max-height: 85vh; border-radius: 5px; box-shadow: 0 0 20px rgba(0,0,0,0.5); }
+        /* Galerij */
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; }
+        .gallery-grid img { width: 100%; height: 140px; object-fit: cover; border-radius: 10px; cursor: pointer; transition: 0.3s; }
+        .gallery-grid img:hover { transform: translateY(-5px); }
 
-        /* Contact & Footer */
-        .contact-info { text-align: center; line-height: 2; }
-        footer { background: #1a1a1a; color: white; text-align: center; padding: 40px; margin-top: 60px; }
+        /* Lightbox */
+        .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); align-items: center; justify-content: center; }
+        .modal img { max-width: 90%; max-height: 80vh; border-radius: 10px; }
 
-        .info-row { display: flex; justify-content: space-between; border-bottom: 1px solid #eee; padding: 10px 0; }
+        footer { background: #1a1a1a; color: white; text-align: center; padding: 60px 20px; }
+
+        @media (max-width: 768px) { .intro-grid { grid-template-columns: 1fr; } .hero h1 { font-size: 2.5rem; } }
     </style>
 </head>
 <body>
 
-<div id="imageModal" class="modal" onclick="this.style.display='none'">
-    <img id="imgFull" src="">
-</div>
+<div id="imageModal" class="modal" onclick="this.style.display='none'"><img id="imgFull" src=""></div>
 
 <nav>
-    <a href="#umi">Wie is Umi</a>
+    <a href="#home">Home</a>
+    <a href="#omgeving">Omgeving</a>
     <a href="#regels">Huisregels</a>
-    <a href="#faq">FAQ (7)</a>
+    <a href="#faq">FAQ</a>
     <a href="#galerij">Galerij</a>
     <a href="#contact">Contact</a>
 </nav>
 
+<section id="home" class="hero">
+    <h1>Welkom bij Umi B&B</h1>
+    <p>Uw thuis in Giulianova, Abruzzo</p>
+</section>
+
 <div class="container">
 
-    <section id="umi" class="section">
-        <h2>Wie is Umi?</h2>
-        <p>Welkom bij <strong>Umi B&B</strong> in Giulianova. Wij bieden een plek waar moderne gastvrijheid en de rust van de Adriatische kust samenkomen. Geniet van persoonlijke service en een onvergetelijk verblijf.</p>
+    <section class="section">
+        <div class="intro-grid">
+            <div>
+                <h2>Wie is Umi?</h2>
+                <p>Umi is niet zomaar een Bed & Breakfast; het is een plek waar passie voor de regio Abruzzo en moderne gastvrijheid samenkomen. De naam "Umi" staat voor de rust en de kracht van de zee.</p>
+                <p>Onze missie is simpel: u een onvergetelijk verblijf bezorgen met een persoonlijk tintje, een fantastisch ontbijt (score 8.8!) en alle comfort die u nodig heeft om Giulianova te ontdekken.</p>
+            </div>
+            <img src="images/544029771.jpg" alt="Umi Interieur">
+        </div>
+    </section>
+
+    <section id="omgeving" class="section">
+        <h2>De Omgeving</h2>
+        <div class="info-row"><span>Somersault</span><span class="dist-badge">1,2 km</span></div>
+        <div class="info-row"><span>Parco degli Eucalipti</span><span class="dist-badge">1,8 km</span></div>
+        <div class="info-row"><span>Spiaggia Giulianova (Strand)</span><span class="dist-badge">1,6 km</span></div>
+        <div class="info-row"><span>Riserva del Borsacchio</span><span class="dist-badge">8 km</span></div>
     </section>
 
     <section id="regels" class="section">
         <h2>Huisregels</h2>
         <div class="info-row"><span>Inchecken</span><span>15:00 - 19:30</span></div>
         <div class="info-row"><span>Uitchecken</span><span>10:00 - 10:30</span></div>
-        <div class="info-row"><span>Babybedje (0-3j)</span><span>€ 10 per nacht</span></div>
-        <div class="info-row"><span>Extra bed (4+j)</span><span>€ 20 per nacht</span></div>
-        <p><small>Huisdieren en feesten zijn niet toegestaan. Roken is verboden.</small></p>
+        <div class="info-row"><span>Babybedje (0-3 jaar)</span><span>€ 10 per nacht</span></div>
+        <div class="info-row"><span>Extra bed (4+ jaar)</span><span>€ 20 per persoon per nacht</span></div>
+        <p><small>* Kinderen vanaf 18 jaar worden als volwassenen gerekend. Huisdieren en feesten zijn niet toegestaan.</small></p>
     </section>
 
     <section id="faq" class="section">
         <h2>Veelgestelde vragen</h2>
         <div class="faq-grid">
-            <div class="faq-item"><span class="faq-q">1. Wat voor ontbijt wordt er geserveerd?</span>Gasten waarderen het ontbijt met een 8.8 (Italiaans of À la carte).</div>
-            <div class="faq-item"><span class="faq-q">2. Wat is er te doen bij Umi B&B?</span>Tennis, hiking, aerobics, boogschieten, live muziek, filmavonden, comedy, kunstgaleries en themadiners.</div>
-            <div class="faq-item"><span class="faq-q">3. Welke kamers kan ik boeken?</span>U kunt een Tweepersoonskamer boeken.</div>
-            <div class="faq-item"><span class="faq-q">4. Wat zijn de in- en uitchecktijden?</span>In: 15:00 | Uit: 10:30.</div>
-            <div class="faq-item"><span class="faq-q">5. Hoeveel kost een verblijf?</span>Prijzen variëren per datum en kamertype.</div>
-            <div class="faq-item"><span class="faq-q">6. Hoe ver van het centrum?</span>Slechts 1,1 km van het centrum van Giulianova.</div>
-            <div class="faq-item"><span class="faq-q">7. Hoe ver van het strand?</span>Het strand ligt op 1,4 km afstand.</div>
+            <div class="faq-item"><span class="faq-q">1. Wat voor ontbijt wordt er geserveerd?</span>Gasten kunnen genieten van een ontbijt met een score van 8.8. Opties: Italiaans of À la carte.</div>
+            <div class="faq-item"><span class="faq-q">2. Wat is er te doen bij Umi B&B?</span>Tennis, Hiking, Aerobics, Boogschieten, Live muziek, Comedy, Filmavonden, Kunstgaleries en Themadiners.</div>
+            <div class="faq-item"><span class="faq-q">3. Welke kamers kan ik boeken?</span>U kunt kiezen voor een comfortabele Tweepersoonskamer.</div>
+            <div class="faq-item"><span class="faq-q">4. Wat zijn de in- en uitchecktijden?</span>Inchecken vanaf 15:00, uitchecken tot 10:30.</div>
+            <div class="faq-item"><span class="faq-q">5. Hoeveel kost een verblijf?</span>Prijzen zijn afhankelijk van de geselecteerde data en kamertype.</div>
+            <div class="faq-item"><span class="faq-q">6. Hoe ver van het centrum?</span>Umi B&B ligt op 1,1 km van het centrum van Giulianova.</div>
+            <div class="faq-item"><span class="faq-q">7. Hoe ver van het strand?</span>Het strand ligt op slechts 1,4 km afstand.</div>
         </div>
     </section>
 
     <section id="galerij" class="section">
         <h2>Galerij</h2>
-        <p><small>Klik op een foto om deze te vergroten.</small></p>
         <div class="gallery-grid">
             <script>
                 const imgs = ["543547600.jpg", "543547616.jpg", "543547620.jpg", "543547683.jpg", "543547709.jpg", "543547722.jpg", "543547738.jpg", "543547766.jpg", "543547787.jpg", "543547828.jpg", "543547858.jpg", "543547881.jpg", "543547959.jpg", "543548062.jpg", "543548069.jpg", "543548104.jpg", "543548123.jpg", "543548127.jpg", "544029771.jpg", "559942633.jpg", "561993086.jpg", "561993189.jpg", "562295020.jpg", "562295445.jpg", "671618758.jpg", "676738978.jpg", "676739022.jpg", "676739484.jpg", "676740204.jpg", "676740329.jpg", "676740443.jpg", "676740544.jpg", "676740710.jpg", "676740990.jpg", "676741112.jpg", "676741164.jpg", "676741228.jpg", "676741517.jpg", "676741598.jpg", "676741673.jpg", "676741772.jpg", "676741916.jpg", "676742125.jpg", "676742323.jpg", "686495701.jpg", "686495878.jpg", "686496190.jpg", "686496842.jpg", "818741094.jpg", "832992649.jpg"];
-                imgs.forEach(i => {
-                    document.write(`<img src="images/${i}" onclick="openImg(this.src)">`);
-                });
-                function openImg(src) {
-                    document.getElementById('imgFull').src = src;
-                    document.getElementById('imageModal').style.display = 'flex';
-                }
+                imgs.forEach(i => document.write(`<img src="images/${i}" onclick="openLbox(this.src)">`));
+                function openLbox(s) { document.getElementById('imgFull').src=s; document.getElementById('imageModal').style.display='flex'; }
             </script>
         </div>
     </section>
 
-    <section id="contact" class="section contact-info">
+    <section id="contact" class="section" style="text-align: center;">
         <h2>Contact</h2>
-        <p>Heb je vragen of wil je direct boeken?</p>
-        <p>📍 <strong>Adres:</strong> Via Cupa, Giulianova (TE), Italië</p>
-        <p>📧 <strong>E-mail:</strong> info@umibnb.it</p>
-        <p>📞 <strong>Telefoon:</strong> +39 347 123 4567</p>
+        <p><strong>Umi B&B Giulianova</strong></p>
+        <p>📍 Via Cupa, Giulianova (TE), Italië</p>
+        <p>✉️ info@umibnb.it | 📞 +39 347 123 4567</p>
     </section>
 
 </div>
 
 <footer>
-    <p>&copy; 2026 Umi B&B Giulianova</p>
+    <p>&copy; 2026 Umi B&B - Giulianova Official Website</p>
 </footer>
 
 </body>
