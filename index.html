@@ -39,7 +39,23 @@
         body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; background: var(--bg); scroll-behavior: smooth; }
         nav { background: var(--primary); padding: 15px; position: sticky; top: 0; z-index: 1000; text-align: center; }
         nav a { color: white; text-decoration: none; font-weight: bold; margin: 0 15px; text-transform: uppercase; font-size: 0.85rem; }
-        .hero { background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/561993086.jpg'); background-size: cover; background-position: center; height: 300px; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center; }
+        
+        /* ОБНОВЕН HEADER С header1.jpg */
+        .hero { 
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('images/header1.jpg'); 
+            background-size: cover; 
+            background-position: center; 
+            height: 400px; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            color: white; 
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .hero h1 { font-size: 4rem; margin: 0; }
         .container { max-width: 1000px; margin: auto; padding: 20px; }
         .lang-switcher { text-align: center; margin: 20px 0; }
         .lang-btn { background: white; border: 2px solid var(--primary); padding: 8px 18px; margin: 5px; cursor: pointer; border-radius: 25px; font-weight: bold; }
@@ -77,98 +93,4 @@
 
 <div class="container">
     <div class="lang-switcher">
-        <button class="lang-btn active" onclick="showLang('en', this)">🇬🇧 English</button>
-        <button class="lang-btn" onclick="showLang('it', this)">🇮🇹 Italiano</button>
-        <button class="lang-btn" onclick="showLang('nl', this)">🇳🇱 Nederlands</button>
-    </div>
-
-    <div id="about" class="content-box">
-        <div class="lang-content en" style="display: block;">
-            <h2>Welcome to Umi B&B</h2>
-            <p>Experience comfort and Italian hospitality just steps from the Adriatic Sea.</p>
-        </div>
-        <div class="lang-content it">
-            <h2>Benvenuti a Umi B&B</h2>
-            <p>Vivi il comfort e l'ospitalità italiana a pochi passi dal mare Adriatico.</p>
-        </div>
-        <div class="lang-content nl">
-            <h2>Welkom bij Umi B&B</h2>
-            <p>Ervaar comfort en Italiaanse gastvrijheid op een steenworp afstand van de Adriatische Zee.</p>
-        </div>
-    </div>
-
-    <div id="facilities" class="content-box">
-        <div class="lang-content en" style="display: block;">
-            <h2>Facilities</h2>
-            <ul>
-                <li>✅ Free WiFi</li>
-                <li>✅ Air Conditioning</li>
-                <li>✅ Flat-screen TV</li>
-                <li>✅ Private Bathroom & Bidet</li>
-                <li>✅ Hairdryer</li>
-                <li>✅ Coffee/Tea Maker</li>
-                <li>✅ Patio & Garden</li>
-                <li>✅ Free Parking nearby</li>
-            </ul>
-        </div>
-        <div class="lang-content it">
-            <h2>Servizi</h2>
-            <ul>
-                <li>✅ WiFi gratuito</li>
-                <li>✅ Aria condizionata</li>
-                <li>✅ TV a schermo piatto</li>
-                <li>✅ Bagno privato e bidet</li>
-                <li>✅ Asciugacapelli</li>
-                <li>✅ Macchina per caffè/tè</li>
-                <li>✅ Patio e giardino</li>
-                <li>✅ Parcheggio gratuito nelle vicinanze</li>
-            </ul>
-        </div>
-        <div class="lang-content nl">
-            <h2>Faciliteiten</h2>
-            <ul>
-                <li>✅ Gratis WiFi</li>
-                <li>✅ Airconditioning</li>
-                <li>✅ Flatscreen-tv</li>
-                <li>✅ Eigen badkamer & bidet</li>
-                <li>✅ Haardroger</li>
-                <li>✅ Koffie- и theefaciliteiten</li>
-                <li>✅ Patio & tuin</li>
-                <li>✅ Gratis parkeren in de buurt</li>
-            </ul>
-        </div>
-    </div>
-
-    <h2 id="gallery" style="text-align: center;">Gallery</h2>
-    <div class="gallery">
-        <script>
-            // Бърз начин да вкараме всичките 50 снимки без да пишем 50 реда код
-            const images = [
-                "543547600.jpg", "543547616.jpg", "543547620.jpg", "543547683.jpg", "543547709.jpg",
-                "543547722.jpg", "543547738.jpg", "543547766.jpg", "543547787.jpg", "543547828.jpg",
-                "543547858.jpg", "543547881.jpg", "543547959.jpg", "543548062.jpg", "543548069.jpg",
-                "543548104.jpg", "543548123.jpg", "543548127.jpg", "544029771.jpg", "559942633.jpg",
-                "561993086.jpg", "561993189.jpg", "562295020.jpg", "562295445.jpg", "671618758.jpg",
-                "676738978.jpg", "676739022.jpg", "676739484.jpg", "676740204.jpg", "676740329.jpg",
-                "676740443.jpg", "676740544.jpg", "676740710.jpg", "676740990.jpg", "676741112.jpg",
-                "676741164.jpg", "676741228.jpg", "676741517.jpg", "676741598.jpg", "676741673.jpg",
-                "676741772.jpg", "676741916.jpg", "676742125.jpg", "676742323.jpg", "686495701.jpg",
-                "686495878.jpg", "686496190.jpg", "686496842.jpg", "818741094.jpg", "832992649.jpg"
-            ];
-            images.forEach(img => {
-                document.write(`<img src="images/${img}" onclick="openFullImg(this)" loading="lazy">`);
-            });
-        </script>
-    </div>
-
-    <div id="contact" style="text-align: center; margin: 60px 0;">
-        <a href="mailto:info@umibnb.it" style="background: var(--secondary); color: white; padding: 18px 40px; text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 1.2rem;">BOOK NOW</a>
-    </div>
-</div>
-
-<footer>
-    <p>&copy; 2026 Umi B&B - Giulianova, Italy</p>
-</footer>
-
-</body>
-</html>
+        <button class="lang-btn active" onclick="showLang('en', this)">🇬🇧 English</
