@@ -96,7 +96,22 @@
             box-shadow: var(--shadow);
             border: 1px solid rgba(0,0,0,0.03);
         }
-        h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--accent); margin-bottom: 25px; }
+        h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--accent); margin-bottom: 25px; margin-top: 0; }
+
+        /* Wie is Umi Layout met Foto */
+        .umi-split {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 40px;
+            align-items: center;
+        }
+        .umi-image img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 10px 10px 0 #eef4ff;
+        }
 
         /* Grids */
         .grid-info { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
@@ -120,6 +135,13 @@
         .modal img { max-width: 90%; max-height: 80vh; border-radius: 10px; }
 
         footer { background: var(--text-dark); color: white; text-align: center; padding: 60px 20px; }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .umi-split { grid-template-columns: 1fr; text-align: center; }
+            .umi-image img { height: 250px; }
+            .hero h1 { font-size: 2.5rem; }
+        }
     </style>
     <script>
         function setLang(lang) {
@@ -167,17 +189,24 @@
 <div class="container">
 
     <section class="section-card">
-        <div class="lang-content it active-content">
-            <h2>Chi è Umi?</h2>
-            <p>Umi B&B offre un'accoglienza calorosa e moderna nel cuore dell'Abruzzo. Il nome "Umi" significa mare, simbolo di pace e freschezza. La nostra missione è farvi sentire come a casa.</p>
-        </div>
-        <div class="lang-content en">
-            <h2>Who is Umi?</h2>
-            <p>Umi B&B offers a warm and modern welcome in the heart of Abruzzo. The name "Umi" means sea, a symbol of peace and freshness. Our mission is to make you feel right at home.</p>
-        </div>
-        <div class="lang-content nl">
-            <h2>Wie is Umi?</h2>
-            <p>Umi B&B biedt een warm en modern welkom in het hart van Abruzzo. De naam "Umi" betekent zee, een symbool van rust en frisheid. Onze missie is om u zich direct thuis te laten voelen.</p>
+        <div class="umi-split">
+            <div class="umi-text">
+                <div class="lang-content it active-content">
+                    <h2>Chi è Umi?</h2>
+                    <p>Umi B&B offre un'accoglienza calorosa e moderna nel cuore dell'Abruzzo. Il nome "Umi" significa mare, simbolo di pace e freschezza. La nostra missione è farvi sentire come a casa.</p>
+                </div>
+                <div class="lang-content en">
+                    <h2>Who is Umi?</h2>
+                    <p>Umi B&B offers a warm and modern welcome in the heart of Abruzzo. The name "Umi" means sea, a symbol of peace and freshness. Our mission is to make you feel right at home.</p>
+                </div>
+                <div class="lang-content nl">
+                    <h2>Wie is Umi?</h2>
+                    <p>Umi B&B biedt een warm en modern welkom in het hart van Abruzzo. De naam "Umi" betekent zee, een symbool van rust en frisheid. Onze missie is om u zich direct thuis te laten voelen.</p>
+                </div>
+            </div>
+            <div class="umi-image">
+                <img src="images/544029771.jpg" alt="Umi B&B Sfeerbeeld">
+            </div>
         </div>
     </section>
 
