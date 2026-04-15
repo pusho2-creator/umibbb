@@ -22,6 +22,7 @@
             background-color: var(--bg-light); 
             color: var(--text-dark);
             scroll-behavior: smooth;
+            line-height: 1.6;
         }
 
         /* Language Switcher */
@@ -98,20 +99,22 @@
         }
         h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--accent); margin-bottom: 25px; margin-top: 0; }
 
-        /* Wie is Umi Layout met Foto */
+        /* Layout met Foto */
         .umi-split {
             display: grid;
             grid-template-columns: 1.2fr 0.8fr;
             gap: 40px;
-            align-items: center;
+            align-items: flex-start;
         }
         .umi-image img {
             width: 100%;
-            height: 350px;
+            height: auto;
+            min-height: 400px;
             object-fit: cover;
             border-radius: 15px;
             box-shadow: 10px 10px 0 #eef4ff;
         }
+        .desc-text { color: var(--text-light); font-size: 0.95rem; margin-top: 20px; }
 
         /* Grids */
         .grid-info { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
@@ -136,11 +139,9 @@
 
         footer { background: var(--text-dark); color: white; text-align: center; padding: 60px 20px; }
 
-        /* Mobile Responsive */
         @media (max-width: 768px) {
-            .umi-split { grid-template-columns: 1fr; text-align: center; }
-            .umi-image img { height: 250px; }
-            .hero h1 { font-size: 2.5rem; }
+            .umi-split { grid-template-columns: 1fr; }
+            .umi-image { order: -1; margin-bottom: 20px; }
         }
     </style>
     <script>
@@ -164,19 +165,10 @@
 
 <nav>
     <a href="#home">Home</a>
-    <a href="#omgeving" class="lang-content it active-content">Dintorni</a>
-    <a href="#omgeving" class="lang-content en">Surroundings</a>
-    <a href="#omgeving" class="lang-content nl">Omgeving</a>
-    <a href="#regels" class="lang-content it active-content">Regole</a>
-    <a href="#regels" class="lang-content en">Rules</a>
-    <a href="#regels" class="lang-content nl">Regels</a>
+    <a href="#omgeving">Dintorni</a>
     <a href="#faq">FAQ</a>
-    <a href="#galerij" class="lang-content it active-content">Galleria</a>
-    <a href="#galerij" class="lang-content en">Gallery</a>
-    <a href="#galerij" class="lang-content nl">Galerij</a>
-    <a href="#contact" class="lang-content it active-content">Contatti</a>
-    <a href="#contact" class="lang-content en">Contact</a>
-    <a href="#contact" class="lang-content nl">Contact</a>
+    <a href="#galerij">Galleria</a>
+    <a href="#contact">Contatti</a>
 </nav>
 
 <section class="hero" id="home">
@@ -193,19 +185,36 @@
             <div class="umi-text">
                 <div class="lang-content it active-content">
                     <h2>Chi è Umi?</h2>
-                    <p>Umi B&B offre un'accoglienza calorosa e moderna nel cuore dell'Abruzzo. Il nome "Umi" significa mare, simbolo di pace e freschezza. La nostra missione è farvi sentire come a casa.</p>
+                    <p>Umi B&B offre un'accoglienza calorosa e moderna nel cuore dell'Abruzzo. Il nome "Umi" significa mare, simbolo di pace e freschezza.</p>
+                    <div class="desc-text">
+                        Situato a 19 minuti a piedi dalla Spiaggia di Giulianova, l'Umi B&B offre un giardino, sistemazioni con patio e la connessione WiFi gratuita.<br><br>
+                        Le unità sono dotate di terrazza, aria condizionata, TV a schermo piatto e bagno privato con bidet e set di cortesia. La struttura può fornire asciugamani e biancheria da letto a un costo aggiuntivo.<br><br>
+                        Il B&B dista 23 km dallo Stadio Riviera delle Palme en 25 km dalla stazione ferroviaria di San Benedetto del Tronto. L'Aeroporto d'Abruzzo si trova a 52 km.
+                    </div>
                 </div>
+
                 <div class="lang-content en">
                     <h2>Who is Umi?</h2>
-                    <p>Umi B&B offers a warm and modern welcome in the heart of Abruzzo. The name "Umi" means sea, a symbol of peace and freshness. Our mission is to make you feel right at home.</p>
+                    <p>Umi B&B offers a warm and modern welcome in the heart of Abruzzo. The name "Umi" means sea, a symbol of peace and freshness.</p>
+                    <div class="desc-text">
+                        Located a 19-minute walk from Giulianova Beach, Umi B&B offers a garden, accommodations with a patio, and free WiFi.<br><br>
+                        Units feature a terrace, air conditioning, a flat-screen TV, and a private bathroom with a bidet and free toiletries. For an extra fee, the property can provide towels and bed linen.<br><br>
+                        Riviera delle Palme Stadium is 23 km from the bed and breakfast, while San Benedetto del Tronto train station is 25 km away. Abruzzo Airport is 52 km from the property.
+                    </div>
                 </div>
+
                 <div class="lang-content nl">
                     <h2>Wie is Umi?</h2>
-                    <p>Umi B&B biedt een warm en modern welkom in het hart van Abruzzo. De naam "Umi" betekent zee, een symbool van rust en frisheid. Onze missie is om u zich direct thuis te laten voelen.</p>
+                    <p>Umi B&B biedt een warm en modern welkom in het hart van Abruzzo. De naam "Umi" betekent zee, een symbool van rust en frisheid.</p>
+                    <div class="desc-text">
+                        Umi B&B bevindt zich op 19 minuten lopen van Spiaggia Giulianova en biedt een tuin. De accommodaties hebben een patio en gratis WiFi.<br><br>
+                        De units zijn voorzien van een terras, airconditioning, een flatscreen-tv en een eigen badkamer met bidet en gratis toiletartikelen. Tegen betaling kan de accommodatie handdoeken en beddengoed verzorgen.<br><br>
+                        Stadion Riviera delle Palme ligt op 23 km van de bed & breakfast, en treinstation San Benedetto de Tronto ligt 25 km verderop. Vliegveld Luchthaven Abruzzo ligt op 52 km van de accommodatie.
+                    </div>
                 </div>
             </div>
             <div class="umi-image">
-                <img src="images/544029771.jpg" alt="Umi B&B Sfeerbeeld">
+                <img src="images/544029771.jpg" alt="Umi B&B">
             </div>
         </div>
     </section>
@@ -228,63 +237,22 @@
         </div>
     </section>
 
-    <section id="regels" class="section-card">
-        <h2 class="lang-content it active-content">Regole della casa</h2>
-        <h2 class="lang-content en">House Rules</h2>
-        <h2 class="lang-content nl">Huisregels</h2>
-        <div class="grid-info">
-            <ul class="info-list">
-                <li>Check-in <span>15:00 - 19:30</span></li>
-                <li>Check-out <span>10:00 - 10:30</span></li>
-            </ul>
-            <ul class="info-list">
-                <li>
-                    <span class="lang-content it active-content">Culla (0-3 anni)</span>
-                    <span class="lang-content en">Crib (0-3 years)</span>
-                    <span class="lang-content nl">Babybedje (0-3 jaar)</span>
-                    <span class="dist-badge">€ 10 p.n.</span>
-                </li>
-                <li>
-                    <span class="lang-content it active-content">Letto extra (4+ anni)</span>
-                    <span class="lang-content en">Extra bed (4+ years)</span>
-                    <span class="lang-content nl">Extra bed (4+ jaar)</span>
-                    <span class="dist-badge">€ 20 p.n.</span>
-                </li>
-            </ul>
-        </div>
-    </section>
-
     <section id="faq" class="section-card">
         <h2>FAQ</h2>
-        
-        <div class="faq-grid lang-content it active-content">
-            <div class="faq-item"><span class="faq-q">1. Com'è la colazione?</span>Punteggio 8.8. Opzioni: Italiana o À la carte.</div>
-            <div class="faq-item"><span class="faq-q">2. Quali attività sono disponibili?</span>Tennis, Hiking, Aerobica, Tiro con l'arco, Musica dal vivo, Cinema, Gallerie d'arte.</div>
-            <div class="faq-item"><span class="faq-q">3. Che tipo di camera posso prenotare?</span>Camera Matrimoniale.</div>
-            <div class="faq-item"><span class="faq-q">4. Orari check-in/out?</span>Dalle 15:00 / Fino alle 10:30.</div>
-            <div class="faq-item"><span class="faq-q">5. Quanto costa il soggiorno?</span>I prezzi variano in base a date e camera.</div>
-            <div class="faq-item"><span class="faq-q">6. Distanza dal centro?</span>1,1 km dal centro di Giulianova.</div>
-            <div class="faq-item"><span class="faq-q">7. Distanza dalla spiaggia?</span>La spiaggia è a 1,4 km.</div>
-        </div>
-
-        <div class="faq-grid lang-content en">
-            <div class="faq-item"><span class="faq-q">1. How is the breakfast?</span>Score 8.8. Options: Italian or À la carte.</div>
-            <div class="faq-item"><span class="faq-q">2. What activities are available?</span>Tennis, Hiking, Archery, Live music, Movie nights, Art galleries.</div>
-            <div class="faq-item"><span class="faq-q">3. What room type can I book?</span>Double Room.</div>
-            <div class="faq-item"><span class="faq-q">4. Check-in/out times?</span>In from 3:00 PM / Out until 10:30 AM.</div>
-            <div class="faq-item"><span class="faq-q">5. How much is the stay?</span>Prices depend on dates and room.</div>
-            <div class="faq-item"><span class="faq-q">6. Distance from center?</span>1.1 km from Giulianova center.</div>
-            <div class="faq-item"><span class="faq-q">7. Distance from beach?</span>The beach is 1.4 km away.</div>
-        </div>
-
         <div class="faq-grid lang-content nl">
-            <div class="faq-item"><span class="faq-q">1. Wat voor ontbijt wordt er geserveerd?</span>Score 8.8. Opties: Italiaans of À la carte.</div>
-            <div class="faq-item"><span class="faq-q">2. Welke activiteiten zijn er?</span>Tennis, Wandelen, Boogschieten, Live muziek, Filmavonden, Kunstgaleries.</div>
-            <div class="faq-item"><span class="faq-q">3. Welke kamers kan ik boeken?</span>Tweepersoonskamer.</div>
-            <div class="faq-item"><span class="faq-q">4. In- en uitchecktijden?</span>Vanaf 15:00 / Tot 10:30.</div>
-            <div class="faq-item"><span class="faq-q">5. Wat kost een verblijf?</span>Prijzen variëren per datum en kamertype.</div>
-            <div class="faq-item"><span class="faq-q">6. Afstand tot het centrum?</span>1,1 km van het centrum van Giulianova.</div>
-            <div class="faq-item"><span class="faq-q">7. Afstand tot het strand?</span>Het strand ligt op 1,4 km afstand.</div>
+            <div class="faq-item"><span class="faq-q">1. Ontbijt?</span>Score 8.8. Italiaans of À la carte.</div>
+            <div class="faq-item"><span class="faq-q">2. Activiteiten?</span>Tennis, Wandelen, Live muziek, Filmavonden.</div>
+            <div class="faq-item"><span class="faq-q">3. Kamers?</span>Tweepersoonskamer.</div>
+        </div>
+        <div class="faq-grid lang-content it active-content">
+            <div class="faq-item"><span class="faq-q">1. Colazione?</span>Punteggio 8.8. Italiana o À la carte.</div>
+            <div class="faq-item"><span class="faq-q">2. Attività?</span>Tennis, Escursioni, Musica dal vivo, Cinema.</div>
+            <div class="faq-item"><span class="faq-q">3. Camere?</span>Camera Matrimoniale.</div>
+        </div>
+        <div class="faq-grid lang-content en">
+            <div class="faq-item"><span class="faq-q">1. Breakfast?</span>Score 8.8. Italian or À la carte.</div>
+            <div class="faq-item"><span class="faq-q">2. Activities?</span>Tennis, Hiking, Live music, Movie nights.</div>
+            <div class="faq-item"><span class="faq-q">3. Rooms?</span>Double Room.</div>
         </div>
     </section>
 
